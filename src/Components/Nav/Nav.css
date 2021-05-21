@@ -1,0 +1,25 @@
+.nav {
+  margin-top: 1em;
+  width: 95%;
+  outline: 2px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 1em;
+}
+
+.nav input {
+  margin: 0 1em;
+}
+
+.nav figure {
+  margin-right: auto;
+  outline: 2px green solid;
+}
+/*# sourceMappingURL=Nav.css.map */

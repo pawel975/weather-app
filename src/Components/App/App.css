@@ -1,5 +1,12 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .app {
-  outline: 2px solid blacks;
+  position: relative;
   width: 100vw;
   height: 100vh;
   display: -webkit-box;
@@ -12,8 +19,46 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background: linear-gradient(45deg, #89dbe0, rgba(137, 219, 224, 0));
+  background: linear-gradient(45deg, #333d4b, rgba(51, 61, 75, 0.6));
+  overflow: hidden;
+}
+
+.app .weather-icon {
+  position: absolute;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  left: 80%;
+  bottom: 80%;
+  width: 60%;
+  height: auto;
+  content: url("../../assets/animated/night.svg");
+  -webkit-animation: movement 1.5s ease-in-out;
+          animation: movement 1.5s ease-in-out;
+}
+
+@-webkit-keyframes movement {
+  0% {
+    left: 120%;
+    bottom: 60%;
+  }
+  100% {
+    left: 80%;
+    bottom: 80%;
+  }
+}
+
+@keyframes movement {
+  0% {
+    left: 120%;
+    bottom: 60%;
+  }
+  100% {
+    left: 80%;
+    bottom: 80%;
+  }
 }
 /*# sourceMappingURL=App.css.map */

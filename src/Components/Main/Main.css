@@ -1,0 +1,39 @@
+.main {
+  margin-top: 3em;
+  width: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  margin-right: auto;
+  margin-left: 1em;
+  border-radius: 5px;
+}
+
+.main .main-info {
+  padding: 0 1em;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .main-info * {
+  padding: 0.2em;
+}
+
+.main .main-info .main-temperature {
+  padding: 0;
+  font-size: 60px;
+}
+
+.main .main-info .details-params {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=Main.css.map */

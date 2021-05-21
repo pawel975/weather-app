@@ -1,0 +1,19 @@
+
+.nav {
+    margin-top: 1em;
+    width: 95%;
+    outline: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1em;
+
+    input {
+        margin: 0 1em;
+    }
+
+    figure {
+        margin-right: auto;
+        outline: 2px green solid;
+    }
+}

@@ -1,11 +1,45 @@
-
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 .app {
-    outline: 2px solid black;
+    // outline: 2px solid black;
+    position: relative;
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    outline: 2px solid black;
+    justify-content: flex-start;
+    background: linear-gradient(45deg,rgba(137, 219, 224,1),rgba(137, 219, 224,0));
+    background: linear-gradient(45deg,rgba(51, 61, 75,1),rgba(51, 61, 75,0.6));
+    // background: linear-gradient(45deg,rgba(210, 224, 224,1),rgba(230, 224, 224,1));
+    overflow: hidden;
+    
+    .weather-icon {
+        position: absolute;
+        transform: translate(-50%,50%);
+        left: 80%;
+        bottom: 80%;
+        // outline: 2px solid black;
+        width: 60%;
+        height: auto;
+        content: url('../../assets/animated/night.svg');
+
+        @keyframes movement {
+           0%{
+            left: 120%;
+            bottom: 60%;
+            }
+           100%{
+            left: 80%;
+            bottom: 80%;
+            }
+        }
+
+
+        animation: movement 1.5s ease-in-out;
+    }
 }
+
