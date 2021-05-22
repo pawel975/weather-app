@@ -7,11 +7,12 @@
     background: $background;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 
     .filter-section__choose-filter {
         width: 250px;
-        height: 20px;
+        height: 30px;
         // outline: green 2px solid;
         border-radius: 5px;
         overflow: hidden;
@@ -29,4 +30,14 @@
             color: white;
         }
     }
+
+    // .filter-section__forecast-hours {
+        
+    // }
+
+    // .filter-section__forecast-days {
+
+    // }
+
+
 }

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACI,AAAA,QAAQ,CAAC;EACL,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,GAAG;EACX,OAAO,EAAE,gBAAgB;EACzB,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,QAAQ,EAAE,MAAM;CASnB;;AAfD,AAQI,QARI,CAQJ,aAAa,CAAC;EACV,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,aAAa;EAC9B,MAAM,EAAE,MAAM;EACd,OAAO,EAAE,eAAe;CAC3B",
+    "sources": [
+        "HistoricalWeather.scss"
+    ],
+    "names": [],
+    "file": "HistoricalWeather.css"
+}

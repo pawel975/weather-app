@@ -1,0 +1,24 @@
+
+    .hours-weather {
+        width: 90%;
+        height: 70%;
+        outline: yellow 2px solid;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        overflow: hidden;
+
+        .hours-weather__container {
+            width: 100%;
+            display: flex;
+
+            .hours-weather__element {
+                width: calc(100%/5);
+                height: 10%;
+                outline: solid 2px green;
+            }
+
+        }
+
+    }

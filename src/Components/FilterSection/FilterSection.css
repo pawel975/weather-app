@@ -10,6 +10,8 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -17,7 +19,7 @@
 
 .filter-section .filter-section__choose-filter {
   width: 250px;
-  height: 20px;
+  height: 30px;
   border-radius: 5px;
   overflow: hidden;
   display: -webkit-box;

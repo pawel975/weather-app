@@ -1,0 +1,32 @@
+.hours-weather {
+  width: 90%;
+  height: 70%;
+  outline: yellow 2px solid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  overflow: hidden;
+}
+
+.hours-weather .hours-weather__container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hours-weather .hours-weather__container .hours-weather__element {
+  width: calc(100%/5);
+  height: 10%;
+  outline: solid 2px green;
+}
+/*# sourceMappingURL=NextHours.css.map */

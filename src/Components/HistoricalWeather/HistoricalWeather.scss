@@ -1,0 +1,17 @@
+
+    .weather {
+        width: 90%;
+        height: 70%;
+        outline: yellow 2px solid;
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+
+        .weather__day {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0.75em;
+            outline: 2px solid black;
+        }
+    }
