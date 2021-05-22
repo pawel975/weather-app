@@ -1,3 +1,5 @@
+@import '../variables.scss';
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,11 +15,11 @@
     align-items: center;
     justify-content: flex-start;
     background: linear-gradient(45deg,rgba(137, 219, 224,1),rgba(137, 219, 224,0));
-    background: linear-gradient(45deg,rgba(51, 61, 75,1),rgba(51, 61, 75,0.6));
+    // background: linear-gradient(45deg,rgba(51, 61, 75,1),rgba(51, 61, 75,0.6));
     // background: linear-gradient(45deg,rgba(210, 224, 224,1),rgba(230, 224, 224,1));
     overflow: hidden;
     
-    .weather-icon {
+    .app__weather-icon {
         position: absolute;
         transform: translate(-50%,50%);
         left: 80%;
@@ -25,7 +27,7 @@
         // outline: 2px solid black;
         width: 60%;
         height: auto;
-        content: url('../../assets/animated/night.svg');
+        content: url('../../assets/animated/day.svg');
 
         @keyframes movement {
            0%{
@@ -37,7 +39,6 @@
             bottom: 80%;
             }
         }
-
 
         animation: movement 1.5s ease-in-out;
     }

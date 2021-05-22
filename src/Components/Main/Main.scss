@@ -1,32 +1,37 @@
+@import '../variables.scss';
+
 .main {
     margin-top: 3em;
     width: 50%;
-    background: rgba($color: #000000, $alpha: 0.2);
+    background: $background;
     margin-right: auto;
     margin-left: 1em;
     // outline: 2px solid yellow;
     border-radius: 5px;
 
-    .main-info {
+    .main__info {
         *{
             padding: 0.2em;
         }
+        
         padding: 0 1em;
         color: white;
         display: flex;
         flex-direction: column;
 
-        .main-temperature {
+        .main__temperature {
             padding: 0;
             font-size: 60px;
         }
 
-        .details-params {
-            display: flex;
-            justify-content: space-between;
-            span {
+        .main__details {
+            // outline: 2px solid yellow;
 
-                
+            .main__params {
+                display: flex;
+                justify-content: space-between;
+                span {
+                }
             }
         }
 

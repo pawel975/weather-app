@@ -1,7 +1,6 @@
 .nav {
-  margin-top: 1em;
+  margin: 0.5em 0;
   width: 95%;
-  outline: 2px solid black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,15 +10,32 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.nav .nav__button-now {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.2em;
+  border-radius: 5px;
+  color: white;
+  border: none;
+}
+
+.nav .nav__input-search {
   margin: 0 1em;
 }
 
-.nav input {
-  margin: 0 1em;
+.nav .nav__magnifier {
+  margin: 0 0.5em;
 }
 
-.nav figure {
+.nav .nav__localization {
   margin-right: auto;
-  outline: 2px green solid;
+}
+
+.nav .nav__date {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.2em;
+  border-radius: 5px;
+  color: white;
 }
 /*# sourceMappingURL=Nav.css.map */

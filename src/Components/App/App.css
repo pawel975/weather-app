@@ -23,11 +23,10 @@
       -ms-flex-pack: start;
           justify-content: flex-start;
   background: linear-gradient(45deg, #89dbe0, rgba(137, 219, 224, 0));
-  background: linear-gradient(45deg, #333d4b, rgba(51, 61, 75, 0.6));
   overflow: hidden;
 }
 
-.app .weather-icon {
+.app .app__weather-icon {
   position: absolute;
   -webkit-transform: translate(-50%, 50%);
           transform: translate(-50%, 50%);
@@ -35,7 +34,7 @@
   bottom: 80%;
   width: 60%;
   height: auto;
-  content: url("../../assets/animated/night.svg");
+  content: url("../../assets/animated/day.svg");
   -webkit-animation: movement 1.5s ease-in-out;
           animation: movement 1.5s ease-in-out;
 }

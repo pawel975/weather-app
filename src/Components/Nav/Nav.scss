@@ -1,19 +1,36 @@
-
+@import '../variables.scss';
 .nav {
-    margin-top: 1em;
+    margin:0.5em 0;
     width: 95%;
-    outline: 2px solid black;
+    // outline: 2px solid black;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 1em;
 
-    input {
-        margin: 0 1em;
+    .nav__button-now {
+        background: $background;
+        padding: 0.2em;
+        border-radius: 5px;
+        color: white;
+        border: none;
     }
 
-    figure {
+    .nav__input-search {
+        margin: 0 1em;
+    }
+    .nav__magnifier {
+        margin: 0 0.5em;
+    }
+
+    .nav__localization {
         margin-right: auto;
-        outline: 2px green solid;
+    }
+
+    .nav__date {
+        background: $background;
+        padding: 0.2em;
+        border-radius: 5px;
+        color: white;
+
     }
 }

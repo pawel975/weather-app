@@ -82,7 +82,7 @@ function App() {
 
 return (
   <div className="app">
-    <div className="weather-icon" ></div>
+    <div className="app__weather-icon" ></div>
     <Nav/>
     <Main/>
     <Dropdown/>

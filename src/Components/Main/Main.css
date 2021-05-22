@@ -7,7 +7,7 @@
   border-radius: 5px;
 }
 
-.main .main-info {
+.main .main__info {
   padding: 0 1em;
   color: white;
   display: -webkit-box;
@@ -19,16 +19,16 @@
           flex-direction: column;
 }
 
-.main .main-info * {
+.main .main__info * {
   padding: 0.2em;
 }
 
-.main .main-info .main-temperature {
+.main .main__info .main__temperature {
   padding: 0;
   font-size: 60px;
 }
 
-.main .main-info .details-params {
+.main .main__info .main__details .main__params {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
