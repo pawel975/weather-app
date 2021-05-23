@@ -1,27 +1,33 @@
 @import '../variables.scss';
 
-div.container {
-    margin: auto;
-    width:90%;
-    height: 100%;
-    display: flex;
-    // outline: 2px solid black;
-}
-.hours-weather__button {
-    width: 20px;
-    height: 100px;
-    text-align: center;
-    align-self: center;
-    background-color: $background;
-    border: none;
-    color: white;
-}
+    div.container {
+        // margin: 0 auto;
+        width:90%;
+        height: 70%;
+        display: flex;
+        // outline: 2px solid black;
+    }
+    .hours-weather__button {
+        width: 20px;
+        height: 100px;
+        text-align: center;
+        align-self: center;
+        background-color: $background;
+        border: none;
+        color: white;
+
+    }
+    
+    .hours-weather__button--disabled {
+        opacity: 0.6;
+    }
+
     .hours-weather {
-        margin: auto;
+        margin: 0em auto;
         position: relative;
         width: 80%;
-        height: 70%;
-        // outline: yellow 2px solid;
+        height: 100%;
+        outline: yellow 2px solid;
         display: flex;
         flex-direction: row;
         align-items: center;

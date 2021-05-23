@@ -1,23 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ForecastWeather from '../ForecastWeather/ForecastWeather';
 import HistoricalWeather from '../HistoricalWeather/HistoricalWeather';
 import NextHours from '../NextHours/NextHours';
 import './FilterSection.css';
 
-const FilterSection = () => {
+const FilterSection = ({height}) => {
+
+    const [filterChoice, setFilterChoice] = useState(0);
+
+    const handleFilterButtonClick = (e) => {
+        const buttonIndex = Number(e.target.value);
+        setFilterChoice(buttonIndex)
+    }
 
     return(
-        <div className="filter-section">
+        <div style={{height:`${height}`}} className="filter-section">
             <div className="filter-section__choose-filter">
-                <button className="filter-section__button-filter">Next 48h</button>
+                <button onClick={handleFilterButtonClick} value={0} className="filter-section__button-filter">Next 48h</button>
                 <hr/>
-                <button className="filter-section__button-filter">Next 7 days</button>
+                <button onClick={handleFilterButtonClick} value={1} className="filter-section__button-filter">Next 7 days</button>
                 <hr/>
-                <button className="filter-section__button-filter">Last 5 days</button>
+                <button onClick={handleFilterButtonClick} value={2} className="filter-section__button-filter">Last 5 days</button>
             </div>
-            <NextHours/>
-            {/* <ForecastWeather/> */}
-            {/* <HistoricalWeather/> */}
+            {filterChoice===0 && <NextHours/>}
+            {filterChoice===1 && <ForecastWeather/>}
+            {filterChoice===2 && <HistoricalWeather/>}
         </div>
     )
 }

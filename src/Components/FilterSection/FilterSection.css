@@ -1,4 +1,6 @@
 .filter-section {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
   position: relative;
   width: 100%;
   height: 40vh;
