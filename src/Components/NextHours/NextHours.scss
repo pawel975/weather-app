@@ -1,20 +1,45 @@
+@import '../variables.scss';
 
+div.container {
+    margin: auto;
+    width:90%;
+    height: 100%;
+    display: flex;
+    // outline: 2px solid black;
+}
+.hours-weather__button {
+    width: 20px;
+    height: 100px;
+    text-align: center;
+    align-self: center;
+    background-color: $background;
+    border: none;
+    color: white;
+}
     .hours-weather {
-        width: 90%;
+        margin: auto;
+        position: relative;
+        width: 80%;
         height: 70%;
-        outline: yellow 2px solid;
+        // outline: yellow 2px solid;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
-        overflow: hidden;
+        overflow: scroll;
+
 
         .hours-weather__container {
-            width: 100%;
+            text-align: center;
+            transition: 0.5s ease-in-out;
+            position: absolute;
+            left: 0%;
+            width: 1200%;
             display: flex;
+            // outline: 2px solid purple;
 
             .hours-weather__element {
-                width: calc(100%/5);
+                width: auto;
                 height: 10%;
                 outline: solid 2px green;
             }

@@ -1,7 +1,29 @@
-.hours-weather {
+div.container {
+  margin: auto;
   width: 90%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.hours-weather__button {
+  width: 20px;
+  height: 100px;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  color: white;
+}
+
+.hours-weather {
+  margin: auto;
+  position: relative;
+  width: 80%;
   height: 70%;
-  outline: yellow 2px solid;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,18 +36,23 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .hours-weather .hours-weather__container {
-  width: 100%;
+  text-align: center;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  position: absolute;
+  left: 0%;
+  width: 1200%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .hours-weather .hours-weather__container .hours-weather__element {
-  width: calc(100%/5);
+  width: auto;
   height: 10%;
   outline: solid 2px green;
 }
