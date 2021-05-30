@@ -1,50 +1,58 @@
-import React, { useState,useRef } from 'react';
+import React, {useRef } from 'react';
+import {useSelector,useDispatch} from "react-redux";
+import {open} from '../../redux/actions';
+import {close} from '../../redux/actions';
 import './Dropdown.css'
 import {MdKeyboardArrowUp} from 'react-icons/md'
 import FilterSection from '../FilterSection/FilterSection';
 
 const Dropdown = () => {
 
-    const [isFilterSectionOpen,setIsFilterSectionOpen] = useState(false)
+    const isFilterSectionOpen = useSelector(state => state.isFilterSectionOpen);
+    const dispatch = useDispatch();
 
     const handleFilterSectionOpenClick = () => {
-        setIsFilterSectionOpen(!isFilterSectionOpen)
+        if (isFilterSectionOpen) {
+            dispatch(close())
+        } else {
+            dispatch(open())
+        }
     }
 
     const draggableFilterSection = useRef()
     
     
-    const mousedown =(e)=> {
+    // const mousedown =(e)=> {
         
-        // let prevX = e.clientX;
-        let prevY = e.clientY;
+    //     // let prevX = e.clientX;
+    //     let prevY = e.clientY;
         
-        const mousemove = (e) => {
-            // let newX = prevX - e.clientX;
-            // let newY = prevY - e.clientY;
-            let place = e.clientY/window.innerWidth *100
+    //     const mousemove = (e) => {
+    //         // let newX = prevX - e.clientX;
+    //         // let newY = prevY - e.clientY;
+    //         let place = e.clientY/window.innerWidth *100
 
-            console.log(place.toFixed())
-            console.log(e.clientY)
-            console.log(draggableFilterSection)
+    //         console.log(place.toFixed())
+    //         console.log(e.clientY)
+    //         console.log(draggableFilterSection)
             
-            draggableFilterSection.current.style.bottom = `${100 - place.toFixed()-40}%`
-            console.log(draggableFilterSection.current.style.bottom = `${100 - place.toFixed()-40}%`)
+    //         draggableFilterSection.current.style.bottom = `${100 - place.toFixed()-40}%`
+    //         console.log(draggableFilterSection.current.style.bottom = `${100 - place.toFixed()-40}%`)
             
-            prevY = e.clientY;
-        }
+    //         prevY = e.clientY;
+    //     }
         
-        const mouseup = () => {
-            window.removeEventListener('mousemove',mousemove)
-            window.removeEventListener("mouseup", mouseup)
+    //     const mouseup = () => {
+    //         window.removeEventListener('mousemove',mousemove)
+    //         window.removeEventListener("mouseup", mouseup)
             
-        }
+    //     }
         
-        window.addEventListener("mousemove",mousemove);
-        window.addEventListener("mouseup",mouseup);
-    }
+    //     window.addEventListener("mousemove",mousemove);
+    //     window.addEventListener("mouseup",mouseup);
+    // }
     
-    window.addEventListener("mousedown",mousedown)
+    // window.addEventListener("mousedown",mousedown)
 
     return(
         <div ref={draggableFilterSection}  style={isFilterSectionOpen? {bottom:'0%'}:{bottom:"-40%"}} className="dropdown">

@@ -2,7 +2,8 @@
     .weather {
         width: 90%;
         height: 70%;
-        outline: yellow 2px solid;
+        // outline: yellow 2px solid;
+        box-shadow: inset 0px 0px 5px rgba($color: #000000, $alpha: 0.5);
         display: flex;
         flex-direction: column;
         overflow: scroll;

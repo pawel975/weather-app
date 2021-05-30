@@ -29,6 +29,8 @@
 }
 
 .main .main__info .main__details .main__params {
+  -webkit-transition: 2s;
+  transition: 2s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

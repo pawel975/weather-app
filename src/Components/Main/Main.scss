@@ -26,8 +26,10 @@
 
         .main__details {
             // outline: 2px solid yellow;
-
+            
             .main__params {
+            transition: 2s;
+
                 display: flex;
                 justify-content: space-between;
                 span {
