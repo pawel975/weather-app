@@ -6,6 +6,7 @@
 }
 
 .app {
+  outline: 2px solid black;
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -23,16 +24,17 @@
       -ms-flex-pack: start;
           justify-content: flex-start;
   background: linear-gradient(45deg, #89dbe0, rgba(137, 219, 224, 0));
+  background: linear-gradient(45deg, #333d4b, rgba(51, 61, 75, 0.6));
   overflow: hidden;
 }
 
 .app .app__main-content {
   margin-top: 2em;
-  outline: 2px solid green;
   position: relative;
   width: 90%;
-  min-height: 50%;
-  max-height: 70%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -47,12 +49,12 @@
   -ms-grid-column: 2;
   grid-area: weather-icon;
   position: relative;
+  margin: auto;
   left: 0;
   bottom: 0;
-  outline: 2px solid black;
-  width: 100%;
+  width: clamp(100px, 100%, 150px);
   height: auto;
-  content: url("../../assets/animated/day.svg");
+  content: url("../../assets/animated/night.svg");
   -webkit-animation: movement 1.5s ease-in-out;
           animation: movement 1.5s ease-in-out;
 }
@@ -80,22 +82,9 @@
 }
 
 .app .app__main-content .main {
-  outline: 2px solid yellow;
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   -ms-grid-column: 1;
   grid-area: main;
-}
-
-.app .app__main-content .quote {
-  background: rgba(0, 0, 0, 0.2);
-  margin: auto;
-  width: 90%;
-  height: 100%;
-  border-radius: 5px;
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: quote;
-  display: initial;
 }
 /*# sourceMappingURL=App.css.map */

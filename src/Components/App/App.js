@@ -5,6 +5,7 @@ import axios from 'axios';
 import Main from '../Main/Main';
 import Nav from '../Nav/Nav';
 import Dropdown from '../Dropdown/Dropdown';
+import Quote from "../Quote/Quote";
 
 
 function App() {
@@ -88,7 +89,7 @@ return (
     <Nav/>
     <div className="app__main-content">
       <div className="app__weather-icon" ></div>
-      {!isFilterSectionOpen && <div style={{display: "initial"}} className="quote">quote</div>}
+      {!isFilterSectionOpen && <Quote/>}
       <Main/>
     </div>
     <Dropdown/>

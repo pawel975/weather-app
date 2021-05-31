@@ -12,14 +12,16 @@ const Main = () => {
                 <div className="main__temperature">20°C</div>
                 <div className="main__city">Bydgoszcz</div>
                 <div className="main__weather">Cloudy</div>
-                {!isFilterSectionOpen && <div className="main__details">
+                <div className="main__feels">Feels like</div>
+                {!isFilterSectionOpen && 
+                <>
                     <div className="main__params"><p>Sunrise:</p><span>06:00</span></div>
                     <div className="main__params"><p>Sunset:</p><span>21:00</span></div>
                     <div className="main__params"><p>Feels like:</p><span>22°C</span></div>
                     <div className="main__params"><p>Pressure:</p><span>1006</span></div>
                     <div className="main__params"><p>Clouds:</p><span>40</span></div>
                     <div className="main__params"><p>Visibilty:</p><span>10000</span></div>
-                </div>}
+                </>}
             </div>
         </div>
     )

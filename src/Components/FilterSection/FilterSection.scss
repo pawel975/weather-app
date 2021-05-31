@@ -20,7 +20,7 @@
         display: flex;
 
         hr{
-            color: white;
+            color: $font1;
         }
 
         .filter-section__button-filter {
@@ -28,7 +28,7 @@
             border: none;
             height: 100%;
             width: calc(100%/3);
-            color: white;
+            color: $font1;
         }
     }
 }

@@ -1,0 +1,22 @@
+@import '../variables.scss';
+
+.quote {
+    background: $background;
+    // margin: auto;
+    margin-left: auto;
+    width: 90%;
+    height: 100%;
+    border-radius: 5px;
+    grid-area: quote;
+    display: initial;
+    padding: 0.5em;
+
+    p {
+        color:$font1;
+    }
+
+    h3 {
+        font-size: 20px;
+        color:$font1;
+    }
+}
