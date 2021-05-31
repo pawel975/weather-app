@@ -21,7 +21,6 @@ const Main = () => {
                     <div className="main__params"><p>Visibilty:</p><span>10000</span></div>
                 </div>}
             </div>
-            <div style={{display: "none"}} className="quote">XD</div>
         </div>
     )
 }

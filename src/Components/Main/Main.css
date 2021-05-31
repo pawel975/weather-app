@@ -1,9 +1,10 @@
 .main {
-  margin-top: 3em;
-  width: 50%;
+  width: 100%;
   background: rgba(0, 0, 0, 0.2);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   margin-right: auto;
-  margin-left: 1em;
   border-radius: 5px;
 }
 
@@ -29,8 +30,6 @@
 }
 
 .main .main__info .main__details .main__params {
-  -webkit-transition: 2s;
-  transition: 2s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

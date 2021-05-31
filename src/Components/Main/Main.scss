@@ -1,11 +1,11 @@
 @import '../variables.scss';
 
 .main {
-    margin-top: 3em;
-    width: 50%;
+    width: 100%;
     background: $background;
+    height: fit-content;
     margin-right: auto;
-    margin-left: 1em;
+    // margin-left: 1em;
     // outline: 2px solid yellow;
     border-radius: 5px;
 
@@ -28,7 +28,6 @@
             // outline: 2px solid yellow;
             
             .main__params {
-            transition: 2s;
 
                 display: flex;
                 justify-content: space-between;

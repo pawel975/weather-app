@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from 'react';
+import {useSelector} from 'react-redux';
 import './App.css';
 import axios from 'axios';
 import Main from '../Main/Main';
@@ -7,6 +8,8 @@ import Dropdown from '../Dropdown/Dropdown';
 
 
 function App() {
+
+  const isFilterSectionOpen = useSelector(state => state.isFilterSectionOpen);
 
 //   let lat;
 //   let long;
@@ -82,9 +85,12 @@ function App() {
 
 return (
   <div className="app">
-    <div className="app__weather-icon" ></div>
     <Nav/>
-    <Main/>
+    <div className="app__main-content">
+      <div className="app__weather-icon" ></div>
+      {!isFilterSectionOpen && <div style={{display: "initial"}} className="quote">quote</div>}
+      <Main/>
+    </div>
     <Dropdown/>
   </div>
   )

@@ -19,28 +19,60 @@
     // background: linear-gradient(45deg,rgba(210, 224, 224,1),rgba(230, 224, 224,1));
     overflow: hidden;
     
-    .app__weather-icon {
-        position: absolute;
-        transform: translate(-50%,50%);
-        left: 80%;
-        bottom: 80%;
-        // outline: 2px solid black;
-        width: 60%;
-        height: auto;
-        content: url('../../assets/animated/day.svg');
+    .app__main-content {
+        margin-top: 2em;
+        outline: 2px solid green;
+        position: relative;
+        width: 90%;
+        min-height: 50%;
+        max-height: 70%;
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 1fr 1fr ;    
+        grid-template-areas: 
+        "main weather-icon"
+        "main quote";
 
-        @keyframes movement {
-           0%{
-            left: 120%;
-            bottom: 60%;
+        .app__weather-icon {
+            grid-area: weather-icon;
+            position: relative;
+            // transform: translate(-50%,50%);
+            left: 0;
+            bottom: 0;
+            outline: 2px solid black;
+            width:100%;
+            height: auto;
+            content: url('../../assets/animated/day.svg');
+        
+            @keyframes movement {
+               0%{
+                left: 100%;
+                bottom: -20%;
+                }
+               100%{
+                left: 0;
+                bottom: 0;
+                }
             }
-           100%{
-            left: 80%;
-            bottom: 80%;
-            }
+        
+            animation: movement 1.5s ease-in-out;
         }
 
-        animation: movement 1.5s ease-in-out;
+        .main {
+            outline: 2px solid yellow;
+            grid-area: main;
+        }
+
+        .quote {
+            background: $background;
+            margin: auto;
+            width: 90%;
+            height: 100%;
+            border-radius: 5px;
+            grid-area: quote;
+            display: initial;
+        }
     }
 }
+
 

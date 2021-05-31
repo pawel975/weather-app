@@ -26,13 +26,31 @@
   overflow: hidden;
 }
 
-.app .app__weather-icon {
-  position: absolute;
-  -webkit-transform: translate(-50%, 50%);
-          transform: translate(-50%, 50%);
-  left: 80%;
-  bottom: 80%;
-  width: 60%;
+.app .app__main-content {
+  margin-top: 2em;
+  outline: 2px solid green;
+  position: relative;
+  width: 90%;
+  min-height: 50%;
+  max-height: 70%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "main weather-icon" "main quote";
+}
+
+.app .app__main-content .app__weather-icon {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: weather-icon;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  outline: 2px solid black;
+  width: 100%;
   height: auto;
   content: url("../../assets/animated/day.svg");
   -webkit-animation: movement 1.5s ease-in-out;
@@ -41,23 +59,43 @@
 
 @-webkit-keyframes movement {
   0% {
-    left: 120%;
-    bottom: 60%;
+    left: 100%;
+    bottom: -20%;
   }
   100% {
-    left: 80%;
-    bottom: 80%;
+    left: 0;
+    bottom: 0;
   }
 }
 
 @keyframes movement {
   0% {
-    left: 120%;
-    bottom: 60%;
+    left: 100%;
+    bottom: -20%;
   }
   100% {
-    left: 80%;
-    bottom: 80%;
+    left: 0;
+    bottom: 0;
   }
+}
+
+.app .app__main-content .main {
+  outline: 2px solid yellow;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: main;
+}
+
+.app .app__main-content .quote {
+  background: rgba(0, 0, 0, 0.2);
+  margin: auto;
+  width: 90%;
+  height: 100%;
+  border-radius: 5px;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: quote;
+  display: initial;
 }
 /*# sourceMappingURL=App.css.map */
