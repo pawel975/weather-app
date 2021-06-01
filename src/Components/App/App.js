@@ -1,5 +1,5 @@
-import React, { useState,useEffect } from 'react';
-import {useSelector} from 'react-redux';
+import React, {useEffect } from 'react';
+import {useSelector,useDispatch} from 'react-redux';
 import './App.css';
 import axios from 'axios';
 import Main from '../Main/Main';
@@ -7,58 +7,61 @@ import Nav from '../Nav/Nav';
 import Dropdown from '../Dropdown/Dropdown';
 import Quote from "../Quote/Quote";
 
+import {getData} from '../../redux/actions/index'
 
 function App() {
 
   const isFilterSectionOpen = useSelector(state => state.isFilterSectionOpen);
-
-//   let lat;
-//   let long;
-//   const exclude = "minutes";
-//   const [newTime, setNewTime] = useState(null)
-//   const [state,setState] = useState({
-//     currently: [],
-//     days: [],
-//     hours: [],
-//   });
-  
+  const dispatch = useDispatch()
 
 
-// useEffect(() => {
+  let lat;
+  let long;
+  const exclude = "minutes";
+  // const [newTime, setNewTime] = useState(null)
 
-//   console.log("render")
-//   navigator.geolocation.getCurrentPosition(position => {
-//       lat = position.coords.latitude;
-//       long = position.coords.longitude;
-//       console.log(lat,long);
-//     })
+ 
 
-//     const fetchData = () => {
+useEffect(() => {
 
-//       const URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=${exclude}&appid=${process.env.REACT_APP_API_KEY}`
+
+  console.log("render")
+  navigator.geolocation.getCurrentPosition(position => {
+      lat = position.coords.latitude;
+      long = position.coords.longitude;
+      console.log(lat,long);
+    })
+
+    const fetchData = () => {
+
+      const URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=${exclude}&appid=${process.env.REACT_APP_API_KEY}`
     
-//       axios({
-//         method: 'get',
-//         url: URL,
-//       })
-//       .then(res=>{
-//         console.log(res.data);
-//         setState({
-//         ...state,
-//         currently: res.data.current,
-//         days: res.data.daily,
-//         hours: res.data.hourly,
-//         });
-//       })
-//       .catch(err => console.error(`Can't fetch the data from API - ${err}`))
+      axios({
+        method: 'get',
+        url: URL,
+      })
+      .then(res=>{
+        console.log(res.data);
+        const data = res.data;
+        dispatch(getData({
+          weather: data.current.weather[0].description,
+          feelsLike: data.current.feels_like,
+          sunrise: data.current.sunrise,
+          sunset: data.current.sunset,
+          pressure: data.current.pressure,
+          clouds: data.current.clouds,
+          visibility: data.current.visibility,
+        }));
+      })
+      .catch(err => console.error(`Can't fetch the data from API - ${err}`))
 
-//     }
+    }
 
 
-//     setTimeout(fetchData,2000)
+    setTimeout(fetchData,2000)
 
 
-// }, [])
+}, [])
 
 
 // const getCurrentTime = () => {

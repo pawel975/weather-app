@@ -5,6 +5,7 @@ import './Main.css'
 const Main = () => {
 
     const isFilterSectionOpen = useSelector(state => state.isFilterSectionOpen);
+    const mainStateReducer = useSelector(state => state.mainStateReducer);
 
     return(
         <div className="main">
@@ -15,12 +16,12 @@ const Main = () => {
                 <div className="main__feels">Feels like</div>
                 {!isFilterSectionOpen && 
                 <>
-                    <div className="main__params"><p>Sunrise:</p><span>06:00</span></div>
-                    <div className="main__params"><p>Sunset:</p><span>21:00</span></div>
-                    <div className="main__params"><p>Feels like:</p><span>22°C</span></div>
-                    <div className="main__params"><p>Pressure:</p><span>1006</span></div>
-                    <div className="main__params"><p>Clouds:</p><span>40</span></div>
-                    <div className="main__params"><p>Visibilty:</p><span>10000</span></div>
+                    <div className="main__params"><p>Sunrise:</p><span>{mainStateReducer.data[0].sunrise}</span></div>
+                    <div className="main__params"><p>Sunset:</p><span>{mainStateReducer.data[0].sunset}</span></div>
+                    <div className="main__params"><p>Feels like:</p><span>{(mainStateReducer.data[0].feelsLike-273.15).toFixed()}°C</span></div>
+                    <div className="main__params"><p>Pressure:</p><span>{mainStateReducer.data[0].pressure}</span></div>
+                    <div className="main__params"><p>Clouds:</p><span>{mainStateReducer.data[0].clouds}</span></div>
+                    <div className="main__params"><p>Visibilty:</p><span>{mainStateReducer.data[0].visibility}</span></div>
                 </>}
             </div>
         </div>
