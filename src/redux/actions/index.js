@@ -18,3 +18,9 @@ export const getData = (weatherData) => {
         payload: weatherData
     }
 } 
+export const setDataLoading = (isLoading) => {
+    return {
+        type: "DATA_LOADING",
+        payload: isLoading,
+    }
+} 

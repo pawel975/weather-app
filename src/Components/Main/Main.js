@@ -2,29 +2,33 @@ import React from 'react';
 import {useSelector} from 'react-redux';
 import './Main.css'
 
+
 const Main = () => {
 
     const isFilterSectionOpen = useSelector(state => state.isFilterSectionOpen);
     const mainStateReducer = useSelector(state => state.mainStateReducer);
 
+
+    const {temperature, weather , sunrise,sunset,feelsLike,pressure,clouds,visibility} = mainStateReducer.data[0]
+
     return(
         <div className="main">
             <div className="main__info">
-                <div className="main__temperature">20°C</div>
+                <div className="main__temperature">{temperature}°C</div>
                 <div className="main__city">Bydgoszcz</div>
-                <div className="main__weather">Cloudy</div>
-                <div className="main__feels">Feels like</div>
+                <div className="main__weather">{weather}</div>
                 {!isFilterSectionOpen && 
                 <>
-                    <div className="main__params"><p>Sunrise:</p><span>{mainStateReducer.data[0].sunrise}</span></div>
-                    <div className="main__params"><p>Sunset:</p><span>{mainStateReducer.data[0].sunset}</span></div>
-                    <div className="main__params"><p>Feels like:</p><span>{(mainStateReducer.data[0].feelsLike-273.15).toFixed()}°C</span></div>
-                    <div className="main__params"><p>Pressure:</p><span>{mainStateReducer.data[0].pressure}</span></div>
-                    <div className="main__params"><p>Clouds:</p><span>{mainStateReducer.data[0].clouds}</span></div>
-                    <div className="main__params"><p>Visibilty:</p><span>{mainStateReducer.data[0].visibility}</span></div>
+                    <div className="main__params"><p>Sunrise:</p><span>{sunrise}</span></div>
+                    <div className="main__params"><p>Sunset:</p><span>{sunset}</span></div>
+                    <div className="main__params"><p>Feels like:</p><span>{feelsLike}°C</span></div>
+                    <div className="main__params"><p>Pressure:</p><span>{pressure}</span></div>
+                    <div className="main__params"><p>Clouds:</p><span>{clouds}</span></div>
+                    <div className="main__params"><p>Visibilty:</p><span>{visibility}</span></div>
                 </>}
             </div>
         </div>
+                
     )
 }
 

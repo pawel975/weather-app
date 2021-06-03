@@ -7,13 +7,22 @@ import Nav from '../Nav/Nav';
 import Dropdown from '../Dropdown/Dropdown';
 import Quote from "../Quote/Quote";
 
-import {getData} from '../../redux/actions/index'
+import {getData,setDataLoading} from '../../redux/actions/index'
 
 function App() {
 
   const isFilterSectionOpen = useSelector(state => state.isFilterSectionOpen);
+  const dataLoading = useSelector(state => state.mainStateReducer.isDataLoading);
   const dispatch = useDispatch()
 
+  const formatTimestamp = (timestamp) => {
+    const date = new Date(timestamp*1000)
+    const hours = "0" + date.getHours()
+    const minutes = "0" + date.getMinutes()
+    const formattedTime = hours.substr(-2) + ':' + minutes.substr(-2)
+    console.log(formattedTime)
+    return formattedTime
+  }
 
   let lat;
   let long;
@@ -24,8 +33,7 @@ function App() {
 
 useEffect(() => {
 
-
-  console.log("render")
+  console.log("render weather info")
   navigator.geolocation.getCurrentPosition(position => {
       lat = position.coords.latitude;
       long = position.coords.longitude;
@@ -33,7 +41,7 @@ useEffect(() => {
     })
 
     const fetchData = () => {
-
+      dispatch(setDataLoading(true)); 
       const URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=${exclude}&appid=${process.env.REACT_APP_API_KEY}`
     
       axios({
@@ -44,18 +52,21 @@ useEffect(() => {
         console.log(res.data);
         const data = res.data;
         dispatch(getData({
+          temperature: (data.current.temp-273.15).toFixed(),
           weather: data.current.weather[0].description,
-          feelsLike: data.current.feels_like,
-          sunrise: data.current.sunrise,
-          sunset: data.current.sunset,
+          feelsLike: (data.current.feels_like-273.15).toFixed(),
+          sunrise: formatTimestamp(data.current.sunrise),
+          sunset: formatTimestamp(data.current.sunset),
           pressure: data.current.pressure,
           clouds: data.current.clouds,
           visibility: data.current.visibility,
         }));
+        dispatch(setDataLoading(false)); 
       })
       .catch(err => console.error(`Can't fetch the data from API - ${err}`))
 
     }
+    
 
 
     setTimeout(fetchData,2000)
@@ -93,7 +104,7 @@ return (
     <div className="app__main-content">
       <div className="app__weather-icon" ></div>
       {!isFilterSectionOpen && <Quote/>}
-      <Main/>
+      {!dataLoading && <Main/>}
     </div>
     <Dropdown/>
   </div>
