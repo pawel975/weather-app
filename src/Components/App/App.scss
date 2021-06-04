@@ -14,8 +14,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    background: linear-gradient(45deg,rgba(137, 219, 224,1),rgba(137, 219, 224,0));
-    background: linear-gradient(45deg,rgba(51, 61, 75,1),rgba(51, 61, 75,0.6));
+    // background: linear-gradient(45deg,rgba(137, 219, 224,1),rgba(137, 219, 224,0));
+    // background: linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85));
     // background: linear-gradient(45deg,rgba(210, 224, 224,1),rgba(230, 224, 224,1));
     overflow: hidden;
     
@@ -42,7 +42,7 @@
             // outline: 2px solid black;
             width:clamp(100px,100%,150px);
             height: auto;
-            content: url('../../assets/animated/night.svg');
+            content: url('../../assets/my-assets/animated/clear-sky-d.svg');
         
             @keyframes movement {
                0%{

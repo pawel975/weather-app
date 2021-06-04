@@ -22,8 +22,6 @@
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  background: linear-gradient(45deg, #89dbe0, rgba(137, 219, 224, 0));
-  background: linear-gradient(45deg, #333d4b, rgba(51, 61, 75, 0.6));
   overflow: hidden;
 }
 
@@ -53,7 +51,7 @@
   bottom: 0;
   width: clamp(100px, 100%, 150px);
   height: auto;
-  content: url("../../assets/animated/night.svg");
+  content: url("../../assets/my-assets/animated/clear-sky-d.svg");
   -webkit-animation: movement 1.5s ease-in-out;
           animation: movement 1.5s ease-in-out;
 }
