@@ -61,26 +61,54 @@ useEffect(() => {
           sunset: formatTimestamp(data.current.sunset),
           pressure: data.current.pressure,
           clouds: data.current.clouds,
-          visibility: data.current.visibility,
+          visibility: data.current.visibiliy,
         }));
         dispatch(setDataLoading(false)); 
 
 
 
+          const sunriseHour = Number((mainStateReducer.data[0].sunrise).slice(0,2));
+          const sunriseMinutes = Number((mainStateReducer.data[0].sunrise).slice(3,5));
           const sunsetHour = Number((mainStateReducer.data[0].sunset).slice(0,2));
           const sunsetMinutes = Number((mainStateReducer.data[0].sunset).slice(3,5));
           let currentHour = new Date().getHours();
+          currentHour = currentHour +3;
+          console.log(currentHour)
           let currentMinutes = new Date().getMinutes();
-  
-          console.log(sunsetHour,sunsetMinutes, typeof sunsetHour, typeof currentHour);
+
+          let dayOrNight;
+
+          if(currentHour === sunsetHour){
+            if(currentMinutes < sunsetMinutes) {
+              dayOrNight = "D";
+            } else {
+              dayOrNight = "N";
+            }
+          } else if (currentHour < sunsetHour) {
+            dayOrNight = "D";
+          } else {
+            dayOrNight = "N";
+          }
+
+          if(currentHour === sunriseHour){
+            if(currentMinutes > sunriseMinutes) {
+              dayOrNight = "D";
+            } else {
+              dayOrNight = "N";
+            }
+          } else if (currentHour > sunriseHour) {
+            dayOrNight = "D";
+          } else {
+            dayOrNight = "N";
+          }
+
+          console.log(dayOrNight)
+
+          // console.log(sunsetHour,sunsetMinutes, typeof sunsetHour, typeof currentHour);
   
            switch (mainStateReducer.data[0].weather) {
             case 'clear sky':
-              if((currentHour < sunsetHour && currentMinutes < sunsetMinutes)) {
-                bgTest.current.style.background = weatherBackgroundColors['clearSkyN']
-              } else {
-                bgTest.current.style.background = weatherBackgroundColors['clearSkyD']
-              }
+                bgTest.current.style.background = weatherBackgroundColors[`clearSky${dayOrNight}`]
               break;
             default:
               break;
