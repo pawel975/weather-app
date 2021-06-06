@@ -82,8 +82,7 @@ function App() {
 
 
   useEffect(() => {
-
-    console.log("render weather info")
+    console.log("render position")
     navigator.geolocation.getCurrentPosition(position => {
         setLocation({
           lat:position.coords.latitude,
@@ -94,6 +93,9 @@ function App() {
 
 useEffect(() => {
 
+    if(location.lat === 0) return
+
+    console.log('render fetch API')
     const fetchData = () => {
       dispatch(setDataLoading(true)); 
       const URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat}&lon=${location.long}&exclude=${exclude}&appid=${process.env.REACT_APP_API_KEY}`
@@ -120,7 +122,7 @@ useEffect(() => {
       })
       .catch(err => console.error(`You have an error! - ${err}`))
       
-      // dataLoading && changeBackgroundStyle();
+      !dataLoading && changeBackgroundStyle();
     }
     setTimeout(fetchData,2000)
 
