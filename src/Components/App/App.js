@@ -16,6 +16,8 @@ function App() {
   const mainStateReducer = useSelector(state => state.mainStateReducer);
   const dispatch = useDispatch()
 
+
+
   const formatTimestamp = (timestamp) => {
     const date = new Date(timestamp*1000)
     const hours = "0" + date.getHours()
@@ -23,6 +25,51 @@ function App() {
     const formattedTime = hours.substr(-2) + ':' + minutes.substr(-2)
     console.log(formattedTime)
     return formattedTime
+  }
+
+  const changeBackgroundStyle = () => {
+    const sunriseHour = Number((mainStateReducer.data[0].sunrise).slice(0,2));
+    const sunriseMinutes = Number((mainStateReducer.data[0].sunrise).slice(3,5));
+    const sunsetHour = Number((mainStateReducer.data[0].sunset).slice(0,2));
+    const sunsetMinutes = Number((mainStateReducer.data[0].sunset).slice(3,5));
+
+    let currentHour = new Date().getHours();
+    let currentMinutes = new Date().getMinutes();
+
+    let dayOrNight;
+
+    if(currentHour === sunsetHour){
+      if(currentMinutes < sunsetMinutes) {
+        dayOrNight = "D";
+      } else {
+        dayOrNight = "N";
+      }
+    }
+    else if(currentHour === sunriseHour){
+      if(currentMinutes > sunriseMinutes) {
+        dayOrNight = "D";
+      } else {
+        dayOrNight = "N";
+      }
+    }
+    else if (sunriseHour < currentHour && currentHour < sunsetHour) {
+      dayOrNight = "D";
+    } 
+    else {
+      dayOrNight = "N";
+    }
+
+    console.log(dayOrNight)
+
+    // console.log(sunsetHour,sunsetMinutes, typeof sunsetHour, typeof currentHour);
+
+     switch (mainStateReducer.data[0].weather) {
+      case 'clear sky':
+          bgTest.current.style.background = weatherBackgroundColors[`clearSky${dayOrNight}`]
+        break;
+      default:
+        break;
+    }
   }
 
   let lat;
@@ -65,58 +112,10 @@ useEffect(() => {
         }));
         dispatch(setDataLoading(false)); 
 
-
-
-          const sunriseHour = Number((mainStateReducer.data[0].sunrise).slice(0,2));
-          const sunriseMinutes = Number((mainStateReducer.data[0].sunrise).slice(3,5));
-          const sunsetHour = Number((mainStateReducer.data[0].sunset).slice(0,2));
-          const sunsetMinutes = Number((mainStateReducer.data[0].sunset).slice(3,5));
-          let currentHour = new Date().getHours();
-          currentHour = currentHour +3;
-          console.log(currentHour)
-          let currentMinutes = new Date().getMinutes();
-
-          let dayOrNight;
-
-          if(currentHour === sunsetHour){
-            if(currentMinutes < sunsetMinutes) {
-              dayOrNight = "D";
-            } else {
-              dayOrNight = "N";
-            }
-          } else if (currentHour < sunsetHour) {
-            dayOrNight = "D";
-          } else {
-            dayOrNight = "N";
-          }
-
-          if(currentHour === sunriseHour){
-            if(currentMinutes > sunriseMinutes) {
-              dayOrNight = "D";
-            } else {
-              dayOrNight = "N";
-            }
-          } else if (currentHour > sunriseHour) {
-            dayOrNight = "D";
-          } else {
-            dayOrNight = "N";
-          }
-
-          console.log(dayOrNight)
-
-          // console.log(sunsetHour,sunsetMinutes, typeof sunsetHour, typeof currentHour);
-  
-           switch (mainStateReducer.data[0].weather) {
-            case 'clear sky':
-                bgTest.current.style.background = weatherBackgroundColors[`clearSky${dayOrNight}`]
-              break;
-            default:
-              break;
-          }
-
       })
       .catch(err => console.error(`You have an error! - ${err}`))
       
+      // dataLoading && changeBackgroundStyle();
     }
     setTimeout(fetchData,2000)
 
