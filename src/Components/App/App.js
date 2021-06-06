@@ -1,4 +1,4 @@
-import React, {useEffect, useRef } from 'react';
+import React, {useState,useEffect, useRef } from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import './App.css';
 import axios from 'axios';
@@ -16,7 +16,10 @@ function App() {
   const mainStateReducer = useSelector(state => state.mainStateReducer);
   const dispatch = useDispatch()
 
-
+  const [location, setLocation] = useState({
+    lat: 0,
+    long: 0,
+  })
 
   const formatTimestamp = (timestamp) => {
     const date = new Date(timestamp*1000)
@@ -72,26 +75,28 @@ function App() {
     }
   }
 
-  let lat;
-  let long;
   const exclude = "minutes";
   // const [newTime, setNewTime] = useState(null)
 
   const bgTest = useRef()
 
 
-useEffect(() => {
+  useEffect(() => {
 
-  console.log("render weather info")
-  navigator.geolocation.getCurrentPosition(position => {
-      lat = position.coords.latitude;
-      long = position.coords.longitude;
-      console.log(lat,long);
+    console.log("render weather info")
+    navigator.geolocation.getCurrentPosition(position => {
+        setLocation({
+          lat:position.coords.latitude,
+          long:position.coords.longitude,
+      })
     })
+  }, [])
+
+useEffect(() => {
 
     const fetchData = () => {
       dispatch(setDataLoading(true)); 
-      const URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=${exclude}&appid=${process.env.REACT_APP_API_KEY}`
+      const URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat}&lon=${location.long}&exclude=${exclude}&appid=${process.env.REACT_APP_API_KEY}`
     
       axios({
         method: 'get',
@@ -119,7 +124,7 @@ useEffect(() => {
     }
     setTimeout(fetchData,2000)
 
-}, [])
+}, [location])
 
 
 // const getCurrentTime = () => {
