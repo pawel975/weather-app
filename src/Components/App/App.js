@@ -64,11 +64,33 @@ function App() {
 
     console.log(dayOrNight)
 
-    // console.log(sunsetHour,sunsetMinutes, typeof sunsetHour, typeof currentHour);
-
      switch (mainStateReducer.data[0].weather) {
       case 'clear sky':
-          bgTest.current.style.background = weatherBackgroundColors[`clearSky${dayOrNight}`]
+          bgRef.current.style.background = weatherBackgroundColors[`clearSky${dayOrNight}`]
+        break;
+      case 'few clouds':
+          bgRef.current.style.background = weatherBackgroundColors[`fewClouds${dayOrNight}`]
+        break;
+      case 'scattered clouds':
+          bgRef.current.style.background = weatherBackgroundColors[`scatteredClouds${dayOrNight}`]
+        break;
+      case 'broken clouds':
+          bgRef.current.style.background = weatherBackgroundColors[`brokenClouds${dayOrNight}`]
+        break;
+      case 'shower rain':
+          bgRef.current.style.background = weatherBackgroundColors[`showerRain${dayOrNight}`]
+        break;
+      case 'rain':
+          bgRef.current.style.background = weatherBackgroundColors[`rain${dayOrNight}`]
+        break;
+      case 'thunderstorm':
+          bgRef.current.style.background = weatherBackgroundColors[`thunderstorm${dayOrNight}`]
+        break;
+      case 'snow':
+          bgRef.current.style.background = weatherBackgroundColors[`snow${dayOrNight}`]
+        break;
+      case 'mist':
+          bgRef.current.style.background = weatherBackgroundColors[`mist${dayOrNight}`]
         break;
       default:
         break;
@@ -78,18 +100,18 @@ function App() {
   const exclude = "minutes";
   // const [newTime, setNewTime] = useState(null)
 
-  const bgTest = useRef()
+  const bgRef = useRef()
 
 
-  useEffect(() => {
-    console.log("render position")
-    navigator.geolocation.getCurrentPosition(position => {
-        setLocation({
-          lat:position.coords.latitude,
-          long:position.coords.longitude,
-      })
+useEffect(() => {
+  console.log("render position")
+  navigator.geolocation.getCurrentPosition(position => {
+      setLocation({
+        lat:position.coords.latitude,
+        long:position.coords.longitude,
     })
-  }, [])
+  })
+}, [])
 
 useEffect(() => {
 
@@ -118,15 +140,19 @@ useEffect(() => {
           visibility: data.current.visibiliy,
         }));
         dispatch(setDataLoading(false)); 
-
       })
       .catch(err => console.error(`You have an error! - ${err}`))
       
-      !dataLoading && changeBackgroundStyle();
+      
     }
     setTimeout(fetchData,2000)
 
 }, [location])
+
+useEffect(()=> {
+  if(dataLoading) return
+  !dataLoading && changeBackgroundStyle();
+},[dataLoading])
 
 
 // const getCurrentTime = () => {
@@ -152,15 +178,16 @@ useEffect(() => {
 
 
 const weatherBackgroundColors = {
-  clearSkyD: `linear-gradient(45deg,rgba(137, 219, 224,1),rgba(137, 219, 224,0))`,
+  clearSkyD: `linear-gradient(45deg,rgba(194, 198, 199,1),rgba(194, 198, 199,0.35))`,
+  test: `linear-gradient(45deg,rgba(126, 214, 236,1),rgba(126, 214, 236,0.35))`,
   clearSkyN: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
-  fewCloudsD: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
+  fewCloudsD: `linear-gradient(45deg,rgba(126, 214, 236,1),rgba(126, 214, 236,0.35))`,
   fewCloudsN: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
-  scatteredCloudsD: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
+  scatteredCloudsD: `linear-gradient(45deg,rgba(203, 226, 232,1),rgba(203, 226, 232,0.35))`,
   scatteredCloudsN: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
-  brokenCloudsD: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
+  brokenCloudsD: `linear-gradient(45deg,rgba(194, 198, 199,1),rgba(194, 198, 199,0.35))`,
   brokenCloudsN: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
-  showerRainD: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
+  showerRainD: `linear-gradient(45deg,rgba(194, 198, 199,1),rgba(194, 198, 199,0.35))`,
   showerRainN: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
   rainD: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
   rainN: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
@@ -175,7 +202,7 @@ const weatherBackgroundColors = {
 
 
 return (
-  <div ref={bgTest} className="app" >
+  <div ref={bgRef} className="app" >
     <Nav/>
     <div  className="app__main-content">
       <div className="app__weather-icon" ></div>

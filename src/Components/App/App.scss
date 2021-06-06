@@ -39,10 +39,10 @@
             // transform: translate(-50%,50%);
             left: 0;
             bottom: 0;
-            outline: 2px solid black;
-            width:clamp(100px,100%,150px);
+            // outline: 2px solid black;
+            width:clamp(100px,100%,250px);
             height: auto;
-            content: url('../../assets/my-assets/animated/clear-sky-d.svg');
+            content: url('../../assets/my-assets/animated/rain-d.svg');
         
             @keyframes movement {
                0%{
