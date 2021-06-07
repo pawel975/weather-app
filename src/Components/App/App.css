@@ -51,7 +51,6 @@
   bottom: 0;
   width: clamp(100px, 100%, 250px);
   height: auto;
-  content: url("../../assets/my-assets/animated/rain-d.svg");
   -webkit-animation: movement 1.5s ease-in-out;
           animation: movement 1.5s ease-in-out;
 }

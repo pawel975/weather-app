@@ -21,6 +21,8 @@ function App() {
     long: 0,
   })
 
+  const [weatherIcon, setWeatherIcon] = useState("clear-sky-d")
+
   const formatTimestamp = (timestamp) => {
     const date = new Date(timestamp*1000)
     const hours = "0" + date.getHours()
@@ -178,25 +180,24 @@ useEffect(()=> {
 
 
 const weatherBackgroundColors = {
-  clearSkyD: `linear-gradient(45deg,rgba(194, 198, 199,1),rgba(194, 198, 199,0.35))`,
-  test: `linear-gradient(45deg,rgba(126, 214, 236,1),rgba(126, 214, 236,0.35))`,
-  clearSkyN: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
+  clearSkyD: `linear-gradient(45deg,rgba(126, 214, 236,1),rgba(126, 214, 236,0.35))`,
+  clearSkyN: `linear-gradient(45deg,rgba(53, 55, 81, 1),rgba(53, 55, 81, 0.85))`,
   fewCloudsD: `linear-gradient(45deg,rgba(126, 214, 236,1),rgba(126, 214, 236,0.35))`,
-  fewCloudsN: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
+  fewCloudsN: `linear-gradient(45deg,rgba(37, 38, 54, 1),rgba(37, 38, 54, 0.85))`,
   scatteredCloudsD: `linear-gradient(45deg,rgba(203, 226, 232,1),rgba(203, 226, 232,0.35))`,
-  scatteredCloudsN: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
+  scatteredCloudsN:`linear-gradient(45deg,rgba(37, 38, 54, 1),rgba(37, 38, 54, 0.85))`,
   brokenCloudsD: `linear-gradient(45deg,rgba(194, 198, 199,1),rgba(194, 198, 199,0.35))`,
-  brokenCloudsN: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
+  brokenCloudsN: `linear-gradient(45deg,rgba(37, 38, 54, 1),rgba(37, 38, 54, 0.85))`,
   showerRainD: `linear-gradient(45deg,rgba(194, 198, 199,1),rgba(194, 198, 199,0.35))`,
-  showerRainN: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
-  rainD: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
-  rainN: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
-  thunderstormD: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
+  showerRainN: `linear-gradient(45deg,rgba(37, 38, 54, 1),rgba(37, 38, 54, 0.85))`,
+  rainD: `linear-gradient(45deg,rgba(194, 198, 199,1),rgba(194, 198, 199,0.35))`,
+  rainN: `linear-gradient(45deg,rgba(37, 38, 54, 1),rgba(37, 38, 54, 0.85))`,
+  thunderstormD: `linear-gradient(45deg,rgba(148, 148, 148, 1),rgba(148, 148, 148, 0.85))`,
   thunderstormN: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
-  snowD: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
-  snowN: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
-  mistD: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
-  mistN: `linear-gradient(45deg,rgba(44, 52, 62, 1),rgba(44, 52, 62, 0.85))`,
+  snowD: `linear-gradient(45deg,rgba(173, 195, 212,1),rgba(173, 195, 212,0.35))`,
+  snowN: `linear-gradient(45deg,rgba(37, 38, 54, 1),rgba(37, 38, 54, 0.85))`,
+  mistD: `linear-gradient(45deg,rgba(195, 205, 212,1),rgba(195, 205, 212,0.35))`,
+  mistN: `linear-gradient(45deg,rgba(37, 38, 54, 1),rgba(37, 38, 54, 0.85))`,
 
 }
 
@@ -205,7 +206,7 @@ return (
   <div ref={bgRef} className="app" >
     <Nav/>
     <div  className="app__main-content">
-      <div className="app__weather-icon" ></div>
+      <div className="app__weather-icon" ><img src="../../../assets/my_assets/animated/clear-sky-d.svg" alt="" /> </div>
       {!isFilterSectionOpen && <Quote/>}
       {!dataLoading && <Main/>}
     </div>
