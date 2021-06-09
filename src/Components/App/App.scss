@@ -44,6 +44,9 @@
             height: auto;
             // content: url('../../assets/my-assets/animated/mist-n.svg');
         
+            img {
+                width: 100%;
+            }
             @keyframes movement {
                0%{
                 left: 100%;

@@ -55,6 +55,10 @@
           animation: movement 1.5s ease-in-out;
 }
 
+.app .app__main-content .app__weather-icon img {
+  width: 100%;
+}
+
 @-webkit-keyframes movement {
   0% {
     left: 100%;

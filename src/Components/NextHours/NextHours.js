@@ -1,9 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import './NextHours.css';
+import {useSelector,useDispatch} from 'react-redux';
 
 const NextHours = () => {
 
+    const mainStateReducer = useSelector(state => state.mainStateReducer);
+    // const dispatch = useDispatch()
+
     const hoursArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48];
+    // const hoursArray = mainStateReducer.data[0].hourly
 
     const hoursInSlider = [3,4,6,8,12];
     const containerWidth = [1600,1200,800,600,400];
@@ -54,7 +59,7 @@ const NextHours = () => {
         <div 
             style={{width:`calc(100%/${hoursInSlider[sliderIndex]}`}} className="hours-weather__element"
         >
-            <p>{hour}</p>
+            <p>{hour.dt}</p>
         </div>
     ))
 

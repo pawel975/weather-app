@@ -7,6 +7,26 @@ import Nav from '../Nav/Nav';
 import Dropdown from '../Dropdown/Dropdown';
 import Quote from "../Quote/Quote";
 
+import ClearSkyD from "../../assets/my-assets/animated/clear-sky-d.svg";
+import ClearSkyN from "../../assets/my-assets/animated/clear-sky-n.svg";
+import FewCloudsD from "../../assets/my-assets/animated/few-clouds-d.svg";
+import FewCloudsN from "../../assets/my-assets/animated/few-clouds-n.svg";
+import ScatteredCloudsD from "../../assets/my-assets/animated/scattered-clouds-d.svg";
+import ScatteredCloudsN from "../../assets/my-assets/animated/scattered-clouds-n.svg";
+import BrokenCloudsD from "../../assets/my-assets/animated/broken-clouds-d.svg";
+import BrokenCloudsN from "../../assets/my-assets/animated/broken-clouds-n.svg";
+import ShowerRainD from "../../assets/my-assets/animated/shower-rain-d.svg";
+import ShowerRainN from "../../assets/my-assets/animated/shower-rain-n.svg";
+import RainD from "../../assets/my-assets/animated/rain-d.svg";
+import RainN from "../../assets/my-assets/animated/rain-n.svg";
+import ThunderstormD from "../../assets/my-assets/animated/thunderstorm-d.svg";
+import ThunderstormN from "../../assets/my-assets/animated/thunderstorm-d.svg";
+import SnowD from "../../assets/my-assets/animated/snow-d.svg";
+import SnowN from "../../assets/my-assets/animated/snow-n.svg";
+import MistD from "../../assets/my-assets/animated/mist-d.svg";
+import MistN from "../../assets/my-assets/animated/mist-n.svg";
+
+
 import {getData,setDataLoading} from '../../redux/actions/index'
 
 function App() {
@@ -21,7 +41,7 @@ function App() {
     long: 0,
   })
 
-  const [weatherIcon, setWeatherIcon] = useState("clear-sky-d")
+  const [weatherIcon, setWeatherIcon] = useState(ClearSkyD)
 
   const formatTimestamp = (timestamp) => {
     const date = new Date(timestamp*1000)
@@ -32,7 +52,7 @@ function App() {
     return formattedTime
   }
 
-  const changeBackgroundStyle = () => {
+  const changeWeatherStyling = () => {
     const sunriseHour = Number((mainStateReducer.data[0].sunrise).slice(0,2));
     const sunriseMinutes = Number((mainStateReducer.data[0].sunrise).slice(3,5));
     const sunsetHour = Number((mainStateReducer.data[0].sunset).slice(0,2));
@@ -64,39 +84,48 @@ function App() {
       dayOrNight = "N";
     }
 
-    console.log(dayOrNight)
-
      switch (mainStateReducer.data[0].weather) {
       case 'clear sky':
           bgRef.current.style.background = weatherBackgroundColors[`clearSky${dayOrNight}`]
+          setWeatherIcon(dayOrNight ==="D"? ClearSkyD:ClearSkyN)
         break;
       case 'few clouds':
           bgRef.current.style.background = weatherBackgroundColors[`fewClouds${dayOrNight}`]
+          setWeatherIcon(dayOrNight ==="D"? FewCloudsD:FewCloudsN)
         break;
       case 'scattered clouds':
           bgRef.current.style.background = weatherBackgroundColors[`scatteredClouds${dayOrNight}`]
+          setWeatherIcon(dayOrNight ==="D"? ScatteredCloudsD:ScatteredCloudsN)
         break;
       case 'broken clouds':
           bgRef.current.style.background = weatherBackgroundColors[`brokenClouds${dayOrNight}`]
+          setWeatherIcon(dayOrNight ==="D"? BrokenCloudsD:BrokenCloudsN)
         break;
       case 'shower rain':
           bgRef.current.style.background = weatherBackgroundColors[`showerRain${dayOrNight}`]
+          setWeatherIcon(dayOrNight ==="D"? ShowerRainD:ShowerRainN)
         break;
       case 'rain':
           bgRef.current.style.background = weatherBackgroundColors[`rain${dayOrNight}`]
+          setWeatherIcon(dayOrNight ==="D"? RainD:RainN)
         break;
       case 'thunderstorm':
           bgRef.current.style.background = weatherBackgroundColors[`thunderstorm${dayOrNight}`]
+          setWeatherIcon(dayOrNight ==="D"? ThunderstormD:ThunderstormN)
         break;
       case 'snow':
           bgRef.current.style.background = weatherBackgroundColors[`snow${dayOrNight}`]
+          setWeatherIcon(dayOrNight ==="D"? SnowD:SnowN)
         break;
       case 'mist':
           bgRef.current.style.background = weatherBackgroundColors[`mist${dayOrNight}`]
+          setWeatherIcon(dayOrNight ==="D"? MistD:MistN)
         break;
       default:
         break;
     }
+
+    console.log(mainStateReducer.data[0].weather)
   }
 
   const exclude = "minutes";
@@ -140,6 +169,7 @@ useEffect(() => {
           pressure: data.current.pressure,
           clouds: data.current.clouds,
           visibility: data.current.visibiliy,
+          hourly: data.hourly.dt,
         }));
         dispatch(setDataLoading(false)); 
       })
@@ -153,7 +183,7 @@ useEffect(() => {
 
 useEffect(()=> {
   if(dataLoading) return
-  !dataLoading && changeBackgroundStyle();
+  !dataLoading && changeWeatherStyling();
 },[dataLoading])
 
 
@@ -198,15 +228,16 @@ const weatherBackgroundColors = {
   snowN: `linear-gradient(45deg,rgba(37, 38, 54, 1),rgba(37, 38, 54, 0.85))`,
   mistD: `linear-gradient(45deg,rgba(195, 205, 212,1),rgba(195, 205, 212,0.35))`,
   mistN: `linear-gradient(45deg,rgba(37, 38, 54, 1),rgba(37, 38, 54, 0.85))`,
-
 }
 
 
 return (
   <div ref={bgRef} className="app" >
     <Nav/>
-    <div  className="app__main-content">
-      <div className="app__weather-icon" ><img src="../../../assets/my_assets/animated/clear-sky-d.svg" alt="" /> </div>
+    <div className="app__main-content">
+      {!dataLoading && <div className="app__weather-icon">
+        <img src={weatherIcon} alt="" />
+      </div>}
       {!isFilterSectionOpen && <Quote/>}
       {!dataLoading && <Main/>}
     </div>
@@ -214,5 +245,4 @@ return (
   </div>
   )
 }
-
 export default App;
