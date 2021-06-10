@@ -4,7 +4,7 @@ import HistoricalWeather from '../HistoricalWeather/HistoricalWeather';
 import NextHours from '../NextHours/NextHours';
 import './FilterSection.css';
 
-const FilterSection = ({height}) => {
+const FilterSection = ({height,formatTimestamp}) => {
 
     const [filterChoice, setFilterChoice] = useState(0);
 
@@ -22,9 +22,9 @@ const FilterSection = ({height}) => {
                 <hr/>
                 <button onClick={handleFilterButtonClick} value={2} className="filter-section__button-filter">Last 5 days</button>
             </div>
-            {filterChoice===0 && <NextHours/>}
-            {filterChoice===1 && <ForecastWeather/>}
-            {filterChoice===2 && <HistoricalWeather/>}
+            {filterChoice===0 && <NextHours formatTimestamp={formatTimestamp}/>}
+            {filterChoice===1 && <ForecastWeather formatTimestamp={formatTimestamp}/>}
+            {filterChoice===2 && <HistoricalWeather formatTimestamp={formatTimestamp}/>}
         </div>
     )
 }

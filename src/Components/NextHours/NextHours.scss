@@ -46,9 +46,15 @@
             // outline: 2px solid purple;
 
             .hours-weather__element {
+                color: white;
                 width: auto;
                 height: 10%;
-                outline: solid 2px green;
+                // outline: solid 2px green;
+
+                img {
+                    width: 80%;
+                    // outline: 2px solid black;
+                }
             }
 
         }

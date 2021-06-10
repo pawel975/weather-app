@@ -48,7 +48,7 @@ function App() {
     const hours = "0" + date.getHours()
     const minutes = "0" + date.getMinutes()
     const formattedTime = hours.substr(-2) + ':' + minutes.substr(-2)
-    console.log(formattedTime)
+    // console.log(formattedTime)
     return formattedTime
   }
 
@@ -169,7 +169,7 @@ useEffect(() => {
           pressure: data.current.pressure,
           clouds: data.current.clouds,
           visibility: data.current.visibiliy,
-          hourly: data.hourly.dt,
+          hours: data.hourly,
         }));
         dispatch(setDataLoading(false)); 
       })
@@ -232,6 +232,8 @@ const weatherBackgroundColors = {
 
 
 return (
+  <>
+  {!dataLoading &&
   <div ref={bgRef} className="app" >
     <Nav/>
     <div className="app__main-content">
@@ -241,8 +243,10 @@ return (
       {!isFilterSectionOpen && <Quote/>}
       {!dataLoading && <Main/>}
     </div>
-    <Dropdown/>
+    <Dropdown formatTimestamp={formatTimestamp}/>
   </div>
+}
+  </>
   )
 }
 export default App;

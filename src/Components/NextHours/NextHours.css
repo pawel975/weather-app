@@ -57,8 +57,12 @@ div.container {
 }
 
 .hours-weather .hours-weather__container .hours-weather__element {
+  color: white;
   width: auto;
   height: 10%;
-  outline: solid 2px green;
+}
+
+.hours-weather .hours-weather__container .hours-weather__element img {
+  width: 80%;
 }
 /*# sourceMappingURL=NextHours.css.map */

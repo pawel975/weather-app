@@ -1,14 +1,30 @@
 import React, {useState, useEffect} from 'react';
 import './NextHours.css';
-import {useSelector,useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 
-const NextHours = () => {
+import ClearSkyD from "../../assets/my-assets/animated/clear-sky-d.svg";
+import ClearSkyN from "../../assets/my-assets/animated/clear-sky-n.svg";
+import FewCloudsD from "../../assets/my-assets/animated/few-clouds-d.svg";
+import FewCloudsN from "../../assets/my-assets/animated/few-clouds-n.svg";
+import ScatteredCloudsD from "../../assets/my-assets/animated/scattered-clouds-d.svg";
+import ScatteredCloudsN from "../../assets/my-assets/animated/scattered-clouds-n.svg";
+import BrokenCloudsD from "../../assets/my-assets/animated/broken-clouds-d.svg";
+import BrokenCloudsN from "../../assets/my-assets/animated/broken-clouds-n.svg";
+import ShowerRainD from "../../assets/my-assets/animated/shower-rain-d.svg";
+import ShowerRainN from "../../assets/my-assets/animated/shower-rain-n.svg";
+import RainD from "../../assets/my-assets/animated/rain-d.svg";
+import RainN from "../../assets/my-assets/animated/rain-n.svg";
+import ThunderstormD from "../../assets/my-assets/animated/thunderstorm-d.svg";
+import ThunderstormN from "../../assets/my-assets/animated/thunderstorm-d.svg";
+import SnowD from "../../assets/my-assets/animated/snow-d.svg";
+import SnowN from "../../assets/my-assets/animated/snow-n.svg";
+import MistD from "../../assets/my-assets/animated/mist-d.svg";
+import MistN from "../../assets/my-assets/animated/mist-n.svg";
 
+const NextHours = ({formatTimestamp}) => {
+    
     const mainStateReducer = useSelector(state => state.mainStateReducer);
-    // const dispatch = useDispatch()
-
-    const hoursArray = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48];
-    // const hoursArray = mainStateReducer.data[0].hourly
+    const hoursArray = mainStateReducer.data[0].hours
 
     const hoursInSlider = [3,4,6,8,12];
     const containerWidth = [1600,1200,800,600,400];
@@ -16,9 +32,77 @@ const NextHours = () => {
     const minSliderMove = 0;
     // let sliderIndex = 0;
 
-    const [state, setState] = useState(hoursArray)
     const [move,setMove] = useState(0);
     const [sliderIndex, setSliderIndex] = useState(0)
+
+    const changeWeatherIcon = (hourWeather) => {
+        const sunriseHour = Number((mainStateReducer.data[0].sunrise).slice(0,2));
+        const sunriseMinutes = Number((mainStateReducer.data[0].sunrise).slice(3,5));
+        const sunsetHour = Number((mainStateReducer.data[0].sunset).slice(0,2));
+        const sunsetMinutes = Number((mainStateReducer.data[0].sunset).slice(3,5));
+
+        let currentHour = new Date().getHours();
+        let currentMinutes = new Date().getMinutes();
+
+        let dayOrNight;
+        let weatherIcon;
+
+        if(currentHour === sunsetHour){
+        if(currentMinutes < sunsetMinutes) {
+            dayOrNight = "D";
+        } else {
+            dayOrNight = "N";
+        }
+        }
+        else if(currentHour === sunriseHour){
+        if(currentMinutes > sunriseMinutes) {
+            dayOrNight = "D";
+        } else {
+            dayOrNight = "N";
+        }
+        }
+        else if (sunriseHour < currentHour && currentHour < sunsetHour) {
+        dayOrNight = "D";
+        } 
+        else {
+        dayOrNight = "N";
+        }
+
+
+
+        switch (hourWeather) {
+        case 'clear sky':
+            weatherIcon = dayOrNight === "D"? ClearSkyD:ClearSkyN;
+            break;
+        case 'few clouds':
+            weatherIcon = dayOrNight ==="D"? FewCloudsD:FewCloudsN;
+            break;
+        case 'scattered clouds':
+            weatherIcon = dayOrNight ==="D"? ScatteredCloudsD:ScatteredCloudsN;
+            break;
+        case 'broken clouds':
+            weatherIcon = dayOrNight ==="D"? BrokenCloudsD:BrokenCloudsN;
+            break;
+        case 'shower rain':
+            weatherIcon =  dayOrNight ==="D"? ShowerRainD:ShowerRainN;
+            break;
+        case 'rain':
+            weatherIcon = dayOrNight ==="D"? RainD:RainN;
+            break;
+        case 'thunderstorm':
+            weatherIcon = dayOrNight ==="D"? ThunderstormD:ThunderstormN;
+            break;
+        case 'snow':
+            weatherIcon = dayOrNight ==="D"? SnowD:SnowN
+            break;
+        case 'mist':
+            weatherIcon = dayOrNight ==="D"? MistD:MistN
+            break;
+        default:
+            break;
+        }
+      return weatherIcon
+  }
     
     const updateWindowWidth = () => {
         // setMove(0);
@@ -52,14 +136,15 @@ const NextHours = () => {
 
     useEffect(() => {
         updateWindowWidth()
-        
     }, []);
     
-    const allHours = state.map(hour => (
+    const allHours = hoursArray.map(hour => (
         <div 
+            key={hour.weather.id}
             style={{width:`calc(100%/${hoursInSlider[sliderIndex]}`}} className="hours-weather__element"
         >
-            <p>{hour.dt}</p>
+            <p>{formatTimestamp(hour.dt)}</p>
+            <img src={changeWeatherIcon(hour.weather[0].description)} alt="" />
         </div>
     ))
 
