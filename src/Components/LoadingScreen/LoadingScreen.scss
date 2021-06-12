@@ -1,0 +1,21 @@
+
+.loading-screen {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg,rgba(126, 214, 236,1),rgba(126, 214, 236,0.35));
+
+    .loading-screen__icon {
+        width: clamp(150px, 100%, 500px);
+        // outline: 2px solid black;
+    }
+
+    p {
+        color: white;
+        font-size: 35px;
+        font-weight: 700;
+    }
+}

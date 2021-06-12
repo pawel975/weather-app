@@ -6,6 +6,7 @@ import Main from '../Main/Main';
 import Nav from '../Nav/Nav';
 import Dropdown from '../Dropdown/Dropdown';
 import Quote from "../Quote/Quote";
+import LoadingScreen from '../LoadingScreen/LoadingScreen'
 
 import ClearSkyD from "../../assets/my-assets/animated/clear-sky-d.svg";
 import ClearSkyN from "../../assets/my-assets/animated/clear-sky-n.svg";
@@ -52,9 +53,89 @@ function App() {
     return formattedTime
   }
 
-  const formatToDate = (timestamp) => {
+  const formatToDate = (timestamp, levelOfDetails = "dayOfTheWeek") => {
     const date = new Date(timestamp*1000)
-    const dayOfTheWeek = date.getUTCDay()
+    let thisDate;
+
+    if (levelOfDetails === "dayOfTheWeek") {
+      thisDate = date.getUTCDay()
+      switch (thisDate) {
+        case 0:
+          thisDate = "Monday"
+          break;
+        case 1:
+          thisDate = "Tuesday"
+          break;
+        case 2:
+          thisDate = "Wednesday"
+          break;
+        case 3:
+          thisDate = "Thursday"
+          break;
+        case 4:
+          thisDate = "Friday"
+          break;
+        case 5:
+          thisDate = "Saturday"
+          break;
+        case 6:
+          thisDate = "Sunday"
+          break;
+        default:
+          break;
+      }
+
+    } else if (levelOfDetails==="day") {
+      let day = date.getDate();
+      thisDate = day
+
+    } else if (levelOfDetails==="day-month") {
+      let day = date.getDate();
+      let month = date.getMonth();
+      switch (month) {
+        case 1:
+          month = "January"
+          break;
+        case 2:
+          month = "February"
+          break;
+        case 3:
+          month = "March"
+          break;
+        case 4:
+          month = "April"
+          break;
+        case 5:
+          month = "May"
+          break;
+        case 6:
+          month = "June"
+          break;
+        case 7:
+          month = "July"
+          break;
+        case 8:
+          month = "August"
+          break;
+        case 9:
+          month = "September"
+          break;
+        case 10:
+          month = "October"
+          break;
+        case 11:
+          month = "November"
+          break;
+        case 12:
+          month = "December"
+          break;
+        default:
+          break;
+      }
+      thisDate = `${day} ${month}`
+    }
+
+    return thisDate
   }
 
   const changeWeatherStyling = () => {
@@ -223,7 +304,8 @@ useEffect(() => {
           pressure: data.current.pressure,
           clouds: data.current.clouds,
           visibility: data.current.visibiliy,
-          hours: data.hourly,
+          hoursForecast: data.hourly,
+          
         }));
         dispatch(setDataLoading(false)); 
       })
@@ -299,7 +381,12 @@ return (
     </div>
     <Dropdown formatTimestamp={formatTimestamp} formatToDate={formatToDate}/>
   </div>
-}
+  }
+
+  {dataLoading && 
+    <LoadingScreen/>
+  }
+
   </>
   )
 }

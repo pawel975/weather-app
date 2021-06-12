@@ -24,7 +24,7 @@ import MistN from "../../assets/my-assets/animated/mist-n.svg";
 const NextHours = ({formatTimestamp, formatToDate}) => {
     
     const mainStateReducer = useSelector(state => state.mainStateReducer);
-    const hoursArray = mainStateReducer.data[0].hours
+    const hoursArray = mainStateReducer.data[0].hoursForecast
 
     const hoursInSlider = [3,4,6,8,12];
     const containerWidth = [1600,1200,800,600,400];
@@ -193,7 +193,7 @@ const NextHours = ({formatTimestamp, formatToDate}) => {
             style={{width:`calc(100%/${hoursInSlider[sliderIndex]}`}} className="hours-weather__element"
         >
             <p>{formatTimestamp(hour.dt)}</p>
-            <p>{formatToDate(hour.dt)}</p>
+            <p>{formatToDate(hour.dt, "day-month")}</p>
             <img src={changeWeatherIcon(hour.weather[0].description)} alt="" />
         </div>
     ))

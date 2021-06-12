@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,eAAe,CAAC;EACZ,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,UAAU,EAAE,0DAAqE;CAYpF;;AAnBD,AASI,eATW,CASX,qBAAqB,CAAC;EAClB,KAAK,EAAE,yBAAyB;CAEnC;;AAZL,AAcI,eAdW,CAcX,CAAC,CAAC;EACE,KAAK,EAAE,KAAK;EACZ,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,GAAG;CACnB",
+    "sources": [
+        "LoadingScreen.scss"
+    ],
+    "names": [],
+    "file": "LoadingScreen.css"
+}
