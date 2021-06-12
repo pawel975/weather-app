@@ -21,7 +21,7 @@ import SnowN from "../../assets/my-assets/animated/snow-n.svg";
 import MistD from "../../assets/my-assets/animated/mist-d.svg";
 import MistN from "../../assets/my-assets/animated/mist-n.svg";
 
-const NextHours = ({formatTimestamp}) => {
+const NextHours = ({formatTimestamp, formatToDate}) => {
     
     const mainStateReducer = useSelector(state => state.mainStateReducer);
     const hoursArray = mainStateReducer.data[0].hours
@@ -75,27 +75,76 @@ const NextHours = ({formatTimestamp}) => {
             weatherIcon = dayOrNight === "D"? ClearSkyD:ClearSkyN;
             break;
         case 'few clouds':
+        case 'few clouds: 11-25%':
             weatherIcon = dayOrNight ==="D"? FewCloudsD:FewCloudsN;
             break;
-        case 'scattered clouds':
+        case 'scattered clouds': 
+        case 'scattered clouds: 25-50%': 
             weatherIcon = dayOrNight ==="D"? ScatteredCloudsD:ScatteredCloudsN;
             break;
         case 'broken clouds':
+        case 'broken clouds: 51-84%':
+        case 'overcast clouds':
+        case 'overcast clouds: 85-100%':
             weatherIcon = dayOrNight ==="D"? BrokenCloudsD:BrokenCloudsN;
             break;
         case 'shower rain':
+        case 'heavy intensity rain':
+        case 'very heavy rain':
+        case 'extreme rain':
+        case 'heavy intensity shower rain':
+        case 'ragged shower rain':
+        case 'heavy shower rain and drizzle':
+        case 'shower drizzle':
             weatherIcon =  dayOrNight ==="D"? ShowerRainD:ShowerRainN;
             break;
-        case 'rain':
+        case 'light rain':
+        case 'moderate rain':
+        case 'light intensity shower rain':
+        case 'light intensity drizzle':
+        case 'drizzle':
+        case 'heavy intensity drizzle':
+        case 'light intensity drizzle rain':
+        case 'drizzle rain':
+        case 'heavy intensity drizzle rain':
+        case 'shower rain and drizzle':
             weatherIcon = dayOrNight ==="D"? RainD:RainN;
             break;
         case 'thunderstorm':
+        case 'thunderstorm with light rain':
+        case 'thunderstorm with rain':
+        case 'thunderstorm with heavy rain':
+        case 'light thunderstorm':
+        case 'heavy thunderstorm':
+        case 'ragged thunderstorm':
+        case 'thunderstorm with light drizzle':
+        case 'thunderstorm with drizzle':
+        case 'thunderstorm with heavy drizzle':
             weatherIcon = dayOrNight ==="D"? ThunderstormD:ThunderstormN;
             break;
-        case 'snow':
+        case 'Snow':
+        case 'freezing rain':
+        case 'Heavy snow':
+        case 'Sleet':
+        case 'Light shower sleet':
+        case 'Shower sleet':
+        case 'Light rain and snow':
+        case 'Rain and snow':
+        case 'Light shower snow':
+        case 'Shower snow':
+        case 'Heavy shower snow':
             weatherIcon = dayOrNight ==="D"? SnowD:SnowN
             break;
         case 'mist':
+        case 'Smoke':
+        case 'Haze':
+        case 'sand/ dust whirls':
+        case 'fog':
+        case 'sand':
+        case 'dust':
+        case 'volcanic ash':
+        case 'squalls':
+        case 'tornado':
             weatherIcon = dayOrNight ==="D"? MistD:MistN
             break;
         default:
@@ -144,6 +193,7 @@ const NextHours = ({formatTimestamp}) => {
             style={{width:`calc(100%/${hoursInSlider[sliderIndex]}`}} className="hours-weather__element"
         >
             <p>{formatTimestamp(hour.dt)}</p>
+            <p>{formatToDate(hour.dt)}</p>
             <img src={changeWeatherIcon(hour.weather[0].description)} alt="" />
         </div>
     ))

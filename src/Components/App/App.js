@@ -52,6 +52,11 @@ function App() {
     return formattedTime
   }
 
+  const formatToDate = (timestamp) => {
+    const date = new Date(timestamp*1000)
+    const dayOfTheWeek = date.getUTCDay()
+  }
+
   const changeWeatherStyling = () => {
     const sunriseHour = Number((mainStateReducer.data[0].sunrise).slice(0,2));
     const sunriseMinutes = Number((mainStateReducer.data[0].sunrise).slice(3,5));
@@ -90,34 +95,83 @@ function App() {
           setWeatherIcon(dayOrNight ==="D"? ClearSkyD:ClearSkyN)
         break;
       case 'few clouds':
+      case 'few clouds: 11-25%':
           bgRef.current.style.background = weatherBackgroundColors[`fewClouds${dayOrNight}`]
           setWeatherIcon(dayOrNight ==="D"? FewCloudsD:FewCloudsN)
         break;
-      case 'scattered clouds':
+      case 'scattered clouds': 
+      case 'scattered clouds: 25-50%': 
           bgRef.current.style.background = weatherBackgroundColors[`scatteredClouds${dayOrNight}`]
           setWeatherIcon(dayOrNight ==="D"? ScatteredCloudsD:ScatteredCloudsN)
         break;
       case 'broken clouds':
+      case 'broken clouds: 51-84%':
+      case 'overcast clouds':
+      case 'overcast clouds: 85-100%':
           bgRef.current.style.background = weatherBackgroundColors[`brokenClouds${dayOrNight}`]
           setWeatherIcon(dayOrNight ==="D"? BrokenCloudsD:BrokenCloudsN)
         break;
       case 'shower rain':
+      case 'heavy intensity rain':
+      case 'very heavy rain':
+      case 'extreme rain':
+      case 'heavy intensity shower rain':
+      case 'ragged shower rain':
+      case 'heavy shower rain and drizzle':
+      case 'shower drizzle':
           bgRef.current.style.background = weatherBackgroundColors[`showerRain${dayOrNight}`]
           setWeatherIcon(dayOrNight ==="D"? ShowerRainD:ShowerRainN)
         break;
-      case 'rain':
+      case 'light rain':
+      case 'moderate rain':
+      case 'light intensity shower rain':
+      case 'light intensity drizzle':
+      case 'drizzle':
+      case 'heavy intensity drizzle':
+      case 'light intensity drizzle rain':
+      case 'drizzle rain':
+      case 'heavy intensity drizzle rain':
+      case 'shower rain and drizzle':
           bgRef.current.style.background = weatherBackgroundColors[`rain${dayOrNight}`]
           setWeatherIcon(dayOrNight ==="D"? RainD:RainN)
         break;
       case 'thunderstorm':
+      case 'thunderstorm with light rain':
+      case 'thunderstorm with rain':
+      case 'thunderstorm with heavy rain':
+      case 'light thunderstorm':
+      case 'heavy thunderstorm':
+      case 'ragged thunderstorm':
+      case 'thunderstorm with light drizzle':
+      case 'thunderstorm with drizzle':
+      case 'thunderstorm with heavy drizzle':
           bgRef.current.style.background = weatherBackgroundColors[`thunderstorm${dayOrNight}`]
           setWeatherIcon(dayOrNight ==="D"? ThunderstormD:ThunderstormN)
         break;
-      case 'snow':
+      case 'Snow':
+      case 'freezing rain':
+      case 'Heavy snow':
+      case 'Sleet':
+      case 'Light shower sleet':
+      case 'Shower sleet':
+      case 'Light rain and snow':
+      case 'Rain and snow':
+      case 'Light shower snow':
+      case 'Shower snow':
+      case 'Heavy shower snow':
           bgRef.current.style.background = weatherBackgroundColors[`snow${dayOrNight}`]
           setWeatherIcon(dayOrNight ==="D"? SnowD:SnowN)
         break;
       case 'mist':
+      case 'Smoke':
+      case 'Haze':
+      case 'sand/ dust whirls':
+      case 'fog':
+      case 'sand':
+      case 'dust':
+      case 'volcanic ash':
+      case 'squalls':
+      case 'tornado':
           bgRef.current.style.background = weatherBackgroundColors[`mist${dayOrNight}`]
           setWeatherIcon(dayOrNight ==="D"? MistD:MistN)
         break;
@@ -243,7 +297,7 @@ return (
       {!isFilterSectionOpen && <Quote/>}
       {!dataLoading && <Main/>}
     </div>
-    <Dropdown formatTimestamp={formatTimestamp}/>
+    <Dropdown formatTimestamp={formatTimestamp} formatToDate={formatToDate}/>
   </div>
 }
   </>

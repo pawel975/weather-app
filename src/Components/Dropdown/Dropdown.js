@@ -6,7 +6,7 @@ import './Dropdown.css'
 import {MdKeyboardArrowUp} from 'react-icons/md'
 import FilterSection from '../FilterSection/FilterSection';
 
-const Dropdown = ({formatTimestamp}) => {
+const Dropdown = ({formatTimestamp, formatToDate}) => {
 
     const isFilterSectionOpen = useSelector(state => state.isFilterSectionOpen);
     const dispatch = useDispatch();
@@ -27,7 +27,7 @@ const Dropdown = ({formatTimestamp}) => {
             </div>
             <div className="dropdown__bar"></div>
             {/* <FilterSection height={isFilterSectionOpen?'40vh':'0vh'}/> */}
-            <FilterSection formatTimestamp={formatTimestamp}/>
+            <FilterSection formatTimestamp={formatTimestamp} formatToDate={formatToDate}/>
         </div>
     )
 }
