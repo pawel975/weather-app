@@ -29,40 +29,51 @@ div.container {
   height: 100%;
   -webkit-box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
           box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   overflow: scroll;
 }
 
-.hours-weather .hours-weather__container {
+.hours-weather__date-bar {
+  width: 100%;
+  height: 27.2px;
+  background: rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.hours-weather__date-bar p {
+  margin: auto;
+  width: 100%;
+  font-size: 16px;
+  position: fixed;
+  margin: 0.2em;
+}
+
+.hours-weather__container {
   text-align: center;
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   position: absolute;
   left: 0%;
+  bottom: 5px;
   width: 1200%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.hours-weather .hours-weather__container .hours-weather__element {
+.hours-weather__container .hours-weather__element {
   color: white;
   width: auto;
   height: 10%;
 }
 
-.hours-weather .hours-weather__container .hours-weather__element img {
+.hours-weather__container .hours-weather__element img {
   width: 80%;
 }
 /*# sourceMappingURL=NextHours.css.map */

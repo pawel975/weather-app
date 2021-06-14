@@ -30,7 +30,6 @@ const NextHours = ({formatTimestamp, formatToDate}) => {
     const containerWidth = [1600,1200,800,600,400];
     const maxSliderMove = [1500,1100,700,500,300]; 
     const minSliderMove = 0;
-    // let sliderIndex = 0;
 
     const [move,setMove] = useState(0);
     const [sliderIndex, setSliderIndex] = useState(0)
@@ -193,33 +192,40 @@ const NextHours = ({formatTimestamp, formatToDate}) => {
             style={{width:`calc(100%/${hoursInSlider[sliderIndex]}`}} className="hours-weather__element"
         >
             <p>{formatTimestamp(hour.dt)}</p>
-            <p>{formatToDate(hour.dt, "day-month")}</p>
+            {/* <p>{formatToDate(hour.dt, "day-month")}</p> */}
             <img src={changeWeatherIcon(hour.weather[0].description)} alt="" />
         </div>
     ))
 
     return(
         <div className="container">
-                {sliderIndex >= 2 && 
-                <button  
-                    className={`hours-weather__button ${move===minSliderMove? "hours-weather__button--disabled":""}`} 
-                    style={{zIndex:1}} 
-                    onClick={handleMoveLeft}>
-                        {'<'}
-                </button>}
+            
+            {sliderIndex >= 2 && 
+            <button  
+                className={`hours-weather__button ${move===minSliderMove? "hours-weather__button--disabled":""}`} 
+                style={{zIndex:1}} 
+                onClick={handleMoveLeft}>
+                    {'<'}
+            </button>}
+
             <div style={{overflow:`${sliderIndex >=2 ? "hidden":""}`}} className="hours-weather">
+                <div className="hours-weather__date-bar">
+                    <p>Data 01.02.03</p>
+                </div>
                 <div 
                     style={{left:`-${move}%`, width:`${containerWidth[sliderIndex]}%`}} className="hours-weather__container"
                 >
                     {allHours}
                 </div>
             </div>
-                {sliderIndex >= 2 &&
-                <button 
-                    className={`hours-weather__button ${move===maxSliderMove[sliderIndex]? "hours-weather__button--disabled":""}`} 
-                    style={{zIndex:1}} onClick={handleMoveRight}>
-                        {'>'}
-                </button>}
+
+            {sliderIndex >= 2 &&
+            <button 
+                className={`hours-weather__button ${move===maxSliderMove[sliderIndex]? "hours-weather__button--disabled":""}`} 
+                style={{zIndex:1}} onClick={handleMoveRight}>
+                    {'>'}
+            </button>}
+
         </div>
     )
 }
