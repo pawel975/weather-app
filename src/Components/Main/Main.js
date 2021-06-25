@@ -17,10 +17,10 @@ const Main = () => {
                 <div className="main__temperature">{temperature}°C</div>
                 <div className="main__city">Bydgoszcz</div>
                 <div className="main__weather">{weather}</div>
+                <div className="main__params"><p>Sunrise:</p><span>{sunrise}</span></div>
+                <div className="main__params"><p>Sunset:</p><span>{sunset}</span></div>
                 {!isFilterSectionOpen && 
                 <>
-                    <div className="main__params"><p>Sunrise:</p><span>{sunrise}</span></div>
-                    <div className="main__params"><p>Sunset:</p><span>{sunset}</span></div>
                     <div className="main__params"><p>Feels like:</p><span>{feelsLike}°C</span></div>
                     <div className="main__params"><p>Pressure:</p><span>{pressure}</span></div>
                     <div className="main__params"><p>Clouds:</p><span>{clouds}</span></div>

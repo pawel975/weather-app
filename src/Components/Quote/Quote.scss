@@ -1,21 +1,30 @@
 @import '../variables.scss';
 
 .quote {
+    // outline: 2px solid green;
+    position: relative;
     background: $background;
-    // margin: auto;
-    margin-left: auto;
-    width: 90%;
-    height: 100%;
+    margin: auto;
+    margin-top: 1em;
+    width: 100%;
+    height: auto;
     border-radius: 5px;
     grid-area: quote;
     display: initial;
-    padding: 0.5em;
+    padding:1.5em;
 
     p {
         color:$font1;
-    }
+        font-size: 14px;
 
+    }
+    
     h3 {
+        position: relative;
+        right: 0;
+        bottom: -10px;
+        text-align: right;
+        // outline: 2px solid green;
         font-size: 20px;
         color:$font1;
     }

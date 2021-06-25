@@ -34,40 +34,27 @@ const NextHours = ({formatTimestamp, formatToDate}) => {
     const [move,setMove] = useState(0);
     const [sliderIndex, setSliderIndex] = useState(0)
 
-    const changeWeatherIcon = (hourWeather) => {
+    const changeWeatherIcon = (thisHour, hourWeather) => {
         const sunriseHour = Number((mainStateReducer.data[0].sunrise).slice(0,2));
-        const sunriseMinutes = Number((mainStateReducer.data[0].sunrise).slice(3,5));
         const sunsetHour = Number((mainStateReducer.data[0].sunset).slice(0,2));
-        const sunsetMinutes = Number((mainStateReducer.data[0].sunset).slice(3,5));
-
-        let currentHour = new Date().getHours();
-        let currentMinutes = new Date().getMinutes();
 
         let dayOrNight;
         let weatherIcon;
 
-        if(currentHour === sunsetHour){
-        if(currentMinutes < sunsetMinutes) {
-            dayOrNight = "D";
-        } else {
+        let hourWeatherHour = Number(formatTimestamp(thisHour).slice(0,2));
+
+        if(hourWeatherHour === sunsetHour){
             dayOrNight = "N";
         }
-        }
-        else if(currentHour === sunriseHour){
-        if(currentMinutes > sunriseMinutes) {
+        else if(hourWeatherHour === sunriseHour){
             dayOrNight = "D";
-        } else {
-            dayOrNight = "N";
         }
-        }
-        else if (sunriseHour < currentHour && currentHour < sunsetHour) {
+        else if (sunriseHour < hourWeatherHour && hourWeatherHour < sunsetHour) {
         dayOrNight = "D";
         } 
         else {
         dayOrNight = "N";
         }
-
-
 
         switch (hourWeather) {
         case 'clear sky':
@@ -193,7 +180,7 @@ const NextHours = ({formatTimestamp, formatToDate}) => {
         >
             <p>{formatTimestamp(hour.dt)}</p>
             {/* <p>{formatToDate(hour.dt, "day-month")}</p> */}
-            <img src={changeWeatherIcon(hour.weather[0].description)} alt="" />
+            <img src={changeWeatherIcon(hour.dt ,hour.weather[0].description)} alt="" />
         </div>
     ))
 

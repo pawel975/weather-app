@@ -29,8 +29,21 @@
   font-size: 60px;
 }
 
+.main .main__info .main__city {
+  margin: auto;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.main .main__info .main__weather {
+  font-size: 18px;
+  opacity: 0.5;
+  margin: auto;
+  margin-bottom: 0.2em;
+}
+
 .main .main__info .main__params {
-  padding: 0.2em 0;
+  padding: 0em 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

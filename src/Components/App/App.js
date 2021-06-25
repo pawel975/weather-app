@@ -323,28 +323,6 @@ useEffect(()=> {
 },[dataLoading])
 
 
-// const getCurrentTime = () => {
-//   clearInterval(interval)
-//   const date = new Date();
-//   const hours = "0" + date.getHours()
-//   const minutes = "0" + date.getMinutes()
-//   const seconds = "0" + date.getSeconds()
-//   const formattedTime = hours.substr(-2) + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
-//   interval = setInterval(getCurrentTime,2000)
-//   setNewTime(formattedTime)
-//   // return formattedTime
-// }
-
-// let interval = setInterval(getCurrentTime,1000)
-
-// const WeatherHours = state.hours.map(hour => (
-//   <>
-//     <h2>{(hour.temp-273.15).toFixed(0)}</h2>
-//     <br/>
-//   </>
-// ))
-
-
 const weatherBackgroundColors = {
   clearSkyD: `linear-gradient(45deg,rgba(126, 214, 236,1),rgba(126, 214, 236,0.35))`,
   clearSkyN: `linear-gradient(45deg,rgba(53, 55, 81, 1),rgba(53, 55, 81, 0.85))`,
