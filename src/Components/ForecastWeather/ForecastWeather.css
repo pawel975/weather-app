@@ -1,0 +1,72 @@
+.weather {
+  width: 90%;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  overflow: scroll;
+  -webkit-box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.weather .weather__day {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0;
+  height: 70%;
+  width: clamp(100px, 90%, 400px);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+}
+
+.weather .weather__day .weather__date {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.weather .weather__day img {
+  height: 60%;
+}
+
+.weather .weather__day .weather__temperature {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.weather .weather__day .weather__day-night {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+@media (min-width: 1000px) {
+  .weather .weather__day {
+    overflow: initial;
+    height: 50%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .weather {
+    overflow: initial;
+  }
+}
+/*# sourceMappingURL=ForecastWeather.css.map */

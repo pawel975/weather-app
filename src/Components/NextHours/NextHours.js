@@ -178,8 +178,8 @@ const NextHours = ({formatTimestamp, formatToDate}) => {
             key={hour.weather.id}
             style={{width:`calc(100%/${hoursInSlider[sliderIndex]}`}} className="hours-weather__element"
         >
-            <p>{formatTimestamp(hour.dt)}</p>
-            {/* <p>{formatToDate(hour.dt, "day-month")}</p> */}
+            <h4>{formatTimestamp(hour.dt)}</h4>
+            <p>{formatToDate(hour.dt, "day-month")}</p>
             <img src={changeWeatherIcon(hour.dt ,hour.weather[0].description)} alt="" />
         </div>
     ))
@@ -196,9 +196,6 @@ const NextHours = ({formatTimestamp, formatToDate}) => {
             </button>}
 
             <div style={{overflow:`${sliderIndex >=2 ? "hidden":""}`}} className="hours-weather">
-                <div className="hours-weather__date-bar">
-                    <p>Data 01.02.03</p>
-                </div>
                 <div 
                     style={{left:`-${move}%`, width:`${containerWidth[sliderIndex]}%`}} className="hours-weather__container"
                 >

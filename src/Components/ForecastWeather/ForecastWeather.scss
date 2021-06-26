@@ -1,0 +1,57 @@
+@import '../variables.scss';
+
+.weather {
+    // margin: 0 auto;
+    width:90%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    // outline: 2px solid black;
+    flex-direction: row;
+    overflow: scroll;
+    box-shadow: inset 0px 0px 5px rgba($color: #000000, $alpha: 0.5);
+
+    .weather__day {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
+        height: 70%;
+        width: clamp(100px,90%,400px);
+        // outline: 2px solid black;
+        justify-content: space-between;
+        color: white;
+
+        .weather__date {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        img {
+            // outline: 2px solid black;
+            height: 60%;
+        }
+
+        .weather__temperature {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .weather__day-night {
+            font-size: 12px;
+            opacity: 0.6;
+        }
+
+        @media (min-width:1000px) {
+            overflow: initial;
+            height: 50%;
+    }
+    }
+
+    @media (min-width:1000px) {
+            overflow: initial;
+    }
+
+}

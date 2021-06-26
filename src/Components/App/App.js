@@ -305,6 +305,7 @@ useEffect(() => {
           clouds: data.current.clouds,
           visibility: data.current.visibiliy,
           hoursForecast: data.hourly,
+          daysForecast: data.daily,
           
         }));
         dispatch(setDataLoading(false)); 

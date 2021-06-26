@@ -23,6 +23,8 @@
     }
 
     .hours-weather {
+        display: flex;
+        align-items: center;
         margin: 0em auto;
         position: relative;
         width: 80%;
@@ -31,44 +33,33 @@
         box-shadow: inset 0px 0px 5px rgba($color: #000000, $alpha: 0.5);
         overflow: scroll;
 
-        &__date-bar {
-            width: 100%;
-            height: $fontSmall2*1.7;
-            background: $background;
-            box-shadow: 0px 0px 5px rgba($color: #000000, $alpha: 0.5);
-            color: white;
-            position: sticky;
-            left: 0;
-            top: 0;
-            // outline: 2px solid green;
-            overflow: hidden;
 
-            p {
-                margin: auto;
-                width:100%;
-                font-size: $fontSmall2;
-                position: fixed;
-                margin: 0.2em;
-            }
-
-        }
-
-
-        &__container {
+        .hours-weather__container {
             text-align: center;
             transition: 0.5s ease-in-out;
             position: absolute;
+            transform: translate(0,50%);
             left: 0%;
-            bottom: 5px;
+            bottom: 50%;
             width: 1200%;
             display: flex;
             // outline: 2px solid purple;
+            
 
             .hours-weather__element {
                 color: white;
                 width: auto;
                 height: 10%;
                 // outline: solid 2px green;
+
+                h4 {
+                    font-size: 18px;
+                }
+
+                p {
+                    opacity: 0.7;
+                    font-size: 12px;
+                }
 
                 img {
                     width: 80%;
