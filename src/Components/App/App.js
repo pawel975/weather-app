@@ -314,7 +314,7 @@ useEffect(() => {
       
       
     }
-    setTimeout(fetchData,2000)
+    setTimeout(fetchData,20000)
 
 }, [location])
 
@@ -356,14 +356,14 @@ return (
         <img src={weatherIcon} alt="" />
       </div>}
       {!isFilterSectionOpen && <Quote/>}
-      {!dataLoading && <Main/>}
+      {!dataLoading && <Main location={location}/>}
     </div>
     <Dropdown formatTimestamp={formatTimestamp} formatToDate={formatToDate}/>
   </div>
   }
 
   {dataLoading && 
-    <LoadingScreen/>
+    <LoadingScreen location={location} setLocation={setLocation}/>
   }
 
   </>

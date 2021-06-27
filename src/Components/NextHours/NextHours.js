@@ -178,9 +178,11 @@ const NextHours = ({formatTimestamp, formatToDate}) => {
             key={hour.weather.id}
             style={{width:`calc(100%/${hoursInSlider[sliderIndex]}`}} className="hours-weather__element"
         >
-            <h4>{formatTimestamp(hour.dt)}</h4>
-            <p>{formatToDate(hour.dt, "day-month")}</p>
+            <p className="hours-weather__element__time">{formatTimestamp(hour.dt)}</p>
+            <p className="hours-weather__element__date">{formatToDate(hour.dt, "day-month")}</p>
             <img src={changeWeatherIcon(hour.dt ,hour.weather[0].description)} alt="" />
+            <p className="hours-weather__element__temperature">{(hour.temp-273.15).toFixed()}°C</p>
+            
         </div>
     ))
 

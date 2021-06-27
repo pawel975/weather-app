@@ -17,11 +17,68 @@
   background: linear-gradient(45deg, #7ed6ec, rgba(126, 214, 236, 0.35));
 }
 
+.loading-screen .loading-screen__error {
+  padding: 1em 0.5em;
+  position: absolute;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  left: 50%;
+  bottom: 50%;
+  border-radius: 15px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "text text" "warsaw-weather refresh";
+  z-index: 1;
+  background-color: #82a4d6;
+  width: clamp(200px, 80%, 250px);
+  height: clamp(100px, 100%, 200px);
+}
+
+.loading-screen .loading-screen__error p {
+  font-size: 15px;
+  margin-bottom: 0.5em;
+  text-align: center;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: text;
+  color: white;
+}
+
+.loading-screen .loading-screen__error .loading-screen__warsaw-weather {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: warsaw-weather;
+}
+
+.loading-screen .loading-screen__error .loading-screen__refresh {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: refresh;
+}
+
+.loading-screen .loading-screen__error .loading-screen__warsaw-weather,
+.loading-screen .loading-screen__error .loading-screen__refresh {
+  width: clamp(70px, 80%, 100px);
+  height: 50px;
+  margin: auto;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  color: #446fb1;
+  background: white;
+}
+
 .loading-screen .loading-screen__icon {
   width: clamp(150px, 100%, 500px);
 }
 
-.loading-screen p {
+.loading-screen .loading-screen__loading-info {
   color: white;
   font-size: 35px;
   font-weight: 700;

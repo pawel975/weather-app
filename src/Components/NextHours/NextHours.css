@@ -31,7 +31,7 @@ div.container {
           align-items: center;
   margin: 0em auto;
   position: relative;
-  width: 80%;
+  width: 90%;
   height: 100%;
   -webkit-box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
           box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
@@ -59,11 +59,13 @@ div.container {
   height: 10%;
 }
 
-.hours-weather .hours-weather__container .hours-weather__element h4 {
+.hours-weather .hours-weather__container .hours-weather__element .hours-weather__element__time,
+.hours-weather .hours-weather__container .hours-weather__element .hours-weather__element__temperature {
   font-size: 18px;
+  font-weight: 700;
 }
 
-.hours-weather .hours-weather__container .hours-weather__element p {
+.hours-weather .hours-weather__container .hours-weather__element .hours-weather__element__date {
   opacity: 0.7;
   font-size: 12px;
 }
