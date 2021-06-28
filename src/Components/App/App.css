@@ -26,7 +26,7 @@
 }
 
 .app .app__main-content {
-  margin-top: 2em;
+  margin-top: 0.5em;
   position: relative;
   width: 90%;
   height: -webkit-fit-content;
@@ -34,8 +34,8 @@
   height: fit-content;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 52% 48%;
+      grid-template-columns: 52% 48%;
   -ms-grid-rows: 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
       grid-template-areas: "main weather-icon" "main ." "quote quote";

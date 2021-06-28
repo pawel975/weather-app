@@ -60,25 +60,25 @@ function App() {
     if (levelOfDetails === "dayOfTheWeek") {
       thisDate = date.getUTCDay()
       switch (thisDate) {
-        case 0:
+        case 1:
           thisDate = "Monday"
           break;
-        case 1:
+        case 2:
           thisDate = "Tuesday"
           break;
-        case 2:
+        case 3:
           thisDate = "Wednesday"
           break;
-        case 3:
+        case 4:
           thisDate = "Thursday"
           break;
-        case 4:
+        case 5:
           thisDate = "Friday"
           break;
-        case 5:
+        case 6:
           thisDate = "Saturday"
           break;
-        case 6:
+        case 0:
           thisDate = "Sunday"
           break;
         default:
@@ -303,9 +303,12 @@ useEffect(() => {
           sunset: formatTimestamp(data.current.sunset),
           pressure: data.current.pressure,
           clouds: data.current.clouds,
-          visibility: data.current.visibiliy,
+          visibility: data.current.visibility,
+          wind_degree: data.current.wind_degree,
+          wind_speed: data.current.wind_speed.toFixed(),
           hoursForecast: data.hourly,
           daysForecast: data.daily,
+          detailsWeather: [],
           
         }));
         dispatch(setDataLoading(false)); 
@@ -314,7 +317,7 @@ useEffect(() => {
       
       
     }
-    setTimeout(fetchData,20000)
+    setTimeout(fetchData,2000)
 
 }, [location])
 
@@ -350,7 +353,7 @@ return (
   <>
   {!dataLoading &&
   <div ref={bgRef} className="app" >
-    <Nav/>
+    <Nav formatToDate={formatToDate}/>
     <div className="app__main-content">
       {!dataLoading && <div className="app__weather-icon">
         <img src={weatherIcon} alt="" />
@@ -363,7 +366,7 @@ return (
   }
 
   {dataLoading && 
-    <LoadingScreen location={location} setLocation={setLocation}/>
+    <LoadingScreen/>
   }
 
   </>

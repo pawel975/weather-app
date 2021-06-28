@@ -4,37 +4,19 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.nav .nav__button-now {
-  background: rgba(0, 0, 0, 0.2);
-  padding: 0.2em;
-  border-radius: 5px;
-  color: white;
-  border: none;
-}
-
-.nav .nav__input-search {
-  margin: 0 1em;
-}
-
-.nav .nav__magnifier {
-  margin: 0 0.5em;
-}
-
-.nav .nav__localization {
-  margin-right: auto;
-}
-
 .nav .nav__date {
+  text-align: center;
+  width: 95%;
   background: rgba(0, 0, 0, 0.2);
-  padding: 0.2em;
+  padding: 0.5em;
   border-radius: 5px;
   color: white;
 }

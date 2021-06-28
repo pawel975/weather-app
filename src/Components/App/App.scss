@@ -17,13 +17,13 @@
     overflow: hidden;
     
     .app__main-content {
-        margin-top: 2em;
+        margin-top: 0.5em;
         // outline: 2px solid green;
         position: relative;
         width: 90%;
         height: fit-content;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 52% 48%;
         grid-template-rows: 1fr 1fr 1fr;    
         grid-template-areas: 
         "main weather-icon"
