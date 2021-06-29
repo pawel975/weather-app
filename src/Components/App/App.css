@@ -41,6 +41,16 @@
       grid-template-areas: "main weather-icon" "main ." "quote quote";
 }
 
+@media (min-width: 600px) {
+  .app .app__main-content {
+    -ms-grid-columns: 52% 48%;
+        grid-template-columns: 52% 48%;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "main weather-icon" "quote quote";
+  }
+}
+
 .app .app__main-content .app__weather-icon {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
@@ -53,6 +63,12 @@
   height: auto;
   -webkit-animation: movement 1.5s ease-in-out;
           animation: movement 1.5s ease-in-out;
+}
+
+@media (min-width: 600px) {
+  .app .app__main-content .app__weather-icon {
+    width: clamp(150px, 100%, 350px);
+  }
 }
 
 .app .app__main-content .app__weather-icon img {

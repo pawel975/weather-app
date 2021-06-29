@@ -10,37 +10,63 @@
     // outline: 2px solid yellow;
     border-radius: 5px;
 
+    @media (min-width: 600px) {
+        width: 90%;
+    }
+
     .main__info {
         * {
-            padding: 0.1em 0;
+            padding: 0.1em 0.5em;
         }
         color: white;
         display: flex;
         flex-direction: column;
 
         .main__temperature {
+            // outline: 2px solid yellow;
             margin: auto;
             padding: 0;
             font-size: 60px;
+
+            @media (min-width: 600px) {
+                font-size: 90px;
+            }
         } 
 
         .main__city {
+            // outline: 2px solid yellow;
             margin:auto;
             font-size: 22px;
             font-weight: 700;
+
+            @media (min-width: 600px) {
+                font-size: 32px;
+            }
         }
 
         .main__weather {
+            // outline: 2px solid yellow;
             font-size: 18px;
             opacity: 0.5;
             margin: auto;
             margin-bottom: 0.2em;
+
+            @media (min-width: 600px) {
+                font-size: 25px;
+                margin-bottom: 0;
+            }
         }
 
         .main__params {
+            // outline: 2px solid yellow;
             padding: 0em 0;
             display: flex;
             justify-content: space-between;
+            font-size: 16px;
+
+            @media (min-width: 600px) {
+                font-size: 20px;
+            }
 
             span {
                 font-weight: bold;

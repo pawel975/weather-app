@@ -7,7 +7,7 @@
     margin: auto;
     margin-top: 1em;
     width: 100%;
-    height: auto;
+    min-height: auto;
     border-radius: 5px;
     grid-area: quote;
     display: initial;
@@ -16,6 +16,10 @@
     p {
         color:$font1;
         font-size: 14px;
+
+        @media (min-width: 600px) {
+            font-size: 18px;
+        }
 
     }
     
@@ -27,5 +31,9 @@
         // outline: 2px solid green;
         font-size: 20px;
         color:$font1;
+
+        @media (min-width: 600px) {
+            font-size: 25px;
+        }
     }
 }

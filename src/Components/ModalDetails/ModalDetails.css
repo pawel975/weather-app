@@ -1,11 +1,26 @@
-.modal_details {
-  z-Index: 1;
-  position: absolute;
+.modal-details__background {
+  z-index: 1;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  left: 50%;
+  bottom: 50%;
+  background: black;
+  opacity: 0.5;
   width: 100vw;
   height: 100vh;
+  position: absolute;
+}
+
+.modal-details {
+  z-Index: 1;
+  position: absolute;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
+  width: 100%;
+  height: 100%;
   background: white;
-  left: 0%;
-  bottom: 0%;
+  left: 50%;
+  bottom: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,14 +33,31 @@
           align-items: center;
 }
 
-.modal_details img {
+@media (min-width: 600px) {
+  .modal-details {
+    z-index: 2;
+    border-radius: 15px;
+    width: 70%;
+    height: 70%;
+    left: 50%;
+    bottom: 50%;
+  }
+}
+
+.modal-details img {
   width: 50%;
   background: rgba(0, 0, 0, 0.15);
   border-radius: 20px;
   margin: 3em 0 1em 0;
 }
 
-.modal_details .modal_details__modal-close {
+@media (min-width: 600px) {
+  .modal-details img {
+    width: 40%;
+  }
+}
+
+.modal-details .modal-details__modal-close {
   width: 20px;
   height: 20px;
   position: absolute;
@@ -33,7 +65,14 @@
   top: 15px;
 }
 
-.modal_details .modal_details__info-section {
+@media (min-width: 600px) {
+  .modal-details .modal-details__modal-close {
+    position: absolute;
+    right: 5%;
+  }
+}
+
+.modal-details .modal-details__info-section {
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,7 +89,7 @@
           align-items: center;
 }
 
-.modal_details .modal_details__info-section .modal_details__parameter {
+.modal-details .modal-details__info-section .modal-details__parameter {
   margin: 0.3em;
   width: 60%;
   display: -webkit-box;
@@ -61,7 +100,7 @@
           justify-content: space-between;
 }
 
-.modal_details .modal_details__info-section .modal_details__parameter p {
+.modal-details .modal-details__info-section .modal-details__parameter p {
   font-weight: 700;
 }
 /*# sourceMappingURL=ModalDetails.css.map */

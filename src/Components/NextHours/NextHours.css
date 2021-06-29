@@ -65,9 +65,22 @@ div.container {
   font-weight: 700;
 }
 
+@media (min-width: 600px) {
+  .hours-weather .hours-weather__container .hours-weather__element .hours-weather__element__time,
+  .hours-weather .hours-weather__container .hours-weather__element .hours-weather__element__temperature {
+    font-size: 22px;
+  }
+}
+
 .hours-weather .hours-weather__container .hours-weather__element .hours-weather__element__date {
   opacity: 0.7;
   font-size: 12px;
+}
+
+@media (min-width: 600px) {
+  .hours-weather .hours-weather__container .hours-weather__element .hours-weather__element__date {
+    font-size: 16px;
+  }
 }
 
 .hours-weather .hours-weather__container .hours-weather__element img {

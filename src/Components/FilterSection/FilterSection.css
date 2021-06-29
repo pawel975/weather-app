@@ -29,6 +29,13 @@
   display: flex;
 }
 
+@media (min-width: 600px) {
+  .filter-section .filter-section__choose-filter {
+    height: 50px;
+    width: 300px;
+  }
+}
+
 .filter-section .filter-section__choose-filter hr {
   color: white;
 }
@@ -39,6 +46,13 @@
   height: 100%;
   width: calc(100%/2);
   color: white;
+  font-size: 14px;
+}
+
+@media (min-width: 600px) {
+  .filter-section .filter-section__choose-filter .filter-section__button-filter {
+    font-size: 16px;
+  }
 }
 
 .filter-section .filter-section__choose-filter .filter-section__button-active {

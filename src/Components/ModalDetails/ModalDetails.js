@@ -148,55 +148,58 @@ const ModalDetails = ({formatTimestamp, formatToDate}) => {
     const {dt,sunrise,sunset,temp,feels_like,pressure,clouds,visibility,wind_speed,wind_deg,weather} = categoryPick
 
     return(
-            <div className="modal_details">
+        <>
+            <div className="modal-details__background"></div>
+            <div className="modal-details">
                 <GrClose 
                     onClick={handleModalClose}
-                    className="modal_details__modal-close"
+                    className="modal-details__modal-close"
                 />
                 <img src={changeWeatherIcon(dt ,weather[0].description)} alt="" />
                 { daysOrHours === "hours"?
-                <div className="modal_details__info-section">
-                    <div className="modal_details__parameter"><p>Time:</p><span>{formatTimestamp(dt)}</span>
+                <div className="modal-details__info-section">
+                    <div className="modal-details__parameter"><p>Time:</p><span>{formatTimestamp(dt)}</span>
                     </div>
-                    <div className="modal_details__parameter"><p>Temperature:</p><span>{(temp-273.15).toFixed()} °C</span>
+                    <div className="modal-details__parameter"><p>Temperature:</p><span>{(temp-273.15).toFixed()} °C</span>
                     </div>
-                    <div className="modal_details__parameter"><p>Feels like:</p><span>{(feels_like-273.15).toFixed()} °C</span>
+                    <div className="modal-details__parameter"><p>Feels like:</p><span>{(feels_like-273.15).toFixed()} °C</span>
                     </div>
-                    <div className="modal_details__parameter"><p>Pressure:</p><span>{pressure} hPa</span>
+                    <div className="modal-details__parameter"><p>Pressure:</p><span>{pressure} hPa</span>
                     </div>
-                    <div className="modal_details__parameter"><p>Clouds:</p><span>{clouds} %</span>
+                    <div className="modal-details__parameter"><p>Clouds:</p><span>{clouds} %</span>
                     </div>
-                    <div className="modal_details__parameter"><p>Visibility:</p><span>{visibility} m</span>
+                    <div className="modal-details__parameter"><p>Visibility:</p><span>{visibility} m</span>
                     </div>
-                    <div className="modal_details__parameter"><p>Wind speed:</p><span>{wind_speed} m/s</span>
+                    <div className="modal-details__parameter"><p>Wind speed:</p><span>{wind_speed} m/s</span>
                     </div>
-                    <div className="modal_details__parameter"><p>Wind degree:</p><span>{wind_deg} deg</span>
+                    <div className="modal-details__parameter"><p>Wind degree:</p><span>{wind_deg} deg</span>
                     </div>
                 </div>
                 :
-                <div className="modal_details__info-section">
-                    <div className="modal_details__parameter"><p>Date:</p><span>{formatToDate(dt,'day-month')}</span>
+                <div className="modal-details__info-section">
+                    <div className="modal-details__parameter"><p>Date:</p><span>{formatToDate(dt,'day-month')}</span>
                     </div>
-                    <div className="modal_details__parameter"><p>Sunrise:</p><span>{formatTimestamp(sunrise)}</span>
+                    <div className="modal-details__parameter"><p>Sunrise:</p><span>{formatTimestamp(sunrise)}</span>
                     </div>
-                    <div className="modal_details__parameter"><p>Sunset:</p><span>{formatTimestamp(sunset)}</span>
+                    <div className="modal-details__parameter"><p>Sunset:</p><span>{formatTimestamp(sunset)}</span>
                     </div>
-                    <div className="modal_details__parameter"><p>Temperature:</p><span>{(temp.day-273.15).toFixed()} °C</span>
+                    <div className="modal-details__parameter"><p>Temperature:</p><span>{(temp.day-273.15).toFixed()} °C</span>
                     </div>
-                    <div className="modal_details__parameter"><p>Feels like:</p><span>{(feels_like.day-273.15).toFixed()} °C</span>
+                    <div className="modal-details__parameter"><p>Feels like:</p><span>{(feels_like.day-273.15).toFixed()} °C</span>
                     </div>
-                    <div className="modal_details__parameter"><p>Pressure:</p><span>{pressure} hPa</span>
+                    <div className="modal-details__parameter"><p>Pressure:</p><span>{pressure} hPa</span>
                     </div>
-                    <div className="modal_details__parameter"><p>Clouds:</p><span>{clouds} %</span>
+                    <div className="modal-details__parameter"><p>Clouds:</p><span>{clouds} %</span>
                     </div>
-                    <div className="modal_details__parameter"><p>Wind speed:</p><span>{wind_speed} m/s</span>
+                    <div className="modal-details__parameter"><p>Wind speed:</p><span>{wind_speed} m/s</span>
                     </div>
-                    <div className="modal_details__parameter"><p>Wind degree:</p><span>{wind_deg} deg</span>
+                    <div className="modal-details__parameter"><p>Wind degree:</p><span>{wind_deg} deg</span>
                     </div>
                 </div>
 
                 }
             </div>
+        </>
     )
 }
 

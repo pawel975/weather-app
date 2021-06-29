@@ -57,11 +57,19 @@
                 .hours-weather__element__temperature  {
                     font-size: 18px;
                     font-weight: 700;
+
+                    @media (min-width:600px) {
+                        font-size: 22px;
+                    }
                 }
 
                 .hours-weather__element__date{
                     opacity: 0.7;
                     font-size: 12px;
+
+                    @media (min-width:600px) {
+                        font-size: 16px;
+                    }
                 }
 
                 img {
