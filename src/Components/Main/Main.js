@@ -18,7 +18,7 @@ const Main = () => {
     const mainStateReducer = useSelector(state => state.mainStateReducer);
 
 
-    const {temperature, weather , sunrise,sunset,feelsLike,pressure,clouds,visibility, wind_speed, wind_degree} = mainStateReducer.data[0]
+    const {temperature, weather , sunrise,sunset,feelsLike,pressure,clouds,visibility, wind_speed, wind_deg} = mainStateReducer.data[0]
 
     return(
         <div className="main">
@@ -40,7 +40,7 @@ const Main = () => {
 
                     <div className="main__params"><p>Wind speed:</p><span>{wind_speed} m/s</span></div>
 
-                    <div className="main__params"><p>Wind degree:</p><span>{wind_degree} deg</span></div>
+                    <div className="main__params"><p>Wind deg:</p><span>{wind_deg} deg</span></div>
 
                 </>}
             </div>

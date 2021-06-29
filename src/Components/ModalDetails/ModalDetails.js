@@ -1,8 +1,6 @@
 import React from 'react';
-import './ForecastWeather.css'; 
-
 import { useSelector, useDispatch } from 'react-redux';
-import { setModalDetailsIndex,modalDetailsOpen } from '../../redux/actions';
+import "./ModalDetails.css";
 
 import ClearSkyD from "../../assets/my-assets/animated/clear-sky-d.svg";
 import ClearSkyN from "../../assets/my-assets/animated/clear-sky-n.svg";
@@ -23,12 +21,17 @@ import SnowN from "../../assets/my-assets/animated/snow-n.svg";
 import MistD from "../../assets/my-assets/animated/mist-d.svg";
 import MistN from "../../assets/my-assets/animated/mist-n.svg";
 
-const ForecastWeather = ({formatTimestamp,formatToDate}) => {
+import {GrClose} from 'react-icons/gr';
+import { modalDetailsClose } from '../../redux/actions';
+
+const ModalDetails = ({formatTimestamp, formatToDate}) => {
 
     const mainStateReducer = useSelector(state => state.mainStateReducer);
-    const daysArray = mainStateReducer.data[0].daysForecast
-
     const dispatch = useDispatch()
+    
+    const handleModalClose = () => {
+        dispatch(modalDetailsClose())
+    }
 
     const changeWeatherIcon = (thisHour, hourWeather) => {
         const sunriseHour = Number((mainStateReducer.data[0].sunrise).slice(0,2));
@@ -95,7 +98,7 @@ const ForecastWeather = ({formatTimestamp,formatToDate}) => {
         case 'thunderstorm':
         case 'thunderstorm with light rain':
         case 'thunderstorm with rain':
-        case 'thunderstorm with heavy rain':
+        case 'thunderstorm with heavy rain': 
         case 'light thunderstorm':
         case 'heavy thunderstorm':
         case 'ragged thunderstorm':
@@ -134,36 +137,69 @@ const ForecastWeather = ({formatTimestamp,formatToDate}) => {
         }
       return weatherIcon
   }
+    const daysOrHours = mainStateReducer.modalDetailsIndex.category
 
-    const handleDetailsView = (e) => {
-        const index = Number(e.target.parentNode.id);
-        console.log(index, e.target.parentNode);
-        dispatch(setModalDetailsIndex({
-            index:index,
-            category: "days",
-        }));
-        dispatch(modalDetailsOpen())
-}
+    const categoryPick =
+     daysOrHours === "hours" ? 
+     mainStateReducer.data[0].hoursForecast[mainStateReducer.modalDetailsIndex.index]
+     : 
+     mainStateReducer.data[0].daysForecast[mainStateReducer.modalDetailsIndex.index]
 
-    const allDays = daysArray.map(day => {
-        let key = daysArray.indexOf(day)
-        return (
-        <section 
-            onClick={handleDetailsView}
-            id={key} 
-            className="weather__day"
-        >
-            <p className="weather__date">{formatToDate(day.dt,"day-month")}</p>
-            <img src={changeWeatherIcon(day.dt ,day.weather[0].description)} alt="" />
-            <p className="weather__temperature">{(day.temp.day-273.15).toFixed()}°C / {(day.temp.night-273.15).toFixed()}°C</p>
-            <p className="weather__day-night">day / night</p>
-        </section>
-    )})
+    const {dt,sunrise,sunset,temp,feels_like,pressure,clouds,visibility,wind_speed,wind_deg,weather} = categoryPick
+
     return(
-        <div className="weather">
-            {allDays}
-        </div>
+            <div className="modal_details">
+                <GrClose 
+                    onClick={handleModalClose}
+                    className="modal_details__modal-close"
+                />
+                <img src={changeWeatherIcon(dt ,weather[0].description)} alt="" />
+                { daysOrHours === "hours"?
+                <div className="modal_details__info-section">
+                    <div className="modal_details__parameter"><p>Time:</p><span>{formatTimestamp(dt)}</span>
+                    </div>
+                    <div className="modal_details__parameter"><p>Temperature:</p><span>{(temp-273.15).toFixed()} °C</span>
+                    </div>
+                    <div className="modal_details__parameter"><p>Feels like:</p><span>{(feels_like-273.15).toFixed()} °C</span>
+                    </div>
+                    <div className="modal_details__parameter"><p>Pressure:</p><span>{pressure} hPa</span>
+                    </div>
+                    <div className="modal_details__parameter"><p>Clouds:</p><span>{clouds} %</span>
+                    </div>
+                    <div className="modal_details__parameter"><p>Visibility:</p><span>{visibility} m</span>
+                    </div>
+                    <div className="modal_details__parameter"><p>Wind speed:</p><span>{wind_speed} m/s</span>
+                    </div>
+                    <div className="modal_details__parameter"><p>Wind degree:</p><span>{wind_deg} deg</span>
+                    </div>
+                </div>
+                :
+                <div className="modal_details__info-section">
+                    <div className="modal_details__parameter"><p>Date:</p><span>{formatToDate(dt,'day-month')}</span>
+                    </div>
+                    <div className="modal_details__parameter"><p>Sunrise:</p><span>{formatTimestamp(sunrise)}</span>
+                    </div>
+                    <div className="modal_details__parameter"><p>Sunset:</p><span>{formatTimestamp(sunset)}</span>
+                    </div>
+                    <div className="modal_details__parameter"><p>Temperature:</p><span>{(temp.day-273.15).toFixed()} °C</span>
+                    </div>
+                    <div className="modal_details__parameter"><p>Feels like:</p><span>{(feels_like.day-273.15).toFixed()} °C</span>
+                    </div>
+                    <div className="modal_details__parameter"><p>Pressure:</p><span>{pressure} hPa</span>
+                    </div>
+                    <div className="modal_details__parameter"><p>Clouds:</p><span>{clouds} %</span>
+                    </div>
+                    <div className="modal_details__parameter"><p>Wind speed:</p><span>{wind_speed} m/s</span>
+                    </div>
+                    <div className="modal_details__parameter"><p>Wind degree:</p><span>{wind_deg} deg</span>
+                    </div>
+                </div>
+
+                }
+            </div>
     )
 }
 
-export default ForecastWeather;
+
+
+export default ModalDetails;

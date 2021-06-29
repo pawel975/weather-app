@@ -2,6 +2,10 @@
 const initialState = {
     data: [],
     isDataLoading: true,
+    modalDetailsIndex: {
+        index:1,
+        category: "hours",
+    },
 }
 
 
@@ -16,6 +20,11 @@ const mainStateReducer = (state = initialState ,action) => {
             return {
                 ...state,
                 isDataLoading: action.payload
+            }
+        case "MODAL_DETAILS_INDEX":
+            return {
+                ...state,
+                modalDetailsIndex: action.payload
             }
         default:
             return state;

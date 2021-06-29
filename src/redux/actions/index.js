@@ -24,3 +24,24 @@ export const setDataLoading = (isLoading) => {
         payload: isLoading,
     }
 } 
+
+export const setModalDetailsIndex = (index) => {
+    return {
+        type: "MODAL_DETAILS_INDEX",
+        payload: index,
+    }
+}
+
+export const modalDetailsOpen = () => {
+    return {
+        type: "MODAL_DETAILS_OPEN"
+    }
+}
+
+export const modalDetailsClose = () => {
+    return {
+        type: "MODAL_DETAILS_CLOSE"
+    }
+}
+
+

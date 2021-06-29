@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './NextHours.css';
-import {useSelector} from 'react-redux';
-
-import {GrClose} from 'react-icons/gr';
+import {useSelector, useDispatch} from 'react-redux';
 
 import ClearSkyD from "../../assets/my-assets/animated/clear-sky-d.svg";
 import ClearSkyN from "../../assets/my-assets/animated/clear-sky-n.svg";
@@ -22,6 +20,7 @@ import SnowD from "../../assets/my-assets/animated/snow-d.svg";
 import SnowN from "../../assets/my-assets/animated/snow-n.svg";
 import MistD from "../../assets/my-assets/animated/mist-d.svg";
 import MistN from "../../assets/my-assets/animated/mist-n.svg";
+import { setModalDetailsIndex,modalDetailsOpen } from '../../redux/actions';
 
 const NextHours = ({formatTimestamp, formatToDate}) => {
     
@@ -35,8 +34,8 @@ const NextHours = ({formatTimestamp, formatToDate}) => {
 
     const [move,setMove] = useState(0);
     const [sliderIndex, setSliderIndex] = useState(0);
-    const [modalDetailsOpen, setModalDetailsOpen] = useState(false);
-    const [modalDetailsIndex, setModalDetailsIndex] = useState(1)
+
+    const dispatch = useDispatch()
 
     const changeWeatherIcon = (thisHour, hourWeather) => {
         const sunriseHour = Number((mainStateReducer.data[0].sunrise).slice(0,2));
@@ -175,13 +174,12 @@ const NextHours = ({formatTimestamp, formatToDate}) => {
 
     const handleDetailsView = (e) => {
         const index = Number(e.target.parentNode.id);
-        console.log(index)
-        setModalDetailsIndex(index)
-        setModalDetailsOpen(true);
-    }
-
-    const handleModalClose = () => {
-        setModalDetailsOpen(false)
+        console.log(index, e.target.parentNode);
+        dispatch(setModalDetailsIndex({
+            index:index,
+            category: "hours",
+        }));
+        dispatch(modalDetailsOpen())
     }
 
     useEffect(() => {
@@ -204,38 +202,10 @@ const NextHours = ({formatTimestamp, formatToDate}) => {
         </div>
     )})
 
-    const {dt,temp,feels_like,pressure,clouds,visibility,wind_speed,wind_deg,weather} = mainStateReducer.data[0].hoursForecast[modalDetailsIndex]
 
     return(
 
         <div className="container">
-
-            {modalDetailsOpen && 
-            <div className="hours-weather__details-modal">
-                <GrClose 
-                    onClick={handleModalClose}
-                    className="hours-weather__modal-close"
-                />
-                <img src={changeWeatherIcon(dt ,weather[0].description)} alt="" />
-                <div className="hours-weather__info-section">
-                    <div className="hours-weather__parameter"><p>Time:</p><span>{formatTimestamp(dt)}</span>
-                    </div>
-                    <div className="hours-weather__parameter"><p>Temperature:</p><span>{(temp-273.15).toFixed()} °C</span>
-                    </div>
-                    <div className="hours-weather__parameter"><p>Feels like:</p><span>{(feels_like-273.15).toFixed()} °C</span>
-                    </div>
-                    <div className="hours-weather__parameter"><p>Pressure:</p><span>{pressure} hPa</span>
-                    </div>
-                    <div className="hours-weather__parameter"><p>Clouds:</p><span>{clouds} %</span>
-                    </div>
-                    <div className="hours-weather__parameter"><p>Visibility:</p><span>{visibility} m</span>
-                    </div>
-                    <div className="hours-weather__parameter"><p>Wind speed:</p><span>{wind_speed} m/s</span>
-                    </div>
-                    <div className="hours-weather__parameter"><p>Wind degree:</p><span>{wind_deg} deg</span>
-                    </div>
-                </div>
-            </div>}
             
             {sliderIndex >= 2 && 
             <button  

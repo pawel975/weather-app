@@ -40,4 +40,8 @@
   width: calc(100%/2);
   color: white;
 }
+
+.filter-section .filter-section__choose-filter .filter-section__button-active {
+  background: rgba(0, 0, 0, 0.5);
+}
 /*# sourceMappingURL=FilterSection.css.map */

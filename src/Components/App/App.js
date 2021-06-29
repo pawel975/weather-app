@@ -7,6 +7,7 @@ import Nav from '../Nav/Nav';
 import Dropdown from '../Dropdown/Dropdown';
 import Quote from "../Quote/Quote";
 import LoadingScreen from '../LoadingScreen/LoadingScreen'
+import ModalDetails from '../ModalDetails/ModalDetails';
 
 import ClearSkyD from "../../assets/my-assets/animated/clear-sky-d.svg";
 import ClearSkyN from "../../assets/my-assets/animated/clear-sky-n.svg";
@@ -33,6 +34,7 @@ import {getData,setDataLoading} from '../../redux/actions/index'
 function App() {
 
   const isFilterSectionOpen = useSelector(state => state.isFilterSectionOpen);
+  const modalDetailsActive = useSelector(state => state.modalDetails)
   const dataLoading = useSelector(state => state.mainStateReducer.isDataLoading);
   const mainStateReducer = useSelector(state => state.mainStateReducer);
   const dispatch = useDispatch()
@@ -264,7 +266,6 @@ function App() {
   }
 
   const exclude = "minutes";
-  // const [newTime, setNewTime] = useState(null)
 
   const bgRef = useRef()
 
@@ -304,7 +305,7 @@ useEffect(() => {
           pressure: data.current.pressure,
           clouds: data.current.clouds,
           visibility: data.current.visibility,
-          wind_degree: data.current.wind_degree,
+          wind_deg: data.current.wind_deg,
           wind_speed: data.current.wind_speed.toFixed(),
           hoursForecast: data.hourly,
           daysForecast: data.daily,
@@ -314,7 +315,6 @@ useEffect(() => {
         dispatch(setDataLoading(false)); 
       })
       .catch(err => console.error(`You have an error! - ${err}`))
-      
       
     }
     setTimeout(fetchData,2000)
@@ -348,9 +348,9 @@ const weatherBackgroundColors = {
   mistN: `linear-gradient(45deg,rgba(37, 38, 54, 1),rgba(37, 38, 54, 0.85))`,
 }
 
-
 return (
   <>
+  {modalDetailsActive && <ModalDetails formatTimestamp={formatTimestamp} formatToDate={formatToDate}/>}
   {!dataLoading &&
   <div ref={bgRef} className="app" >
     <Nav formatToDate={formatToDate}/>
