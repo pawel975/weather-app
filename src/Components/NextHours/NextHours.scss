@@ -16,11 +16,13 @@
         background-color: $background;
         border: none;
         color: $font1;
+        cursor: pointer;
 
     }
     
     .hours-weather__button--disabled {
         opacity: 0.6;
+        
     }
 
     .hours-weather {
@@ -52,7 +54,7 @@
                 width: auto;
                 height: 10%;
                 // outline: solid 2px green;
-
+                cursor: pointer;
                 .hours-weather__element__time,
                 .hours-weather__element__temperature  {
                     font-size: 18px;

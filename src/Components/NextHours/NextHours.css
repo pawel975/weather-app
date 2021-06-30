@@ -16,6 +16,7 @@ div.container {
   background-color: rgba(0, 0, 0, 0.2);
   border: none;
   color: white;
+  cursor: pointer;
 }
 
 .hours-weather__button--disabled {
@@ -57,6 +58,7 @@ div.container {
   color: white;
   width: auto;
   height: 10%;
+  cursor: pointer;
 }
 
 .hours-weather .hours-weather__container .hours-weather__element .hours-weather__element__time,

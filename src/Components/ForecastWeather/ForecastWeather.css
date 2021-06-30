@@ -34,6 +34,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   color: white;
+  cursor: pointer;
 }
 
 @media (min-width: 1750px) {

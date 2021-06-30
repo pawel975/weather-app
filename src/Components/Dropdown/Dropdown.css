@@ -24,6 +24,7 @@
 }
 
 .dropdown .dropdown__arrow-container {
+  cursor: pointer;
   width: clamp(50px, 100%, 100px);
   height: -webkit-fit-content;
   height: -moz-fit-content;

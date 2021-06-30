@@ -20,6 +20,8 @@
         width: clamp(100px,90%,400px);
         justify-content: space-between;
         color: white;
+        cursor: pointer;
+        
 
         @media (min-width:1750px) {
             margin-top: -2em;

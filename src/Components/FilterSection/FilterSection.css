@@ -41,6 +41,7 @@
 }
 
 .filter-section .filter-section__choose-filter .filter-section__button-filter {
+  cursor: pointer;
   background: rgba(0, 0, 0, 0.2);
   border: none;
   height: 100%;
