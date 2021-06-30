@@ -24,12 +24,22 @@
         align-items: center;
 
         @media (min-width: 600px) {
-            z-index: 2;
             border-radius: 15px;
             width:70%;
             height: 70%;
             left: 50%;
             bottom: 50%;
+        }
+
+        @media (min-width: 600px) {
+            border-radius: 15px;
+            width:70%;
+            height: 70%;
+            left: 50%;
+            bottom: 50%;
+        }
+        @media (min-width: 720px) {
+            width:clamp(300px,50%,500px);
         }
 
         img {
@@ -47,8 +57,8 @@
             width: 20px;
             height: 20px;
             position: absolute;
-            right: 15px;
-            top: 15px;
+            right: 5%;
+            top: 5%;
             // outline: 2px solid green;
 
             @media (min-width:600px) {

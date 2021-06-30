@@ -86,4 +86,10 @@ div.container {
 .hours-weather .hours-weather__container .hours-weather__element img {
   width: 80%;
 }
+
+@media (min-width: 1200px) {
+  .hours-weather .hours-weather__container .hours-weather__element img {
+    width: 70%;
+  }
+}
 /*# sourceMappingURL=NextHours.css.map */

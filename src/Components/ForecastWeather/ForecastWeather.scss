@@ -16,20 +16,33 @@
         align-items: center;
         flex-direction: column;
         margin: 0;
-        height: 70%;
+        height: 100%;
         width: clamp(100px,90%,400px);
-        // outline: 2px solid black;
         justify-content: space-between;
         color: white;
+
+        @media (min-width:1750px) {
+            margin-top: -2em;
+         }
+
 
         .weather__date {
             font-size: 18px;
             font-weight: 500;
+
+            @media (min-width:1750px) {
+                font-size: 22px;
+            }
         }
 
         img {
-            // outline: 2px solid black;
-            height: 60%;
+            height: 80%;
+
+            @media (min-width:1750px) {
+               margin: 1em 0;
+               width: 40%;
+            }
+
         }
 
         .weather__temperature {
@@ -37,17 +50,29 @@
             font-size: 16px;
             font-weight: 700;
             margin: 0;
+
+            @media (min-width:1750px) {
+                font-size: 21px;
+            }
         }
 
         .weather__day-night {
             font-size: 12px;
             opacity: 0.6;
+
+            @media (min-width:1750px) {
+                font-size: 16px;
+            }
         }
 
         @media (min-width:1000px) {
             overflow: initial;
-            height: 50%;
-    }
+            height: 50%;     
+        }
+        @media (min-width:1000px) {
+            overflow: initial;
+            height: 60%;     
+        }
     }
 
     @media (min-width:900px) {

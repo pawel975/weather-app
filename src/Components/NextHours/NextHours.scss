@@ -75,6 +75,10 @@
                 img {
                     width: 80%;
                     // outline: 2px solid black;
+
+                    @media (min-width:1200px) {
+                        width: 70%;
+                    }
                 }
             }
 

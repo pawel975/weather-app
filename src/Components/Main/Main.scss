@@ -21,6 +21,10 @@
         color: white;
         display: flex;
         flex-direction: column;
+        
+        @media (min-width:1750px) {
+            padding: 0 1em;
+        }
 
         .main__temperature {
             // outline: 2px solid yellow;
@@ -30,6 +34,12 @@
 
             @media (min-width: 600px) {
                 font-size: 90px;
+            }
+            @media (min-width: 900px) {
+                font-size: 110px;
+            }
+            @media (min-width: 1750px) {
+                font-size: 140px;
             }
         } 
 
@@ -41,6 +51,12 @@
 
             @media (min-width: 600px) {
                 font-size: 32px;
+            }
+            @media (min-width: 900px) {
+                font-size: 40px;
+            }
+            @media (min-width: 1750px) {
+                font-size: 55px;
             }
         }
 
@@ -55,6 +71,12 @@
                 font-size: 25px;
                 margin-bottom: 0;
             }
+            @media (min-width: 900px) {
+                font-size: 28px;
+            }
+            @media (min-width: 1750px) {
+                font-size: 37px;
+            }
         }
 
         .main__params {
@@ -62,10 +84,16 @@
             padding: 0em 0;
             display: flex;
             justify-content: space-between;
-            font-size: 16px;
+            font-size: 14px;
 
             @media (min-width: 600px) {
                 font-size: 20px;
+            }
+            @media (min-width: 900px) {
+                font-size: 25px;
+            }
+            @media (min-width: 1750px) {
+                font-size: 32px;
             }
 
             span {

@@ -27,4 +27,10 @@
     font-size: 20px;
   }
 }
+
+@media (min-width: 1750px) {
+  .nav .nav__date {
+    font-size: 28px;
+  }
+}
 /*# sourceMappingURL=Nav.css.map */

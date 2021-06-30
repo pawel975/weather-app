@@ -30,6 +30,12 @@
   padding: 0.1em 0.5em;
 }
 
+@media (min-width: 1750px) {
+  .main .main__info {
+    padding: 0 1em;
+  }
+}
+
 .main .main__info .main__temperature {
   margin: auto;
   padding: 0;
@@ -42,6 +48,18 @@
   }
 }
 
+@media (min-width: 900px) {
+  .main .main__info .main__temperature {
+    font-size: 110px;
+  }
+}
+
+@media (min-width: 1750px) {
+  .main .main__info .main__temperature {
+    font-size: 140px;
+  }
+}
+
 .main .main__info .main__city {
   margin: auto;
   font-size: 22px;
@@ -51,6 +69,18 @@
 @media (min-width: 600px) {
   .main .main__info .main__city {
     font-size: 32px;
+  }
+}
+
+@media (min-width: 900px) {
+  .main .main__info .main__city {
+    font-size: 40px;
+  }
+}
+
+@media (min-width: 1750px) {
+  .main .main__info .main__city {
+    font-size: 55px;
   }
 }
 
@@ -68,6 +98,18 @@
   }
 }
 
+@media (min-width: 900px) {
+  .main .main__info .main__weather {
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 1750px) {
+  .main .main__info .main__weather {
+    font-size: 37px;
+  }
+}
+
 .main .main__info .main__params {
   padding: 0em 0;
   display: -webkit-box;
@@ -76,12 +118,24 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 @media (min-width: 600px) {
   .main .main__info .main__params {
     font-size: 20px;
+  }
+}
+
+@media (min-width: 900px) {
+  .main .main__info .main__params {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 1750px) {
+  .main .main__info .main__params {
+    font-size: 32px;
   }
 }
 

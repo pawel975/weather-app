@@ -38,6 +38,22 @@
             "quote quote";
         }
 
+        @media (min-width: 900px) {
+            grid-template-columns: 52% 48%;
+            grid-template-rows: 1fr 1fr;    
+            grid-template-areas: 
+            "main weather-icon"
+            "main quote";
+        }
+
+        @media (min-width: 1750px) {
+            grid-template-columns: 45% 55%;
+            grid-template-rows: 1fr 1fr;    
+            grid-template-areas: 
+            "main weather-icon"
+            "main quote";
+        }
+
         .app__weather-icon {
             grid-area: weather-icon;
             position: relative;
@@ -50,6 +66,10 @@
 
             @media (min-width: 600px) {
                 width: clamp(150px, 100%,350px);
+                // outline: 2px solid black;
+            }
+            @media (min-width: 1750px) {
+                width: clamp(200px, 100%,450px);
                 // outline: 2px solid black;
             }
         

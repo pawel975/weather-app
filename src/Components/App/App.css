@@ -51,6 +51,26 @@
   }
 }
 
+@media (min-width: 900px) {
+  .app .app__main-content {
+    -ms-grid-columns: 52% 48%;
+        grid-template-columns: 52% 48%;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "main weather-icon" "main quote";
+  }
+}
+
+@media (min-width: 1750px) {
+  .app .app__main-content {
+    -ms-grid-columns: 45% 55%;
+        grid-template-columns: 45% 55%;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "main weather-icon" "main quote";
+  }
+}
+
 .app .app__main-content .app__weather-icon {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
@@ -68,6 +88,12 @@
 @media (min-width: 600px) {
   .app .app__main-content .app__weather-icon {
     width: clamp(150px, 100%, 350px);
+  }
+}
+
+@media (min-width: 1750px) {
+  .app .app__main-content .app__weather-icon {
+    width: clamp(200px, 100%, 450px);
   }
 }
 

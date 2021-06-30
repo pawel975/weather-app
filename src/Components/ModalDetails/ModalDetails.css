@@ -35,12 +35,27 @@
 
 @media (min-width: 600px) {
   .modal-details {
-    z-index: 2;
     border-radius: 15px;
     width: 70%;
     height: 70%;
     left: 50%;
     bottom: 50%;
+  }
+}
+
+@media (min-width: 600px) {
+  .modal-details {
+    border-radius: 15px;
+    width: 70%;
+    height: 70%;
+    left: 50%;
+    bottom: 50%;
+  }
+}
+
+@media (min-width: 720px) {
+  .modal-details {
+    width: clamp(300px, 50%, 500px);
   }
 }
 
@@ -61,8 +76,8 @@
   width: 20px;
   height: 20px;
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: 5%;
+  top: 5%;
 }
 
 @media (min-width: 600px) {

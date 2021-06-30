@@ -13,6 +13,10 @@
     display: initial;
     padding:1.5em;
 
+    @media (min-width: 1750px) {
+        width: 80%;
+    }
+
     p {
         color:$font1;
         font-size: 14px;
@@ -20,7 +24,12 @@
         @media (min-width: 600px) {
             font-size: 18px;
         }
-
+        @media (min-width: 900px) {
+            font-size: 20px;
+        }
+        @media (min-width: 1750px) {
+            font-size: 32px;
+        }
     }
     
     h3 {
@@ -34,6 +43,12 @@
 
         @media (min-width: 600px) {
             font-size: 25px;
+        }
+        @media (min-width: 900px) {
+            font-size: 28px;
+        }
+        @media (min-width: 1750px) {
+            font-size: 45px;
         }
     }
 }

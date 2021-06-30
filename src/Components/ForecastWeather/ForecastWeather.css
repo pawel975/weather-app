@@ -28,7 +28,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   margin: 0;
-  height: 70%;
+  height: 100%;
   width: clamp(100px, 90%, 400px);
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -36,13 +36,32 @@
   color: white;
 }
 
+@media (min-width: 1750px) {
+  .weather .weather__day {
+    margin-top: -2em;
+  }
+}
+
 .weather .weather__day .weather__date {
   font-size: 18px;
   font-weight: 500;
 }
 
+@media (min-width: 1750px) {
+  .weather .weather__day .weather__date {
+    font-size: 22px;
+  }
+}
+
 .weather .weather__day img {
-  height: 60%;
+  height: 80%;
+}
+
+@media (min-width: 1750px) {
+  .weather .weather__day img {
+    margin: 1em 0;
+    width: 40%;
+  }
 }
 
 .weather .weather__day .weather__temperature {
@@ -52,15 +71,34 @@
   margin: 0;
 }
 
+@media (min-width: 1750px) {
+  .weather .weather__day .weather__temperature {
+    font-size: 21px;
+  }
+}
+
 .weather .weather__day .weather__day-night {
   font-size: 12px;
   opacity: 0.6;
+}
+
+@media (min-width: 1750px) {
+  .weather .weather__day .weather__day-night {
+    font-size: 16px;
+  }
 }
 
 @media (min-width: 1000px) {
   .weather .weather__day {
     overflow: initial;
     height: 50%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .weather .weather__day {
+    overflow: initial;
+    height: 60%;
   }
 }
 
