@@ -28,7 +28,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   margin: 0;
-  height: 100%;
+  height: 80%;
   width: clamp(100px, 90%, 400px);
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -54,7 +54,7 @@
 }
 
 .weather .weather__day img {
-  height: 80%;
+  height: 55%;
 }
 
 @media (min-width: 1750px) {
@@ -68,7 +68,6 @@
   text-align: center;
   font-size: 16px;
   font-weight: 700;
-  margin: 0;
 }
 
 @media (min-width: 1750px) {
@@ -91,7 +90,7 @@
 @media (min-width: 1000px) {
   .weather .weather__day {
     overflow: initial;
-    height: 50%;
+    height: 60%;
   }
 }
 
