@@ -1,6 +1,5 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -9,22 +8,12 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   overflow: hidden;
 }
-
 .app .app__main-content {
   margin-top: 0.5em;
   position: relative;
@@ -32,48 +21,33 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 52% 48%;
-      grid-template-columns: 52% 48%;
-  -ms-grid-rows: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
-      grid-template-areas: "main weather-icon" "main ." "quote quote";
+  grid-template-columns: 52% 48%;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "main weather-icon" "main ." "quote quote";
 }
-
 @media (min-width: 600px) {
   .app .app__main-content {
-    -ms-grid-columns: 52% 48%;
-        grid-template-columns: 52% 48%;
-    -ms-grid-rows: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas: "main weather-icon" "quote quote";
+    grid-template-columns: 52% 48%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "main weather-icon" "quote quote";
   }
 }
-
 @media (min-width: 900px) {
   .app .app__main-content {
-    -ms-grid-columns: 52% 48%;
-        grid-template-columns: 52% 48%;
-    -ms-grid-rows: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas: "main weather-icon" "main quote";
+    grid-template-columns: 52% 48%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "main weather-icon" "main quote";
   }
 }
-
 @media (min-width: 1750px) {
   .app .app__main-content {
-    -ms-grid-columns: 45% 55%;
-        grid-template-columns: 45% 55%;
-    -ms-grid-rows: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas: "main weather-icon" "main quote";
+    grid-template-columns: 45% 55%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "main weather-icon" "main quote";
   }
 }
-
 .app .app__main-content .app__weather-icon {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
   grid-area: weather-icon;
   position: relative;
   margin: auto;
@@ -84,23 +58,19 @@
   -webkit-animation: movement 1.5s ease-in-out;
           animation: movement 1.5s ease-in-out;
 }
-
 @media (min-width: 600px) {
   .app .app__main-content .app__weather-icon {
     width: clamp(150px, 100%, 350px);
   }
 }
-
 @media (min-width: 1750px) {
   .app .app__main-content .app__weather-icon {
     width: clamp(200px, 100%, 450px);
   }
 }
-
 .app .app__main-content .app__weather-icon img {
   width: 100%;
 }
-
 @-webkit-keyframes movement {
   0% {
     left: 100%;
@@ -111,7 +81,6 @@
     bottom: 0;
   }
 }
-
 @keyframes movement {
   0% {
     left: 100%;
@@ -122,11 +91,6 @@
     bottom: 0;
   }
 }
-
 .app .app__main-content .main {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 1;
   grid-area: main;
-}
-/*# sourceMappingURL=App.css.map */
+}/*# sourceMappingURL=App.css.map */

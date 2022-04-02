@@ -8,7 +8,6 @@ const initialState = {
     },
 }
 
-
 const mainStateReducer = (state = initialState ,action) => {
     switch(action.type) {
         case "GET_DATA":

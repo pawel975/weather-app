@@ -1,8 +1,6 @@
 div.container {
   width: 90%;
   height: 70%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -10,9 +8,7 @@ div.container {
   width: 20px;
   height: 100px;
   text-align: center;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
   background-color: rgba(0, 0, 0, 0.2);
   border: none;
   color: white;
@@ -24,74 +20,56 @@ div.container {
 }
 
 .hours-weather {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin: 0em auto;
   position: relative;
   width: 90%;
   height: 100%;
-  -webkit-box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
-          box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
   overflow: scroll;
 }
-
 .hours-weather .hours-weather__container {
   text-align: center;
-  -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
   position: absolute;
-  -webkit-transform: translate(0, 50%);
-          transform: translate(0, 50%);
+  transform: translate(0, 50%);
   left: 0%;
   bottom: 50%;
   width: 1200%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .hours-weather .hours-weather__container .hours-weather__element {
   color: white;
   width: auto;
   height: 10%;
   cursor: pointer;
 }
-
 .hours-weather .hours-weather__container .hours-weather__element .hours-weather__element__time,
 .hours-weather .hours-weather__container .hours-weather__element .hours-weather__element__temperature {
   font-size: 18px;
   font-weight: 700;
 }
-
 @media (min-width: 600px) {
   .hours-weather .hours-weather__container .hours-weather__element .hours-weather__element__time,
-  .hours-weather .hours-weather__container .hours-weather__element .hours-weather__element__temperature {
+.hours-weather .hours-weather__container .hours-weather__element .hours-weather__element__temperature {
     font-size: 22px;
   }
 }
-
 .hours-weather .hours-weather__container .hours-weather__element .hours-weather__element__date {
   opacity: 0.7;
   font-size: 12px;
 }
-
 @media (min-width: 600px) {
   .hours-weather .hours-weather__container .hours-weather__element .hours-weather__element__date {
     font-size: 16px;
   }
 }
-
 .hours-weather .hours-weather__container .hours-weather__element img {
   width: 80%;
 }
-
 @media (min-width: 1200px) {
   .hours-weather .hours-weather__container .hours-weather__element img {
     width: 70%;
   }
-}
-/*# sourceMappingURL=NextHours.css.map */
+}/*# sourceMappingURL=NextHours.css.map */

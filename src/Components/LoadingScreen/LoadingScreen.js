@@ -1,5 +1,5 @@
 import React, {useState ,useEffect} from 'react';
-import LoadingIcon from "../../assets/my-assets/animated/few-clouds-d.svg";
+import LoadingIcon from "../../assets/animated/few-clouds-d.svg";
 import Loader from "react-loader-spinner";
 import './LoadingScreen.css'
 

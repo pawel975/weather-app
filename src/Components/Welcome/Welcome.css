@@ -1,0 +1,26 @@
+.Welcome {
+  margin: 0.5em 0;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Welcome .Welcome__date {
+  text-align: center;
+  width: 95%;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.5em;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+}
+@media (min-width: 600px) {
+  .Welcome .Welcome__date {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1750px) {
+  .Welcome .Welcome__date {
+    font-size: 28px;
+  }
+}/*# sourceMappingURL=Welcome.css.map */

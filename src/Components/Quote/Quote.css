@@ -10,36 +10,30 @@
   display: initial;
   padding: 1.5em;
 }
-
 @media (min-width: 1750px) {
   .quote {
     width: 80%;
   }
 }
-
 .quote p {
   color: white;
   font-size: 14px;
 }
-
 @media (min-width: 600px) {
   .quote p {
     font-size: 18px;
   }
 }
-
 @media (min-width: 900px) {
   .quote p {
     font-size: 20px;
   }
 }
-
 @media (min-width: 1750px) {
   .quote p {
     font-size: 32px;
   }
 }
-
 .quote h3 {
   position: relative;
   right: 0;
@@ -48,22 +42,18 @@
   font-size: 20px;
   color: white;
 }
-
 @media (min-width: 600px) {
   .quote h3 {
     font-size: 25px;
   }
 }
-
 @media (min-width: 900px) {
   .quote h3 {
     font-size: 28px;
   }
 }
-
 @media (min-width: 1750px) {
   .quote h3 {
     font-size: 45px;
   }
-}
-/*# sourceMappingURL=Quote.css.map */
+}/*# sourceMappingURL=Quote.css.map */
