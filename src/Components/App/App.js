@@ -118,7 +118,7 @@ function App() {
           <Welcome/>
 
           <div className="app__main-content">
-            {!dataLoading && <div className="app__weather-icon"><img src={weatherIcon} alt="" /></div>}
+            {!dataLoading && <div className="app__weather-icon"><img src={weatherIcon} alt="weather-icon"/></div>}
             {!isFilterSectionOpen && <Quote/>}
             {!dataLoading && <Main location={location}/>}
           </div>

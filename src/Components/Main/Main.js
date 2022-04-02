@@ -17,8 +17,7 @@ const Main = () => {
     const isFilterSectionOpen = useSelector(state => state.isFilterSectionOpen);
     const mainStateReducer = useSelector(state => state.mainStateReducer);
 
-
-    const {temperature, weather , sunrise,sunset,feelsLike,pressure,clouds,visibility, wind_speed, wind_deg} = mainStateReducer.data[0]
+    const {temperature, weather, sunrise, sunset, feelsLike, pressure, clouds, visibility, wind_speed, wind_deg} = mainStateReducer.data[0]
 
     return(
         <div className="main">

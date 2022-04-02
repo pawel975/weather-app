@@ -16,9 +16,10 @@
     }
 
     .dropdown__arrow-container {
-        cursor: pointer;
+        
+        background: transparent;
+        border: none;
         width: clamp(50px,100%,100px);
-        // outline: 2px solid yellow;
         height: fit-content;
         display: flex;
         flex-direction: column;

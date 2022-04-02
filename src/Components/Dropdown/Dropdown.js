@@ -5,8 +5,6 @@ import {close} from '../../redux/actions';
 import './Dropdown.css'
 import {MdKeyboardArrowUp} from 'react-icons/md'
 import FilterSection from '../FilterSection/FilterSection';
-import { formatTimestamp } from '../global-helpers/formatTimestamp';
-import { formatToDate } from '../global-helpers/formatToDate';
 
 const Dropdown = () => {
 
@@ -14,6 +12,7 @@ const Dropdown = () => {
     const dispatch = useDispatch();
 
     const handleFilterSectionOpenClick = () => {
+
         if (isFilterSectionOpen) {
             dispatch(close())
         } else {
@@ -23,12 +22,15 @@ const Dropdown = () => {
 
     return(
         <div style={isFilterSectionOpen? {bottom:'0%'}:{bottom:"-40%"}} className="dropdown">
-            <div onClick={handleFilterSectionOpenClick} className="dropdown__arrow-container">
+
+            <button onClick={handleFilterSectionOpenClick} className="dropdown__arrow-container">
                 <MdKeyboardArrowUp className="dropdown__arrow dropdown__arrow--up"/>
-            </div>
+            </button>
+
             <div className="dropdown__bar"></div>
-            {/* <FilterSection height={isFilterSectionOpen?'40vh':'0vh'}/> */}
-            <FilterSection formatTimestamp={formatTimestamp} formatToDate={formatToDate}/>
+
+            <FilterSection />
+
         </div>
     )
 }

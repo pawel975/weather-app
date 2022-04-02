@@ -7,44 +7,6 @@
   align-items: center;
   background: linear-gradient(45deg, rgb(126, 214, 236), rgba(126, 214, 236, 0.35));
 }
-.loading-screen .loading-screen__error {
-  padding: 1em 1em;
-  position: absolute;
-  transform: translate(-50%, 50%);
-  left: 50%;
-  bottom: 50%;
-  border-radius: 15px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: "text text" "refresh refresh";
-  z-index: 1;
-  background-color: rgb(130, 152, 184);
-  width: clamp(200px, 80%, 250px);
-  height: clamp(100px, 100%, 200px);
-  margin: auto;
-}
-.loading-screen .loading-screen__error p {
-  font-size: 15px;
-  margin-bottom: 0.5em;
-  text-align: center;
-  grid-area: text;
-  color: white;
-}
-.loading-screen .loading-screen__error .loading-screen__refresh {
-  grid-area: refresh;
-}
-.loading-screen .loading-screen__error .loading-screen__refresh {
-  width: clamp(70px, 80%, 100px);
-  height: 50px;
-  margin: auto;
-  border-radius: 10px;
-  border: none;
-  font-size: 14px;
-  font-weight: 700;
-  color: rgb(68, 111, 177);
-  background: white;
-}
 .loading-screen .loading-screen__icon {
   width: clamp(150px, 100%, 500px);
 }
