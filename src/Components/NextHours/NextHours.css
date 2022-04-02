@@ -3,6 +3,9 @@ div.container {
   height: 70%;
   display: flex;
 }
+div.container button {
+  z-index: 1;
+}
 
 .hours-weather__button {
   width: 20px;

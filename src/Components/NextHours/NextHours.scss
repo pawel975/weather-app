@@ -6,6 +6,10 @@
         height: 70%;
         display: flex;
         // outline: 2px solid black;
+
+        button {
+            z-index: 1;
+        }
     }
     
     .hours-weather__button {
