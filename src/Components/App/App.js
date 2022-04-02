@@ -13,7 +13,7 @@ import { getData, setDataLoading } from '../../redux/actions/index'
 import { formatTimestamp } from '../global-helpers/formatTimestamp';
 
 import { isDayOrNight } from '../global-helpers/isDayOrNight';
-import { getWeatherStyling } from './getWeatherStyling';
+import { getWeatherStyling } from '../global-helpers/getWeatherStyling';
 
 function App() {
 

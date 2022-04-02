@@ -1,5 +1,6 @@
-import { animatedAssets } from "../global-helpers/animatedAssets"
-import { weatherBackgroundColors } from "./weatherBackgroundColors"
+
+import { animatedAssets } from "../global-helpers/animatedAssets";
+import { weatherBackgroundColors } from "./weatherBackgroundColors";
 
  const {ClearSkyD, ClearSkyN, FewCloudsD, FewCloudsN, ScatteredCloudsD, ScatteredCloudsN, BrokenCloudsD, BrokenCloudsN, ShowerRainD, ShowerRainN, RainD, RainN, ThunderstormD, ThunderstormN, SnowD, SnowN, MistD, MistN} = animatedAssets
 
