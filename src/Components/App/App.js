@@ -11,18 +11,19 @@ import ModalDetails from '../ModalDetails/ModalDetails';
 
 import { getData, setDataLoading } from '../../redux/actions/index'
 import { formatTimestamp } from '../global-helpers/formatTimestamp';
-import { formatToDate } from '../global-helpers/formatToDate';
-import { isDayOrNight } from './isDayOrNight';
+
+import { isDayOrNight } from '../global-helpers/isDayOrNight';
 import { getWeatherStyling } from './getWeatherStyling';
 
 function App() {
 
+  // state
   const mainStateReducer = useSelector(state => state.mainStateReducer)
   const isFilterSectionOpen = useSelector(state => state.isFilterSectionOpen);
   const modalDetailsActive = useSelector(state => state.modalDetails)
   const dataLoading = useSelector(state => state.mainStateReducer.isDataLoading);
-
   const dispatch = useDispatch()
+
   const bgRef = useRef();
 
   const [location, setLocation] = useState({
@@ -30,20 +31,28 @@ function App() {
     long: 0,
   })
   const [weatherIcon, setWeatherIcon] = useState();
-
-  const exclude = "minutes";
   
-  // Change App styling based on fetched data and time of the day
+  console.log(mainStateReducer)
+
+  // Change app styling based on fetched data and time of the day
   const changeWeatherStyling = () => {
 
-    const weatherStyling = getWeatherStyling(mainStateReducer, dayOrNight);
-    bgRef.current.style.backgroundColor = weatherStyling.bgColor;
+    const currentTimestamp = new Date().getTime();
+    const sunriseTimestamp = mainStateReducer.data[0].sunrise;
+    const sunsetTimestamp = mainStateReducer.data[0].sunset;
+    
+    const dayOrNight = isDayOrNight(currentTimestamp, sunriseTimestamp, sunsetTimestamp);
+    const weather = mainStateReducer.data[0].weather;
+
+    const weatherStyling = getWeatherStyling(weather, dayOrNight);
+
+    bgRef.current.style.background = weatherStyling.bgColor;
     setWeatherIcon(weatherStyling.icon);
 
   }
   
+  // Get geolocation
   useEffect(() => {
-    console.log("render position")
     navigator.geolocation.getCurrentPosition(position => {
         setLocation({
           lat:position.coords.latitude,
@@ -52,14 +61,14 @@ function App() {
     })
   }, [])
 
+  // Get weather data
   useEffect(() => {
 
       if(location.lat === 0) return
 
-      console.log('render fetch API')
       const fetchData = () => {
         dispatch(setDataLoading(true)); 
-        const URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat}&lon=${location.long}&exclude=${exclude}&appid=${process.env.REACT_APP_API_KEY}`
+        const URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat}&lon=${location.long}&exclude=minutes&appid=${process.env.REACT_APP_API_KEY}`
       
         axios({
           method: 'get',
@@ -72,8 +81,8 @@ function App() {
             temperature: (data.current.temp-273.15).toFixed(),
             weather: data.current.weather[0].description,
             feelsLike: (data.current.feels_like-273.15).toFixed(),
-            sunrise: formatTimestamp(data.current.sunrise),
-            sunset: formatTimestamp(data.current.sunset),
+            sunrise: data.current.sunrise,
+            sunset: data.current.sunset,
             pressure: data.current.pressure,
             clouds: data.current.clouds,
             visibility: data.current.visibility,
@@ -93,34 +102,33 @@ function App() {
 
   }, [location])
 
+  // Set styling
   useEffect(()=> {
     if(dataLoading) return
     !dataLoading && changeWeatherStyling();
   },[dataLoading])
 
-  // Checks if is day or night based on fetched sunrise time
-  const dayOrNight = isDayOrNight(mainStateReducer);
-
   return (
     <>
       {modalDetailsActive && <ModalDetails/>}
+
       {!dataLoading &&
-      <div ref={bgRef} className="app" >
-        <Welcome formatToDate={formatToDate}/>
-        <div className="app__main-content">
-          {!dataLoading && <div className="app__weather-icon">
-            <img src={weatherIcon} alt="" />
-          </div>}
-          {!isFilterSectionOpen && <Quote/>}
-          {!dataLoading && <Main location={location}/>}
+        <div ref={bgRef} className="app" >
+
+          <Welcome/>
+
+          <div className="app__main-content">
+            {!dataLoading && <div className="app__weather-icon"><img src={weatherIcon} alt="" /></div>}
+            {!isFilterSectionOpen && <Quote/>}
+            {!dataLoading && <Main location={location}/>}
+          </div>
+
+          <Dropdown />
+
         </div>
-        <Dropdown formatTimestamp={formatTimestamp} formatToDate={formatToDate}/>
-      </div>
       }
 
-      {dataLoading && 
-        <LoadingScreen/>
-      }
+      {dataLoading && <LoadingScreen/>}
 
     </>
   )

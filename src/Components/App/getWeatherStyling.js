@@ -3,12 +3,12 @@ import { weatherBackgroundColors } from "./weatherBackgroundColors"
 
  const {ClearSkyD, ClearSkyN, FewCloudsD, FewCloudsN, ScatteredCloudsD, ScatteredCloudsN, BrokenCloudsD, BrokenCloudsN, ShowerRainD, ShowerRainN, RainD, RainN, ThunderstormD, ThunderstormN, SnowD, SnowN, MistD, MistN} = animatedAssets
 
-export const getWeatherStyling = (state, dayOrNight) => {
+export const getWeatherStyling = (weather, dayOrNight) => {
 
     let bgColor;
     let icon;
 
-    switch (state.data[0].weather) {
+    switch (weather) {
         case 'clear sky':
             bgColor = weatherBackgroundColors[`clearSky${dayOrNight}`]
             icon = dayOrNight ==="D"? ClearSkyD:ClearSkyN

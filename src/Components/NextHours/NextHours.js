@@ -21,8 +21,10 @@ import SnowN from "../../assets/animated/snow-n.svg";
 import MistD from "../../assets/animated/mist-d.svg";
 import MistN from "../../assets/animated/mist-n.svg";
 import { setModalDetailsIndex,modalDetailsOpen } from '../../redux/actions';
+import { formatTimestamp } from '../global-helpers/formatTimestamp';
+import { formatToDate } from '../global-helpers/formatToDate';
 
-const NextHours = ({formatTimestamp, formatToDate}) => {
+const NextHours = () => {
     
     const mainStateReducer = useSelector(state => state.mainStateReducer);
     const hoursArray = mainStateReducer.data[0].hoursForecast

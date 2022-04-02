@@ -31,8 +31,8 @@ const FilterSection = ({height, formatTimestamp, formatToDate}) => {
                     Next 7 days
                 </button>
             </div>
-            {filterChoice===0 && <NextHours formatTimestamp={formatTimestamp} formatToDate={formatToDate}/>}
-            {filterChoice===1 && <ForecastWeather formatTimestamp={formatTimestamp} formatToDate={formatToDate}/>}
+            {/* {filterChoice===0 && <NextHours formatTimestamp={formatTimestamp} formatToDate={formatToDate}/>} */}
+            {filterChoice===1 && <ForecastWeather/>}
         </div>
     )
 }

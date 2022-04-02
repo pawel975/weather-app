@@ -5,8 +5,10 @@ import {close} from '../../redux/actions';
 import './Dropdown.css'
 import {MdKeyboardArrowUp} from 'react-icons/md'
 import FilterSection from '../FilterSection/FilterSection';
+import { formatTimestamp } from '../global-helpers/formatTimestamp';
+import { formatToDate } from '../global-helpers/formatToDate';
 
-const Dropdown = ({formatTimestamp, formatToDate}) => {
+const Dropdown = () => {
 
     const isFilterSectionOpen = useSelector(state => state.isFilterSectionOpen);
     const dispatch = useDispatch();
@@ -18,7 +20,6 @@ const Dropdown = ({formatTimestamp, formatToDate}) => {
             dispatch(open())
         }
     }
-
 
     return(
         <div style={isFilterSectionOpen? {bottom:'0%'}:{bottom:"-40%"}} className="dropdown">
