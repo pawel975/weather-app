@@ -5,7 +5,6 @@ import axios from 'axios';
 import Main from '../Main/Main';
 import Welcome from '../Welcome/Welcome';
 import Dropdown from '../Dropdown/Dropdown';
-import Quote from "../Quote/Quote";
 import LoadingScreen from '../LoadingScreen/LoadingScreen'
 import ModalDetails from '../ModalDetails/ModalDetails';
 
@@ -13,6 +12,7 @@ import { getData, setDataLoading } from '../../redux/actions/index'
 
 import { isDayOrNight } from '../global-helpers/isDayOrNight';
 import { getWeatherStyling } from '../global-helpers/getWeatherStyling';
+import { kelvinToCelsius } from '../global-helpers/kelvinToCelsius';
 
 function App() {
 
@@ -29,8 +29,6 @@ function App() {
     long: 0,
   })
   const [weatherIcon, setWeatherIcon] = useState();
-  
-  console.log(mainStateReducer)
 
   // Change app styling based on fetched data and time of the day
   const changeWeatherStyling = () => {
@@ -76,9 +74,9 @@ function App() {
           console.log(res.data);
           const data = res.data;
           dispatch(getData({
-            temperature: (data.current.temp-273.15).toFixed(),
+            temperature: kelvinToCelsius(data.current.temp),
             weather: data.current.weather[0].description,
-            feelsLike: (data.current.feels_like-273.15).toFixed(),
+            feelsLike: kelvinToCelsius(data.current.feels_like),
             sunrise: data.current.sunrise,
             sunset: data.current.sunset,
             pressure: data.current.pressure,
@@ -96,7 +94,8 @@ function App() {
         .catch(err => console.error(`You have an error! - ${err}`))
         
       }
-      setTimeout(fetchData,2000)
+
+      setTimeout(fetchData,1000)
 
   }, [location])
 
