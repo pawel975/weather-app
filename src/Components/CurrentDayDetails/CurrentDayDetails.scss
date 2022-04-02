@@ -1,0 +1,105 @@
+
+@import '../variables.scss';
+
+.current-day {
+    width: 100%;
+    padding: 0.8em;
+    background: $background;
+    height: fit-content;
+    margin-right: auto;
+    border-radius: 5px;
+    
+    @media (min-width: 600px) {
+        width: 90%;
+    }
+
+    .current-day__info {
+        * {
+            padding: 0.1em 0.5em;
+        }
+        
+        color: white;
+        display: flex;
+        flex-direction: column;
+        
+        @media (min-width:1750px) {
+            padding: 0 1em;
+        }
+
+        .current-day__temperature {
+
+            margin: auto;
+            padding: 0;
+            font-size: 60px;
+
+            @media (min-width: 600px) {
+                font-size: 90px;
+            }
+            @media (min-width: 900px) {
+                font-size: 110px;
+            }
+            @media (min-width: 1750px) {
+                font-size: 140px;
+            }
+        } 
+
+        .current-day__city {
+
+            margin:auto;
+            font-size: 22px;
+            font-weight: 700;
+
+            @media (min-width: 600px) {
+                font-size: 32px;
+            }
+            @media (min-width: 900px) {
+                font-size: 40px;
+            }
+            @media (min-width: 1750px) {
+                font-size: 55px;
+            }
+        }
+
+        .current-day__weather {
+
+            font-size: 18px;
+            opacity: 0.5;
+            margin: auto;
+            margin-bottom: 0.2em;
+
+            @media (min-width: 600px) {
+                font-size: 25px;
+                margin-bottom: 0;
+            }
+            @media (min-width: 900px) {
+                font-size: 28px;
+            }
+            @media (min-width: 1750px) {
+                font-size: 37px;
+            }
+        }
+
+        .current-day__params {
+
+            padding: 0em 0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+
+            @media (min-width: 600px) {
+                font-size: 20px;
+            }
+            @media (min-width: 900px) {
+                font-size: 25px;
+            }
+            @media (min-width: 1750px) {
+                font-size: 32px;
+            }
+
+            span {
+                font-weight: bold;
+            }
+        }
+        
+    }
+}

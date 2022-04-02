@@ -10,7 +10,6 @@ import LoadingScreen from '../LoadingScreen/LoadingScreen'
 import ModalDetails from '../ModalDetails/ModalDetails';
 
 import { getData, setDataLoading } from '../../redux/actions/index'
-import { formatTimestamp } from '../global-helpers/formatTimestamp';
 
 import { isDayOrNight } from '../global-helpers/isDayOrNight';
 import { getWeatherStyling } from '../global-helpers/getWeatherStyling';
@@ -19,7 +18,6 @@ function App() {
 
   // state
   const mainStateReducer = useSelector(state => state.mainStateReducer)
-  const isFilterSectionOpen = useSelector(state => state.isFilterSectionOpen);
   const modalDetailsActive = useSelector(state => state.modalDetails)
   const dataLoading = useSelector(state => state.mainStateReducer.isDataLoading);
   const dispatch = useDispatch()
@@ -113,16 +111,11 @@ function App() {
       {modalDetailsActive && <ModalDetails/>}
 
       {!dataLoading &&
+
         <div ref={bgRef} className="app" >
 
           <Welcome/>
-
-          <div className="app__main-content">
-            {!dataLoading && <div className="app__weather-icon"><img src={weatherIcon} alt="weather-icon"/></div>}
-            {!isFilterSectionOpen && <Quote/>}
-            {!dataLoading && <Main location={location}/>}
-          </div>
-
+          {!dataLoading && <Main location={location} weatherIcon={weatherIcon} />}
           <Dropdown />
 
         </div>

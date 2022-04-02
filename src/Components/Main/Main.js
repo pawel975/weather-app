@@ -1,48 +1,22 @@
-import React, { useState } from 'react';
-import {useSelector} from 'react-redux';
-import axios from "axios";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import CurrentDayDetails from '../CurrentDayDetails/CurrentDayDetails';
+import Quote from '../Quote/Quote';
 import './Main.css'
 
-
-const Main = () => {
-
-    const [city, setCity] = useState("")
-
-    const URL = "https://freegeoip.app/json/"
-
-    axios.get(URL).then(res => {
-        setCity(res.data.city)
-    })
+const Main = ({weatherIcon}) => {
 
     const isFilterSectionOpen = useSelector(state => state.isFilterSectionOpen);
-    const mainStateReducer = useSelector(state => state.mainStateReducer);
-
-    const {temperature, weather, sunrise, sunset, feelsLike, pressure, clouds, visibility, wind_speed, wind_deg} = mainStateReducer.data[0]
 
     return(
         <div className="main">
-            <div className="main__info">
-                <div className="main__temperature">{temperature}°C</div>
-                <div className="main__city">{city}</div>
-                <div className="main__weather">{weather}</div>
-                <div className="main__params"><p>Sunrise:</p><span>{sunrise}</span></div>
-                <div className="main__params"><p>Sunset:</p><span>{sunset}</span></div>
-                {!isFilterSectionOpen && 
-                <>
-                    <div className="main__params"><p>Feels like:</p><span>{feelsLike} °C</span></div>
 
-                    <div className="main__params"><p>Pressure:</p><span>{pressure} hPa</span></div>
-
-                    <div className="main__params"><p>Clouds:</p><span>{clouds} %</span></div>
-
-                    <div className="main__params"><p>Visibilty:</p><span>{visibility} m</span></div>
-
-                    <div className="main__params"><p>Wind speed:</p><span>{wind_speed} m/s</span></div>
-
-                    <div className="main__params"><p>Wind deg:</p><span>{wind_deg} deg</span></div>
-
-                </>}
+            <div className="main__weather-icon">
+                <img src={weatherIcon} alt="weather-icon"/>
             </div>
+            <CurrentDayDetails/>
+            {!isFilterSectionOpen && <Quote/>}
+
         </div>
                 
     )

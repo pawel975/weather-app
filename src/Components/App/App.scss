@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
 }
+
 .app {
     // outline: 2px solid black;
     position: relative;
@@ -16,84 +17,6 @@
     justify-content: flex-start;
     overflow: hidden;
     
-    .app__main-content {
-        margin-top: 0.5em;
-        // outline: 2px solid green;
-        position: relative;
-        width: 90%;
-        height: fit-content;
-        display: grid;
-        grid-template-columns: 52% 48%;
-        grid-template-rows: 1fr 1fr 1fr;    
-        grid-template-areas: 
-        "main weather-icon"
-        "main ."
-        "quote quote";
-
-        @media (min-width: 600px) {
-            grid-template-columns: 52% 48%;
-            grid-template-rows: 1fr 1fr;    
-            grid-template-areas: 
-            "main weather-icon"
-            "quote quote";
-        }
-
-        @media (min-width: 900px) {
-            grid-template-columns: 52% 48%;
-            grid-template-rows: 1fr 1fr;    
-            grid-template-areas: 
-            "main weather-icon"
-            "main quote";
-        }
-
-        @media (min-width: 1750px) {
-            grid-template-columns: 45% 55%;
-            grid-template-rows: 1fr 1fr;    
-            grid-template-areas: 
-            "main weather-icon"
-            "main quote";
-        }
-
-        .app__weather-icon {
-            grid-area: weather-icon;
-            position: relative;
-            margin: auto;
-            left: 0;
-            bottom: 0;
-            // outline: 2px solid black;
-            width:clamp(100px,100%,250px);
-            height: auto;
-
-            @media (min-width: 600px) {
-                width: clamp(150px, 100%,350px);
-                // outline: 2px solid black;
-            }
-            @media (min-width: 1750px) {
-                width: clamp(200px, 100%,450px);
-                // outline: 2px solid black;
-            }
-        
-            img {
-                width: 100%;
-            }
-            @keyframes movement {
-               0%{
-                left: 100%;
-                bottom: -20%;
-                }
-               100%{
-                left: 0;
-                bottom: 0;
-                }
-            }
-        
-            animation: movement 1.5s ease-in-out;
-        }
-
-        .main {
-            grid-area: main;
-        }
-    }
 }
 
 

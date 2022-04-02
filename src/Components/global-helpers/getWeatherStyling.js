@@ -96,8 +96,6 @@ export const getWeatherStyling = (weather, dayOrNight) => {
             icon = dayOrNight ==="D"? MistD:MistN
           break;
         default:
-            bgColor = weatherBackgroundColors[`clearSky${dayOrNight}`]
-            icon = dayOrNight ==="D"? ClearSkyD:ClearSkyN
           break;
       }
 

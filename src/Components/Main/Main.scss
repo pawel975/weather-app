@@ -1,106 +1,80 @@
 @import '../variables.scss';
 
 .main {
-    width: 100%;
-    padding: 0.8em;
-    background: $background;
+    margin-top: 0.5em;
+    position: relative;
+    width: 90%;
     height: fit-content;
-    margin-right: auto;
-    // margin-left: 1em;
-    // outline: 2px solid yellow;
-    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 52% 48%;
+    grid-template-rows: 1fr 1fr 1fr;    
+    grid-template-areas: 
+    "current-day weather-icon"
+    "current-day ."
+    "quote quote";
 
     @media (min-width: 600px) {
-        width: 90%;
+        grid-template-columns: 52% 48%;
+        grid-template-rows: 1fr 1fr;    
+        grid-template-areas: 
+        "current-day weather-icon"
+        "quote quote";
     }
 
-    .main__info {
-        * {
-            padding: 0.1em 0.5em;
-        }
-        color: white;
-        display: flex;
-        flex-direction: column;
-        
-        @media (min-width:1750px) {
-            padding: 0 1em;
-        }
-
-        .main__temperature {
-            // outline: 2px solid yellow;
-            margin: auto;
-            padding: 0;
-            font-size: 60px;
-
-            @media (min-width: 600px) {
-                font-size: 90px;
-            }
-            @media (min-width: 900px) {
-                font-size: 110px;
-            }
-            @media (min-width: 1750px) {
-                font-size: 140px;
-            }
-        } 
-
-        .main__city {
-            // outline: 2px solid yellow;
-            margin:auto;
-            font-size: 22px;
-            font-weight: 700;
-
-            @media (min-width: 600px) {
-                font-size: 32px;
-            }
-            @media (min-width: 900px) {
-                font-size: 40px;
-            }
-            @media (min-width: 1750px) {
-                font-size: 55px;
-            }
-        }
-
-        .main__weather {
-            // outline: 2px solid yellow;
-            font-size: 18px;
-            opacity: 0.5;
-            margin: auto;
-            margin-bottom: 0.2em;
-
-            @media (min-width: 600px) {
-                font-size: 25px;
-                margin-bottom: 0;
-            }
-            @media (min-width: 900px) {
-                font-size: 28px;
-            }
-            @media (min-width: 1750px) {
-                font-size: 37px;
-            }
-        }
-
-        .main__params {
-            // outline: 2px solid yellow;
-            padding: 0em 0;
-            display: flex;
-            justify-content: space-between;
-            font-size: 14px;
-
-            @media (min-width: 600px) {
-                font-size: 20px;
-            }
-            @media (min-width: 900px) {
-                font-size: 25px;
-            }
-            @media (min-width: 1750px) {
-                font-size: 32px;
-            }
-
-            span {
-                font-weight: bold;
-            }
-        }
-        
-
+    @media (min-width: 900px) {
+        grid-template-columns: 52% 48%;
+        grid-template-rows: 1fr 1fr;    
+        grid-template-areas: 
+        "current-day weather-icon"
+        "current-day quote";
     }
+
+    @media (min-width: 1750px) {
+        grid-template-columns: 45% 55%;
+        grid-template-rows: 1fr 1fr;    
+        grid-template-areas: 
+        "current-day weather-icon"
+        "current-day quote";
+    }
+
+    .main__weather-icon {
+        grid-area: weather-icon;
+        position: relative;
+        margin: auto;
+        left: 0;
+        bottom: 0;
+        // outline: 2px solid black;
+        width:clamp(100px,100%,250px);
+        height: auto;
+
+        @media (min-width: 600px) {
+            width: clamp(150px, 100%,350px);
+            // outline: 2px solid black;
+        }
+        @media (min-width: 1750px) {
+            width: clamp(200px, 100%,450px);
+            // outline: 2px solid black;
+        }
+    
+        img {
+            width: 100%;
+        }
+        @keyframes movement {
+            0%{
+            left: 100%;
+            bottom: -20%;
+            }
+            100%{
+            left: 0;
+            bottom: 0;
+            }
+        }
+    
+        animation: movement 1.5s ease-in-out;
+    }
+
+    .current-day {
+        grid-area: current-day;
+    }
+
 }

@@ -3,7 +3,7 @@ const initialState = {
     data: [],
     isDataLoading: true,
     modalDetailsIndex: {
-        index:1,
+        index: 1,
         category: "hours",
     },
 }
