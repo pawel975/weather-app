@@ -13,18 +13,17 @@ const LoadingScreen = () => {
     }
 
     useEffect(() => {
-        setTimeout(errorFetchData, 5000)
+        let timeout = setTimeout(errorFetchData, 5000);
+
+        return clearTimeout(timeout);
     }, [])
 
     return(
         <div className="loading-screen">
 
             {isModalErrorActive && <LoadingScreenError/>}
-
             <LoadingScreenIcon />
-
             <Loader type="Oval" color="#00BFFF" height={80} width={80} />
-
             <p className="loading-screen__loading-info">Loading weather...</p>
 
         </div>

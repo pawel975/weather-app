@@ -45,13 +45,10 @@ const ForecastWeather = () => {
             <section onClick={handleDetailsView} id={key} className="weather__day">
 
                 <p className="weather__date">{formatToDate(thisTimestamp,"day-month")}</p>
-
                 <img src={icon} alt="Weather icon" />
-
                 <p className="weather__temperature">
                     {kelvinToCelsius(day.temp.day)}°C / {kelvinToCelsius(day.temp.night)}°C
                 </p>
-
                 <p className="weather__day-night">day / night</p>
 
             </section>
