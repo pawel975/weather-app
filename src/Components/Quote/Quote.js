@@ -14,8 +14,7 @@ const Quote = () => {
 
         clearInterval(interval)
 
-        const URL = 'https://type.fit/api/quotes';
-        axios.get(URL).then(quotes => {
+        axios.get('https://type.fit/api/quotes').then(quotes => {
 
             const index = Math.floor(Math.random()*quotes.data.length);
             setQuoteState({

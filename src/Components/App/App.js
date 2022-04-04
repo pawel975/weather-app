@@ -29,23 +29,6 @@ function App() {
     long: 0,
   })
   const [weatherIcon, setWeatherIcon] = useState();
-
-  // Change app styling based on fetched data and time of the day
-  const changeWeatherStyling = () => {
-
-    const currentTimestamp = new Date().getTime();
-    const sunriseTimestamp = mainStateReducer.data[0].sunrise;
-    const sunsetTimestamp = mainStateReducer.data[0].sunset;
-    
-    const dayOrNight = isDayOrNight(currentTimestamp, sunriseTimestamp, sunsetTimestamp);
-    const weather = mainStateReducer.data[0].weather;
-
-    const weatherStyling = getWeatherStyling(weather, dayOrNight);
-
-    bgRef.current.style.background = weatherStyling.bgColor;
-    setWeatherIcon(weatherStyling.icon);
-
-  }
   
   // Get geolocation
   useEffect(() => {
@@ -60,7 +43,7 @@ function App() {
   // Get weather data
   useEffect(() => {
 
-      if(location.lat === 0) return
+      if (location.lat === 0) return
 
       const fetchData = () => {
         dispatch(setDataLoading(true)); 
@@ -97,13 +80,25 @@ function App() {
 
       setTimeout(fetchData,1000)
 
-  }, [location])
+  }, [dispatch, location])
 
-  // Set styling
-  useEffect(()=> {
+  // Change app styling based on fetched data and time of the day
+  useEffect(() => {
     if(dataLoading) return
-    !dataLoading && changeWeatherStyling();
-  },[dataLoading])
+
+    const currentTimestamp = new Date().getTime();
+    const sunriseTimestamp = mainStateReducer.data[0].sunrise;
+    const sunsetTimestamp = mainStateReducer.data[0].sunset;
+    
+    const dayOrNight = isDayOrNight(currentTimestamp, sunriseTimestamp, sunsetTimestamp);
+    const weather = mainStateReducer.data[0].weather;
+
+    const weatherStyling = getWeatherStyling(weather, dayOrNight);
+
+    bgRef.current.style.background = weatherStyling.bgColor;
+    setWeatherIcon(weatherStyling.icon);
+
+  },[dataLoading, mainStateReducer.data])
 
   return (
     <>
