@@ -75,6 +75,7 @@ function App() {
 
   // Change app styling based on fetched data and time of the day
   useEffect(() => {
+    
     if(dataLoading) return
     
     const currentTimestamp = new Date().getTime() / 1000; // Convert ms to seconds

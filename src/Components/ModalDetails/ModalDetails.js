@@ -26,7 +26,6 @@ const ModalDetails = () => {
      mainStateReducer.data[0].daysForecast[mainStateReducer.modalDetailsIndex.index]
 
     const {dt, sunrise, sunset, weather} = categoryPick
-    console.log(categoryPick);
 
     const dayOrNight = isDayOrNight(dt, sunrise, sunset);
     const icon = getWeatherStyling(weather[0].description, dayOrNight).icon;
