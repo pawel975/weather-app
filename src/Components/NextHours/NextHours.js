@@ -13,6 +13,8 @@ const NextHours = () => {
     
     const mainStateReducer = useSelector(state => state.mainStateReducer);
     const hoursArray = mainStateReducer.data[0].hoursForecast;
+    const sunrise = mainStateReducer.data[0].sunrise;
+    const sunset = mainStateReducer.data[0].sunset;
 
     const hoursInSlider = [3,4,6,8,12];
     const containerWidth = [1600,1200,800,600,400];
@@ -73,8 +75,8 @@ const NextHours = () => {
         const key = hoursArray.indexOf(hour)
 
         const thisTimestamp = hour.dt;
-        const sunriseTimestamp = hour.sunrise;
-        const sunsetTimestamp = hour.sunset;
+        const sunriseTimestamp = sunrise;
+        const sunsetTimestamp = sunset;
 
         const dayOrNight = isDayOrNight(thisTimestamp, sunriseTimestamp, sunsetTimestamp);
         const weather = hour.weather[0].description;

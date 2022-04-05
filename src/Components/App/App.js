@@ -85,14 +85,15 @@ function App() {
   // Change app styling based on fetched data and time of the day
   useEffect(() => {
     if(dataLoading) return
-
-    const currentTimestamp = new Date().getTime();
+    
+    const currentTimestamp = new Date().getTime() / 1000; // Convert ms to seconds
     const sunriseTimestamp = mainStateReducer.data[0].sunrise;
     const sunsetTimestamp = mainStateReducer.data[0].sunset;
     
     const dayOrNight = isDayOrNight(currentTimestamp, sunriseTimestamp, sunsetTimestamp);
     const weather = mainStateReducer.data[0].weather;
 
+    console.table(currentTimestamp, sunriseTimestamp, sunsetTimestamp)
     const weatherStyling = getWeatherStyling(weather, dayOrNight);
 
     bgRef.current.style.background = weatherStyling.bgColor;
