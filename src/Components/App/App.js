@@ -1,7 +1,6 @@
 import React, {useState,useEffect, useRef } from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import './App.css';
-import axios from 'axios';
 import Main from '../Main/Main';
 import Welcome from '../Welcome/Welcome';
 import Dropdown from '../Dropdown/Dropdown';
@@ -69,6 +68,7 @@ function App() {
       }));
 
       dispatch(setDataLoading(false)); 
+      
     })
 
   }, [dispatch, location])

@@ -14,9 +14,11 @@ const LoadingScreen = () => {
 
     // Throw error modal to user that informs about connectivity/localization issue
     useEffect(() => {
-        let timeout = setTimeout(errorFetchData, 5000);
+        let timeout = setTimeout(errorFetchData, 3000);
 
-        return clearTimeout(timeout);
+        return function(){
+            clearTimeout(timeout)
+        }
     }, [])
 
     return(
