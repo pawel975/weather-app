@@ -13,6 +13,7 @@ import { getData, setDataLoading } from '../../redux/actions/index'
 import { isDayOrNight } from '../global-helpers/isDayOrNight';
 import { getWeatherStyling } from '../global-helpers/getWeatherStyling';
 import { kelvinToCelsius } from '../global-helpers/kelvinToCelsius';
+import { fetchData } from './fetchData';
 
 function App() {
 
@@ -43,42 +44,32 @@ function App() {
   // Get weather data
   useEffect(() => {
 
-      if (location.lat === 0) return
+    if (location.lat === 0) return
 
-      const fetchData = () => {
-        dispatch(setDataLoading(true)); 
-        const URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat}&lon=${location.long}&exclude=minutes&appid=${process.env.REACT_APP_API_KEY}`
-      
-        axios({
-          method: 'get',
-          url: URL,
-        })
-        .then(res=>{
-          console.log(res.data);
-          const data = res.data;
-          dispatch(getData({
-            temperature: kelvinToCelsius(data.current.temp),
-            weather: data.current.weather[0].description,
-            feelsLike: kelvinToCelsius(data.current.feels_like),
-            sunrise: data.current.sunrise,
-            sunset: data.current.sunset,
-            pressure: data.current.pressure,
-            clouds: data.current.clouds,
-            visibility: data.current.visibility,
-            wind_deg: data.current.wind_deg,
-            wind_speed: data.current.wind_speed.toFixed(),
-            hoursForecast: data.hourly,
-            daysForecast: data.daily,
-            detailsWeather: [],
-            
-          }));
-          dispatch(setDataLoading(false)); 
-        })
-        .catch(err => console.error(`You have an error! - ${err}`))
-        
-      }
+    dispatch(setDataLoading(true)); 
 
-      setTimeout(fetchData,1000)
+    const URL = `https://api.openweathermap.org/data/2.5/onecall?lat=${location.lat}&lon=${location.long}&exclude=minutes&appid=${process.env.REACT_APP_API_KEY}`
+
+    fetchData(URL)
+    .then(data => {
+      dispatch(getData({
+        temperature: kelvinToCelsius(data.current.temp),
+        weather: data.current.weather[0].description,
+        feelsLike: kelvinToCelsius(data.current.feels_like),
+        sunrise: data.current.sunrise,
+        sunset: data.current.sunset,
+        pressure: data.current.pressure,
+        clouds: data.current.clouds,
+        visibility: data.current.visibility,
+        wind_deg: data.current.wind_deg,
+        wind_speed: data.current.wind_speed.toFixed(),
+        hoursForecast: data.hourly,
+        daysForecast: data.daily,
+        detailsWeather: [],
+      }));
+
+      dispatch(setDataLoading(false)); 
+    })
 
   }, [dispatch, location])
 
@@ -93,7 +84,6 @@ function App() {
     const dayOrNight = isDayOrNight(currentTimestamp, sunriseTimestamp, sunsetTimestamp);
     const weather = mainStateReducer.data[0].weather;
 
-    console.table(currentTimestamp, sunriseTimestamp, sunsetTimestamp)
     const weatherStyling = getWeatherStyling(weather, dayOrNight);
 
     bgRef.current.style.background = weatherStyling.bgColor;
