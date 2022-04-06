@@ -2,15 +2,19 @@
 @import '../variables.scss';
 
 .current-day {
-    width: 100%;
-    padding: 0.8em;
+    width: fit-content;
+    padding: 2rem;
     background: $background;
     height: fit-content;
     margin-right: auto;
     border-radius: 5px;
+    color: white;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
     
     @media (min-width: 600px) {
-        width: 90%;
+        width: fit-content;
     }
 
     .current-day__info {
@@ -78,28 +82,36 @@
                 font-size: 37px;
             }
         }
+        
+    }
 
-        .current-day__params {
+    table {
+        
+        tbody {
+            .current-day__params {
 
-            padding: 0em 0;
-            display: flex;
-            justify-content: space-between;
-            font-size: 14px;
+                padding: 0em 0;
+                font-size: 14px;
+    
+                @media (min-width: 600px) {
+                    font-size: 20px;
+                }
+                @media (min-width: 900px) {
+                    font-size: 25px;
+                }
+                @media (min-width: 1750px) {
+                    font-size: 32px;
+                }
+    
+                td:first-child {
+                    text-align: left;
+                }
 
-            @media (min-width: 600px) {
-                font-size: 20px;
-            }
-            @media (min-width: 900px) {
-                font-size: 25px;
-            }
-            @media (min-width: 1750px) {
-                font-size: 32px;
-            }
-
-            span {
-                font-weight: bold;
+                td:nth-child(2) {
+                    text-align: right;
+                }
+    
             }
         }
-        
     }
 }

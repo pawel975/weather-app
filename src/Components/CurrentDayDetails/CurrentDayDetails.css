@@ -1,16 +1,24 @@
 .current-day {
-  width: 100%;
-  padding: 0.8em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2rem;
   background: rgba(0, 0, 0, 0.2);
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin-right: auto;
   border-radius: 5px;
+  color: white;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
 }
 @media (min-width: 600px) {
   .current-day {
-    width: 90%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }
 .current-day .current-day__info {
@@ -88,27 +96,28 @@
     font-size: 37px;
   }
 }
-.current-day .current-day__info .current-day__params {
+.current-day table tbody .current-day__params {
   padding: 0em 0;
-  display: flex;
-  justify-content: space-between;
   font-size: 14px;
 }
 @media (min-width: 600px) {
-  .current-day .current-day__info .current-day__params {
+  .current-day table tbody .current-day__params {
     font-size: 20px;
   }
 }
 @media (min-width: 900px) {
-  .current-day .current-day__info .current-day__params {
+  .current-day table tbody .current-day__params {
     font-size: 25px;
   }
 }
 @media (min-width: 1750px) {
-  .current-day .current-day__info .current-day__params {
+  .current-day table tbody .current-day__params {
     font-size: 32px;
   }
 }
-.current-day .current-day__info .current-day__params span {
-  font-weight: bold;
+.current-day table tbody .current-day__params td:first-child {
+  text-align: left;
+}
+.current-day table tbody .current-day__params td:nth-child(2) {
+  text-align: right;
 }/*# sourceMappingURL=CurrentDayDetails.css.map */
