@@ -1,6 +1,6 @@
 @use '../variables.scss';
 
-.Welcome {
+.welcome {
     margin:0.5em 0;
     width: 95%;
     // outline: 2px solid black;
@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
 
-    .Welcome__date {
+    .welcome__date {
         text-align: center;
         width: 95%;
         background: variables.$background;

@@ -3,7 +3,6 @@
 .quote {
     position: relative;
     margin: auto;
-    margin-top: 1em;
     width: 100%;
     min-height: auto;
     border-radius: 5px;
@@ -19,14 +18,8 @@
         color: variables.$font1;
         font-size: variables.$fs-100;
 
-        @media (min-width: variables.$screen-mobile) {
-            font-size: variables.$fs-200;
-        }
-        @media (min-width: variables.$screen-tablet) {
-            font-size: variables.$fs-300;
-        }
         @media (min-width: variables.$screen-desktop) {
-            font-size: variables.$fs-400;
+            font-size: variables.$fs-200;
         }
     }
     
@@ -36,17 +29,11 @@
         bottom: -10px;
         text-align: right;
         // outline: 2px solid green;
-        font-size: variables.$fs-300;
+        font-size: variables.$fs-200;
         color: variables.$font1;
 
-        @media (min-width: variables.$screen-mobile) {
-            font-size: variables.$fs-400;
-        }
-        @media (min-width: variables.$screen-tablet) {
-            font-size: variables.$fs-500;
-        }
         @media (min-width: variables.$screen-desktop) {
-            font-size: variables.$fs-600;
+            font-size: variables.$fs-300;
         }
     }
 }

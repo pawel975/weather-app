@@ -8,7 +8,7 @@
   height: -moz-fit-content;
   height: fit-content;
   padding: 1rem;
-  margin-right: auto;
+  margin: auto;
   border-radius: 5px;
   color: white;
   display: flex;
@@ -25,7 +25,6 @@
   color: white;
   display: flex;
   flex-direction: column;
-  font-size: 2rem;
 }
 @media (min-width: 80rem) {
   .current-day .current-day__info {
@@ -34,11 +33,11 @@
 }
 .current-day .current-day__info .current-day__temperature {
   margin: auto;
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 @media (min-width: 32rem) {
   .current-day .current-day__info .current-day__temperature {
-    font-size: 4.25rem;
+    font-size: 3rem;
   }
 }
 @media (min-width: 60rem) {
@@ -48,49 +47,39 @@
 }
 @media (min-width: 80rem) {
   .current-day .current-day__info .current-day__temperature {
-    font-size: 6rem;
+    font-size: 10rem;
   }
 }
 .current-day .current-day__info .current-day__city {
   margin: auto;
-  font-size: 1.5rem;
+  font-size: 0.875rem;
   font-weight: 700;
 }
 @media (min-width: 32rem) {
   .current-day .current-day__info .current-day__city {
-    font-size: 2rem;
+    font-size: 1.25rem;
   }
 }
 @media (min-width: 60rem) {
   .current-day .current-day__info .current-day__city {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
   }
 }
 @media (min-width: 60rem) {
   .current-day .current-day__info .current-day__city {
-    font-size: 3.5rem;
+    font-size: 2.25rem;
   }
 }
 .current-day .current-day__info .current-day__weather {
-  font-size: 1.25rem;
+  font-size: 0.875rem;
   opacity: 0.5;
   margin: auto;
   margin-bottom: 0.2em;
 }
 @media (min-width: 32rem) {
   .current-day .current-day__info .current-day__weather {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin-bottom: 0;
-  }
-}
-@media (min-width: 60rem) {
-  .current-day .current-day__info .current-day__weather {
-    font-size: 2rem;
-  }
-}
-@media (min-width: 60rem) {
-  .current-day .current-day__info .current-day__weather {
-    font-size: 2.5rem;
   }
 }
 .current-day table tbody .current-day__params {
@@ -99,16 +88,6 @@
 @media (min-width: 32rem) {
   .current-day table tbody .current-day__params {
     font-size: 1.25rem;
-  }
-}
-@media (min-width: 60rem) {
-  .current-day table tbody .current-day__params {
-    font-size: 1.5rem;
-  }
-}
-@media (min-width: 60rem) {
-  .current-day table tbody .current-day__params {
-    font-size: 2rem;
   }
 }
 .current-day table tbody .current-day__params td:first-child {

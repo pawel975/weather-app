@@ -36,22 +36,22 @@
 }
 .hours-weather__container .hours-weather__element .hours-weather__element__time,
 .hours-weather__container .hours-weather__element .hours-weather__element__temperature {
-  font-size: 1.25rem;
+  font-size: 0.875rem;
   font-weight: 700;
 }
 @media (min-width: 32rem) {
   .hours-weather__container .hours-weather__element .hours-weather__element__time,
 .hours-weather__container .hours-weather__element .hours-weather__element__temperature {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 .hours-weather__container .hours-weather__element .hours-weather__element__date {
   opacity: 0.7;
-  font-size: 1.25rem;
+  font-size: 0.875rem;
 }
 @media (min-width: 32rem) {
   .hours-weather__container .hours-weather__element .hours-weather__element__date {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 .hours-weather__container .hours-weather__element img {

@@ -8,8 +8,8 @@ const Welcome = () => {
     let date = new Date().getTime()/1000;
 
     return(
-        <div className="Welcome">
-            <div className="Welcome__date">
+        <div className="welcome">
+            <div className="welcome__date">
                 {`Hello, it's ${formatToDate(date, "dayOfTheWeek")}, ${formatToDate(date, 'day-month')}`}
             </div>
         </div>

@@ -5,7 +5,7 @@
     width: fit-content;
     height: fit-content;
     padding: 1rem;
-    margin-right: auto;
+    margin: auto;
     border-radius: 5px;
     color: white;
     display: flex;
@@ -20,7 +20,6 @@
         color: white;
         display: flex;
         flex-direction: column;
-        font-size: variables.$fs-400;
         
         @media (min-width: variables.$screen-desktop) {
             padding: 0 1em;
@@ -29,13 +28,13 @@
         .current-day__temperature {
 
             margin: auto;
-            font-size: variables.$fs-500;
+            font-size: variables.$fs-600;
 
             @media (min-width: variables.$screen-mobile) {
-                font-size: variables.$fs-700;
+                font-size: variables.$fs-600;
             }
             @media (min-width: variables.$screen-tablet) {
-                font-size: variables.$fs-800;
+                font-size: variables.$fs-700;
             }
             @media (min-width: variables.$screen-desktop) {
                 font-size: variables.$fs-900;
@@ -45,37 +44,32 @@
         .current-day__city {
 
             margin:auto;
-            font-size: variables.$fs-300;
+            font-size: variables.$fs-100;
             font-weight: 700;
 
             @media (min-width: variables.$screen-mobile) {
-                font-size: variables.$fs-400;
+                font-size: variables.$fs-200;
+            }
+            @media (min-width: variables.$screen-tablet) {
+                font-size: variables.$fs-300;
             }
             @media (min-width: variables.$screen-tablet) {
                 font-size: variables.$fs-500;
-            }
-            @media (min-width: variables.$screen-tablet) {
-                font-size: variables.$fs-600;
             }
         }
 
         .current-day__weather {
 
-            font-size: variables.$fs-200;
+            font-size: variables.$fs-100;
             opacity: 0.5;
             margin: auto;
             margin-bottom: 0.2em;
 
             @media (min-width: variables.$screen-mobile) {
-                font-size: variables.$fs-300;
+                font-size: variables.$fs-200;
                 margin-bottom: 0;
             }
-            @media (min-width: variables.$screen-tablet) {
-                font-size: variables.$fs-400;
-            }
-            @media (min-width: variables.$screen-tablet) {
-                font-size: variables.$fs-500;
-            }
+
         }
         
     }
@@ -90,12 +84,7 @@
                 @media (min-width: variables.$screen-mobile) {
                     font-size: variables.$fs-200;
                 }
-                @media (min-width: variables.$screen-tablet) {
-                    font-size: variables.$fs-300;
-                }
-                @media (min-width: variables.$screen-tablet) {
-                    font-size: variables.$fs-400;
-                }
+
     
                 td:first-child {
                     font-weight: bold;

@@ -2,7 +2,7 @@
 
 .filter-section {
     width: 100%;
-    height: clamp(25rem, 60%, 35rem);
+    height: 30%;
     background: variables.$background;
     display: flex;
     flex-direction: column;
@@ -37,12 +37,12 @@
             background: variables.$background;
             border: none;
             height: 100%;
-            width: calc(100%/2);
+            width: 100%;
             color: variables.$font1;
-            font-size: variables.$fs-200;
+            font-size: variables.$fs-100;
 
             @media (min-width: variables.$screen-mobile) {
-               font-size: variables.$fs-300;
+               font-size: variables.$fs-200;
             }    
         }
 

@@ -24,25 +24,24 @@
         display: flex;
         align-items: center;
         gap: 0.25rem;
-        // outline: solid 2px green;
         cursor: pointer;
         
         .hours-weather__element__time,
         .hours-weather__element__temperature  {
-            font-size: variables.$fs-200;
+            font-size: variables.$fs-100;
             font-weight: 700;
 
             @media (min-width: variables.$screen-mobile) {
-                font-size: variables.$fs-300;
+                font-size: variables.$fs-200;
             }
         }
 
         .hours-weather__element__date{
             opacity: 0.7;
-            font-size: variables.$fs-200;
+            font-size: variables.$fs-100;
 
             @media (min-width: variables.$screen-mobile) {
-                font-size: variables.$fs-300;
+                font-size: variables.$fs-200;
             }
         }
 

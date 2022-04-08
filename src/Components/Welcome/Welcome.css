@@ -1,13 +1,13 @@
 /* font sizes */
 /* screen-sizes */
-.Welcome {
+.welcome {
   margin: 0.5em 0;
   width: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.Welcome .Welcome__date {
+.welcome .welcome__date {
   text-align: center;
   width: 95%;
   background: rgba(0, 0, 0, 0.4);
@@ -17,12 +17,12 @@
   font-size: 1.25rem;
 }
 @media (min-width: 32rem) {
-  .Welcome .Welcome__date {
+  .welcome .welcome__date {
     font-size: 1.5rem;
   }
 }
 @media (min-width: 80rem) {
-  .Welcome .Welcome__date {
+  .welcome .welcome__date {
     font-size: 2rem;
   }
 }/*# sourceMappingURL=Welcome.css.map */

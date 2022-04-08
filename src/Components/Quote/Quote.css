@@ -3,7 +3,6 @@
 .quote {
   position: relative;
   margin: auto;
-  margin-top: 1em;
   width: 100%;
   min-height: auto;
   border-radius: 5px;
@@ -20,19 +19,9 @@
   color: white;
   font-size: 0.875rem;
 }
-@media (min-width: 32rem) {
-  .quote p {
-    font-size: 1.25rem;
-  }
-}
-@media (min-width: 60rem) {
-  .quote p {
-    font-size: 1.5rem;
-  }
-}
 @media (min-width: 80rem) {
   .quote p {
-    font-size: 2rem;
+    font-size: 1.25rem;
   }
 }
 .quote h3 {
@@ -40,21 +29,11 @@
   right: 0;
   bottom: -10px;
   text-align: right;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: white;
-}
-@media (min-width: 32rem) {
-  .quote h3 {
-    font-size: 2rem;
-  }
-}
-@media (min-width: 60rem) {
-  .quote h3 {
-    font-size: 2.5rem;
-  }
 }
 @media (min-width: 80rem) {
   .quote h3 {
-    font-size: 3.5rem;
+    font-size: 1.5rem;
   }
 }/*# sourceMappingURL=Quote.css.map */
