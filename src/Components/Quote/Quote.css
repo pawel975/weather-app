@@ -2,17 +2,14 @@
 /* screen-sizes */
 .quote {
   position: relative;
-  margin: auto;
   width: 100%;
-  min-height: auto;
   border-radius: 5px;
   grid-area: quote;
   display: initial;
-  padding: 0.2rem 0.7rem;
 }
 @media (min-width: 80rem) {
   .quote {
-    width: 80%;
+    width: 100%;
   }
 }
 .quote p {
@@ -26,8 +23,6 @@
 }
 .quote h3 {
   position: relative;
-  right: 0;
-  bottom: -10px;
   text-align: right;
   font-size: 1.25rem;
   color: white;

@@ -81,7 +81,7 @@
 
                 font-size: variables.$fs-100;
     
-                @media (min-width: variables.$screen-mobile) {
+                @media (min-width: variables.$screen-tablet) {
                     font-size: variables.$fs-200;
                 }
 

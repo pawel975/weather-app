@@ -9,8 +9,8 @@
     position: relative;
     padding: 1rem;
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;    
+    grid-template-columns: 50% 60%;
+    grid-template-rows: 60% 40%;    
     grid-template-areas: 
     "current-day weather-icon"
     "current-day quote";
@@ -18,22 +18,22 @@
     .main__weather-icon {
         grid-area: weather-icon;
         position: relative;
-        margin: auto;
+        margin-block: auto;
         right: 0%;
         bottom: 0%;
-        // outline: 2px solid black;
-        width: clamp(100px, 100%, 150px);
+        width: 10rem;
         height: auto;
 
         @media (min-width: variables.$screen-mobile) {
-            width: clamp(150px, 100%,350px);
+            width: 15rem;
         }
         @media (min-width: variables.$screen-desktop) {
-            width: clamp(200px, 100%,450px);
+            width: 20rem;
         }
     
         img {
             width: 100%;
+            display: block;
         }
 
         @keyframes movement {
@@ -48,7 +48,7 @@
             }
         }
     
-        animation: movement 1.5s ease-in-out;
+        // animation: movement 1.5s ease-in-out;
     }
 
     .current-day {

@@ -85,7 +85,7 @@
 .current-day table tbody .current-day__params {
   font-size: 0.875rem;
 }
-@media (min-width: 32rem) {
+@media (min-width: 60rem) {
   .current-day table tbody .current-day__params {
     font-size: 1.25rem;
   }

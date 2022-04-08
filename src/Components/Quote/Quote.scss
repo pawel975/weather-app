@@ -2,16 +2,13 @@
 
 .quote {
     position: relative;
-    margin: auto;
     width: 100%;
-    min-height: auto;
     border-radius: 5px;
     grid-area: quote;
     display: initial;
-    padding: 0.2rem 0.7rem;
 
     @media (min-width: variables.$screen-desktop) {
-        width: 80%;
+        width: 100%;
     }
 
     p {
@@ -25,10 +22,7 @@
     
     h3 {
         position: relative;
-        right: 0;
-        bottom: -10px;
         text-align: right;
-        // outline: 2px solid green;
         font-size: variables.$fs-200;
         color: variables.$font1;
 
