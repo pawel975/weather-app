@@ -1,3 +1,4 @@
+@use '../variables.scss';
 
 .loading-screen {
     width: 100vw;
@@ -15,7 +16,7 @@
 
     .loading-screen__loading-info {
         color: white;
-        font-size: 35px;
+        font-size: variables.$fs-600;
         font-weight: 700;
     }
 }

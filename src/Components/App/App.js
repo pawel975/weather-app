@@ -1,9 +1,8 @@
 import React, {useState,useEffect, useRef } from 'react';
 import {useSelector,useDispatch} from 'react-redux';
-import './App.css';
+import './App.scss';
 import Main from '../Main/Main';
 import Welcome from '../Welcome/Welcome';
-import Dropdown from '../Dropdown/Dropdown';
 import LoadingScreen from '../LoadingScreen/LoadingScreen'
 import ModalDetails from '../ModalDetails/ModalDetails';
 
@@ -13,6 +12,7 @@ import { isDayOrNight } from '../global-helpers/isDayOrNight';
 import { getWeatherStyling } from '../global-helpers/getWeatherStyling';
 import { kelvinToCelsius } from '../global-helpers/kelvinToCelsius';
 import { fetchData } from './fetchData';
+import FilterSection from '../FilterSection/FilterSection';
 
 function App() {
 
@@ -100,9 +100,9 @@ function App() {
 
         <div ref={bgRef} className="app" >
 
-          <Welcome/>
+          {/* <Welcome/> */}
+          <FilterSection />
           {!dataLoading && <Main location={location} weatherIcon={weatherIcon} />}
-          <Dropdown />
 
         </div>
       }

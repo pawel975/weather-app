@@ -1,3 +1,5 @@
+/* font sizes */
+/* screen-sizes */
 .loading-screen {
   width: 100vw;
   height: 100vh;
@@ -12,6 +14,6 @@
 }
 .loading-screen .loading-screen__loading-info {
   color: white;
-  font-size: 35px;
+  font-size: 3.5rem;
   font-weight: 700;
 }/*# sourceMappingURL=LoadingScreen.css.map */

@@ -1,3 +1,4 @@
+@use '../variables.scss';
 
 .loading-screen__error {
     padding: 1em 1em;
@@ -20,7 +21,7 @@
     margin: auto;
 
     p {
-        font-size: 15px;
+        font-size: variables.$fs-200;
         margin-bottom: 0.5em;
         text-align: center;
         grid-area: text;
@@ -38,9 +39,9 @@
         margin:auto;
         border-radius: 10px;
         border: none;
-        font-size: 14px;
+        font-size: variables.$fs-200;
         font-weight: 700;
-        color: rgb(68, 111, 177);;
+        color: rgb(68, 111, 177);
         background: white;
     }
 }

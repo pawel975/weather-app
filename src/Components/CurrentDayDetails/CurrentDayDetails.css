@@ -1,20 +1,20 @@
+/* font sizes */
+/* screen-sizes */
 .current-day {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 2rem;
-  background: rgba(0, 0, 0, 0);
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  padding: 1rem;
   margin-right: auto;
   border-radius: 5px;
   color: white;
   display: flex;
-  gap: 2rem;
   flex-direction: column;
 }
-@media (min-width: 600px) {
+@media (min-width: 32rem) {
   .current-day {
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -25,97 +25,94 @@
   color: white;
   display: flex;
   flex-direction: column;
+  font-size: 2rem;
 }
-.current-day .current-day__info * {
-  padding: 0.1em 0.5em;
-}
-@media (min-width: 1750px) {
+@media (min-width: 80rem) {
   .current-day .current-day__info {
     padding: 0 1em;
   }
 }
 .current-day .current-day__info .current-day__temperature {
   margin: auto;
-  padding: 0;
-  font-size: 60px;
+  font-size: 2.5rem;
 }
-@media (min-width: 600px) {
+@media (min-width: 32rem) {
   .current-day .current-day__info .current-day__temperature {
-    font-size: 90px;
+    font-size: 4.25rem;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 60rem) {
   .current-day .current-day__info .current-day__temperature {
-    font-size: 110px;
+    font-size: 5rem;
   }
 }
-@media (min-width: 1750px) {
+@media (min-width: 80rem) {
   .current-day .current-day__info .current-day__temperature {
-    font-size: 140px;
+    font-size: 6rem;
   }
 }
 .current-day .current-day__info .current-day__city {
   margin: auto;
-  font-size: 22px;
+  font-size: 1.5rem;
   font-weight: 700;
 }
-@media (min-width: 600px) {
+@media (min-width: 32rem) {
   .current-day .current-day__info .current-day__city {
-    font-size: 32px;
+    font-size: 2rem;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 60rem) {
   .current-day .current-day__info .current-day__city {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
 }
-@media (min-width: 1750px) {
+@media (min-width: 60rem) {
   .current-day .current-day__info .current-day__city {
-    font-size: 55px;
+    font-size: 3.5rem;
   }
 }
 .current-day .current-day__info .current-day__weather {
-  font-size: 18px;
+  font-size: 1.25rem;
   opacity: 0.5;
   margin: auto;
   margin-bottom: 0.2em;
 }
-@media (min-width: 600px) {
+@media (min-width: 32rem) {
   .current-day .current-day__info .current-day__weather {
-    font-size: 25px;
+    font-size: 1.5rem;
     margin-bottom: 0;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 60rem) {
   .current-day .current-day__info .current-day__weather {
-    font-size: 28px;
+    font-size: 2rem;
   }
 }
-@media (min-width: 1750px) {
+@media (min-width: 60rem) {
   .current-day .current-day__info .current-day__weather {
-    font-size: 37px;
+    font-size: 2.5rem;
   }
 }
 .current-day table tbody .current-day__params {
-  padding: 0em 0;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
-@media (min-width: 600px) {
+@media (min-width: 32rem) {
   .current-day table tbody .current-day__params {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 60rem) {
   .current-day table tbody .current-day__params {
-    font-size: 25px;
+    font-size: 1.5rem;
   }
 }
-@media (min-width: 1750px) {
+@media (min-width: 60rem) {
   .current-day table tbody .current-day__params {
-    font-size: 32px;
+    font-size: 2rem;
   }
 }
 .current-day table tbody .current-day__params td:first-child {
+  font-weight: bold;
   text-align: left;
 }
 .current-day table tbody .current-day__params td:nth-child(2) {

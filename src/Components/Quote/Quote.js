@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import './Quote.css';
+import './Quote.scss';
 import axios from 'axios';
 import QuoteText from '../QuoteText/QuoteText';
 import QuoteAuthor from '../QuoteAuthor/QuoteAuthor';

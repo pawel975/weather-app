@@ -1,6 +1,6 @@
 import React, {useState ,useEffect} from 'react';
 import Loader from "react-loader-spinner";
-import './LoadingScreen.css'
+import './LoadingScreen.scss'
 import LoadingScreenError from '../LoadingScreenError/LoadingScreenError';
 import LoadingScreenIcon from '../LoadingScreenIcon/LoadingScreenIcon';
 

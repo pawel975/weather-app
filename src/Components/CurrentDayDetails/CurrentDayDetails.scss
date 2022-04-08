@@ -1,109 +1,104 @@
 
-@import '../variables.scss';
+@use '../variables.scss';
 
 .current-day {
     width: fit-content;
-    padding: 2rem;
-    background: $background;
     height: fit-content;
+    padding: 1rem;
     margin-right: auto;
     border-radius: 5px;
     color: white;
     display: flex;
-    gap: 2rem;
     flex-direction: column;
     
-    @media (min-width: 600px) {
+    @media (min-width: variables.$screen-mobile) {
         width: fit-content;
     }
 
     .current-day__info {
-        * {
-            padding: 0.1em 0.5em;
-        }
         
         color: white;
         display: flex;
         flex-direction: column;
+        font-size: variables.$fs-400;
         
-        @media (min-width:1750px) {
+        @media (min-width: variables.$screen-desktop) {
             padding: 0 1em;
         }
 
         .current-day__temperature {
 
             margin: auto;
-            padding: 0;
-            font-size: 60px;
+            font-size: variables.$fs-500;
 
-            @media (min-width: 600px) {
-                font-size: 90px;
+            @media (min-width: variables.$screen-mobile) {
+                font-size: variables.$fs-700;
             }
-            @media (min-width: 900px) {
-                font-size: 110px;
+            @media (min-width: variables.$screen-tablet) {
+                font-size: variables.$fs-800;
             }
-            @media (min-width: 1750px) {
-                font-size: 140px;
+            @media (min-width: variables.$screen-desktop) {
+                font-size: variables.$fs-900;
             }
         } 
 
         .current-day__city {
 
             margin:auto;
-            font-size: 22px;
+            font-size: variables.$fs-300;
             font-weight: 700;
 
-            @media (min-width: 600px) {
-                font-size: 32px;
+            @media (min-width: variables.$screen-mobile) {
+                font-size: variables.$fs-400;
             }
-            @media (min-width: 900px) {
-                font-size: 40px;
+            @media (min-width: variables.$screen-tablet) {
+                font-size: variables.$fs-500;
             }
-            @media (min-width: 1750px) {
-                font-size: 55px;
+            @media (min-width: variables.$screen-tablet) {
+                font-size: variables.$fs-600;
             }
         }
 
         .current-day__weather {
 
-            font-size: 18px;
+            font-size: variables.$fs-200;
             opacity: 0.5;
             margin: auto;
             margin-bottom: 0.2em;
 
-            @media (min-width: 600px) {
-                font-size: 25px;
+            @media (min-width: variables.$screen-mobile) {
+                font-size: variables.$fs-300;
                 margin-bottom: 0;
             }
-            @media (min-width: 900px) {
-                font-size: 28px;
+            @media (min-width: variables.$screen-tablet) {
+                font-size: variables.$fs-400;
             }
-            @media (min-width: 1750px) {
-                font-size: 37px;
+            @media (min-width: variables.$screen-tablet) {
+                font-size: variables.$fs-500;
             }
         }
         
     }
 
     table {
-        
+
         tbody {
             .current-day__params {
 
-                padding: 0em 0;
-                font-size: 14px;
+                font-size: variables.$fs-100;
     
-                @media (min-width: 600px) {
-                    font-size: 20px;
+                @media (min-width: variables.$screen-mobile) {
+                    font-size: variables.$fs-200;
                 }
-                @media (min-width: 900px) {
-                    font-size: 25px;
+                @media (min-width: variables.$screen-tablet) {
+                    font-size: variables.$fs-300;
                 }
-                @media (min-width: 1750px) {
-                    font-size: 32px;
+                @media (min-width: variables.$screen-tablet) {
+                    font-size: variables.$fs-400;
                 }
     
                 td:first-child {
+                    font-weight: bold;
                     text-align: left;
                 }
 

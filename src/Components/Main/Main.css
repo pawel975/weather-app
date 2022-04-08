@@ -1,53 +1,31 @@
+/* font sizes */
+/* screen-sizes */
 .main {
-  margin-top: 0.5em;
   position: relative;
-  width: 90%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  width: 100%;
+  height: 100%;
   display: grid;
-  grid-template-columns: 52% 48%;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: "current-day weather-icon" "current-day ." "quote quote";
-}
-@media (min-width: 600px) {
-  .main {
-    grid-template-columns: 52% 48%;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "current-day weather-icon" "quote quote";
-  }
-}
-@media (min-width: 900px) {
-  .main {
-    grid-template-columns: 52% 48%;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "current-day weather-icon" "current-day quote";
-  }
-}
-@media (min-width: 1750px) {
-  .main {
-    grid-template-columns: 45% 55%;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "current-day weather-icon" "current-day quote";
-  }
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 50%;
+  grid-template-areas: "current-day weather-icon" "current-day quote";
 }
 .main .main__weather-icon {
   grid-area: weather-icon;
   position: relative;
   margin: auto;
-  left: 0;
-  bottom: 0;
+  right: 0%;
+  bottom: 0%;
   width: clamp(100px, 100%, 250px);
   height: auto;
   -webkit-animation: movement 1.5s ease-in-out;
           animation: movement 1.5s ease-in-out;
 }
-@media (min-width: 600px) {
+@media (min-width: 32rem) {
   .main .main__weather-icon {
     width: clamp(150px, 100%, 350px);
   }
 }
-@media (min-width: 1750px) {
+@media (min-width: 80rem) {
   .main .main__weather-icon {
     width: clamp(200px, 100%, 450px);
   }
@@ -57,22 +35,22 @@
 }
 @-webkit-keyframes movement {
   0% {
-    left: 100%;
-    bottom: -20%;
+    right: -100%;
+    bottom: -30%;
   }
   100% {
-    left: 0;
-    bottom: 0;
+    right: 0%;
+    bottom: 0%;
   }
 }
 @keyframes movement {
   0% {
-    left: 100%;
-    bottom: -20%;
+    right: -100%;
+    bottom: -30%;
   }
   100% {
-    left: 0;
-    bottom: 0;
+    right: 0%;
+    bottom: 0%;
   }
 }
 .main .current-day {

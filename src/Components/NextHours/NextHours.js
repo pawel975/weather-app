@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react';
-import './NextHours.css';
+import './NextHours.scss';
 import {useSelector, useDispatch} from 'react-redux';
 
 import { setModalDetailsIndex,modalDetailsOpen } from '../../redux/actions';
@@ -16,43 +15,7 @@ const NextHours = () => {
     const sunrise = mainStateReducer.data[0].sunrise;
     const sunset = mainStateReducer.data[0].sunset;
 
-    const hoursInSlider = [3,4,6,8,12];
-    const containerWidth = [1600,1200,800,600,400];
-    const maxSliderMove = [1500,1100,700,500,300]; 
-    const minSliderMove = 0;
-
-    const [move, setMove] = useState(0);
-    const [sliderIndex, setSliderIndex] = useState(0);
-
     const dispatch = useDispatch()
-    
-    const updateWindowWidth = () => {
-        
-        const windowSize = window.innerWidth
-        if (windowSize <= 400) {
-            setSliderIndex(0)
-        } else if (windowSize <=800) {
-            setSliderIndex(1)
-        } else if (windowSize <=1400) {
-            setSliderIndex(2)
-        } else if (windowSize <=2000) {
-            setSliderIndex(3)
-        } else{
-            setSliderIndex(4)
-        }
-    }
-
-    const handleMoveRight = () => {
-
-        if(move === maxSliderMove[sliderIndex]) return
-        setMove(move+100);
-    }
-    
-    const handleMoveLeft = () => {
-
-        if(move === minSliderMove) return setMove(minSliderMove);
-        setMove(move - 100);
-    }
 
     const handleDetailsView = (e) => {
         
@@ -64,12 +27,6 @@ const NextHours = () => {
         dispatch(modalDetailsOpen())
     }
 
-    window.addEventListener('resize', updateWindowWidth)
-
-    useEffect(() => {
-        updateWindowWidth()
-    }, []);
-    
     const allHours = hoursArray.map(hour => {
 
         const key = hoursArray.indexOf(hour)
@@ -85,7 +42,7 @@ const NextHours = () => {
         return (
             <div 
                 id={key}
-                style={{width:`calc(100%/${hoursInSlider[sliderIndex]}`}} className="hours-weather__element"
+                className="hours-weather__element"
                 onClick={handleDetailsView}
             >
 
@@ -97,35 +54,9 @@ const NextHours = () => {
             </div>
     )})
 
-    return(
-
-        <div className="container">
-            
-            {sliderIndex >= 2 && 
-                <button  
-                    className={`hours-weather__button ${move === minSliderMove? "hours-weather__button--disabled":""}`} 
-                    onClick={handleMoveLeft}>
-                    {'<'}
-                </button>
-            }
-
-            {/* Disables scroll on desktop so slider moves by pressing buttons */}
-            <div style={{overflow:`${sliderIndex >= 2 ? "hidden":""}`}} className="hours-weather">
-                <div 
-                    style={{left:`-${move}%`, width:`${containerWidth[sliderIndex]}%`}} className="hours-weather__container"
-                >
-                    {allHours}
-                </div>
-            </div>
-
-            {sliderIndex >= 2 &&
-                <button 
-                    className={`hours-weather__button ${move === maxSliderMove[sliderIndex]? "hours-weather__button--disabled":""}`} 
-                    onClick={handleMoveRight}>
-                    {'>'}
-                </button>
-            }
-
+    return (
+        <div className="hours-weather__container">
+            {allHours}
         </div>
     )
 }

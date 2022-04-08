@@ -1,5 +1,5 @@
 
-import './LoadingScreenError.css';
+import './LoadingScreenError.scss';
 
 const LoadingScreenError = () => {
 

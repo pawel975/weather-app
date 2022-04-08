@@ -1,6 +1,7 @@
+/* font sizes */
+/* screen-sizes */
 .quote {
   position: relative;
-  background: rgba(0, 0, 0, 0);
   margin: auto;
   margin-top: 1em;
   width: 100%;
@@ -8,30 +9,30 @@
   border-radius: 5px;
   grid-area: quote;
   display: initial;
-  padding: 1.5em;
+  padding: 0.2rem 0.7rem;
 }
-@media (min-width: 1750px) {
+@media (min-width: 80rem) {
   .quote {
     width: 80%;
   }
 }
 .quote p {
   color: white;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
-@media (min-width: 600px) {
+@media (min-width: 32rem) {
   .quote p {
-    font-size: 18px;
+    font-size: 1.25rem;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 60rem) {
   .quote p {
-    font-size: 20px;
+    font-size: 1.5rem;
   }
 }
-@media (min-width: 1750px) {
+@media (min-width: 80rem) {
   .quote p {
-    font-size: 32px;
+    font-size: 2rem;
   }
 }
 .quote h3 {
@@ -39,21 +40,21 @@
   right: 0;
   bottom: -10px;
   text-align: right;
-  font-size: 20px;
+  font-size: 1.5rem;
   color: white;
 }
-@media (min-width: 600px) {
+@media (min-width: 32rem) {
   .quote h3 {
-    font-size: 25px;
+    font-size: 2rem;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 60rem) {
   .quote h3 {
-    font-size: 28px;
+    font-size: 2.5rem;
   }
 }
-@media (min-width: 1750px) {
+@media (min-width: 80rem) {
   .quote h3 {
-    font-size: 45px;
+    font-size: 3.5rem;
   }
 }/*# sourceMappingURL=Quote.css.map */

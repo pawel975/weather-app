@@ -1,22 +1,30 @@
+/* font sizes */
+/* screen-sizes */
 .filter-section {
-  transition: 0.3s;
-  position: relative;
   width: 100%;
-  height: 40vh;
-  background: rgba(0, 0, 0, 0.2);
+  height: clamp(25rem, 60%, 35rem);
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 1rem;
+}
+@media (min-width: 60rem) {
+  .filter-section {
+    height: 100vh;
+    width: 35%;
+  }
 }
 .filter-section .filter-section__choose-filter {
   width: 250px;
   height: 30px;
   border-radius: 5px;
-  overflow: hidden;
   display: flex;
+  overflow: hidden;
 }
-@media (min-width: 600px) {
+@media (min-width: 32rem) {
   .filter-section .filter-section__choose-filter {
     height: 50px;
     width: 300px;
@@ -27,18 +35,34 @@
 }
 .filter-section .filter-section__choose-filter .filter-section__button-filter {
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.4);
   border: none;
   height: 100%;
   width: 50%;
   color: white;
-  font-size: 14px;
+  font-size: 1.25rem;
 }
-@media (min-width: 600px) {
+@media (min-width: 32rem) {
   .filter-section .filter-section__choose-filter .filter-section__button-filter {
-    font-size: 16px;
+    font-size: 1.5rem;
   }
 }
 .filter-section .filter-section__choose-filter .filter-section__button-active {
   background: rgba(0, 0, 0, 0.5);
+}
+.filter-section .filter-section__choose-container {
+  display: flex;
+  margin: 0em auto;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+  overflow-x: scroll;
+}
+@media (min-width: 60rem) {
+  .filter-section .filter-section__choose-container {
+    flex-direction: column;
+    overflow-x: initial;
+    overflow-y: scroll;
+  }
 }/*# sourceMappingURL=FilterSection.css.map */

@@ -1,3 +1,4 @@
+@use '../variables.scss';
 
     .modal-details__background {
         z-index: 1;
@@ -23,7 +24,7 @@
         flex-direction: column;
         align-items: center;
 
-        @media (min-width: 600px) {
+        @media (min-width: variables.$screen-mobile) {
             border-radius: 15px;
             width:70%;
             height: 70%;
@@ -31,24 +32,17 @@
             bottom: 50%;
         }
 
-        @media (min-width: 600px) {
-            border-radius: 15px;
-            width:70%;
-            height: 70%;
-            left: 50%;
-            bottom: 50%;
-        }
-        @media (min-width: 720px) {
+        @media (min-width: variables.$screen-tablet) {
             width:clamp(300px,50%,500px);
         }
 
         img {
             width: 50%;
-            background: rgba($color: #000000, $alpha: 0.15);
+            background: variables.$background2;
             border-radius: 20px;
             margin: 3em 0 1em 0;
 
-            @media (min-width: 600px) {
+            @media (min-width: variables.$screen-mobile) {
                 width: 40%;
             }
         }
@@ -62,7 +56,7 @@
             top: 5%;
             // outline: 2px solid green;
 
-            @media (min-width:600px) {
+            @media (min-width: variables.$screen-mobile) {
                 position: absolute;
                 right: 5%;
             }

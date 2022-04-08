@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import "./ModalDetails.css";
+import "./ModalDetails.scss";
 
 import {GrClose} from 'react-icons/gr';
 import { modalDetailsClose } from '../../redux/actions';

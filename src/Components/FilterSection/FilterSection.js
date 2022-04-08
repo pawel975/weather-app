@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import ForecastWeather from '../ForecastWeather/ForecastWeather';
 import NextHours from '../NextHours/NextHours';
-import './FilterSection.css';
+import './FilterSection.scss';
 
-const FilterSection = ({height}) => {
+const FilterSection = () => {
 
     const [filterChoice, setFilterChoice] = useState(0);
 
@@ -14,7 +14,7 @@ const FilterSection = ({height}) => {
     }
 
     return(
-        <div style={{height:`${height}`}} className="filter-section">
+        <div className="filter-section">
 
             <div className="filter-section__choose-filter ">
 
@@ -38,8 +38,13 @@ const FilterSection = ({height}) => {
 
             </div>
 
-            {filterChoice === 0 && <NextHours/>}
-            {filterChoice === 1 && <ForecastWeather/>}
+            <div className='filter-section__choose-container'>
+
+                {filterChoice === 0 && <NextHours/>}
+                {filterChoice === 1 && <ForecastWeather/>}
+
+            </div>
+
 
         </div>
     )

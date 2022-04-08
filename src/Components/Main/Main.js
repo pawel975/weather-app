@@ -1,13 +1,10 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import CurrentDayDetails from '../CurrentDayDetails/CurrentDayDetails';
 import Quote from '../Quote/Quote';
-import './Main.css'
+import './Main.scss'
 // import TestColorComponent from './TestColorComponent';
 
 const Main = ({weatherIcon}) => {
-
-    const isFilterSectionOpen = useSelector(state => state.isFilterSectionOpen);
 
     return(
             // <TestColorComponent/>
@@ -17,7 +14,7 @@ const Main = ({weatherIcon}) => {
                 <img src={weatherIcon} alt="weather-icon"/>
             </div>
             <CurrentDayDetails/>
-            {!isFilterSectionOpen && <Quote/>}
+            <Quote/>
         </div>
                 
     )

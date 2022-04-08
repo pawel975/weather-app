@@ -1,49 +1,70 @@
-@import '../variables.scss';
+@use '../variables.scss';
 
 .filter-section {
-    transition: 0.3s;
-    position: relative;
     width: 100%;
-    height: 40vh;
-    background: $background;
+    height: clamp(25rem, 60%, 35rem);
+    background: variables.$background;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+    padding: 1rem;
+
+    @media (min-width: variables.$screen-tablet) {
+        height: 100vh;
+        width: 35%;
+    }   
 
     .filter-section__choose-filter {
         width: 250px;
         height: 30px;
-        // outline: green 2px solid;
         border-radius: 5px;
-        overflow: hidden;
         display: flex;
+        overflow: hidden;
 
-        @media (min-width: 600px) {
+        @media (min-width: variables.$screen-mobile) {
             height: 50px;
             width: 300px;
         }
 
         hr{
-            color: $font1;
+            color: variables.$font1;
         }
 
         .filter-section__button-filter {
             cursor: pointer;
-            background: $background;
+            background: variables.$background;
             border: none;
             height: 100%;
             width: calc(100%/2);
-            color: $font1;
-            font-size: 14px;
+            color: variables.$font1;
+            font-size: variables.$fs-200;
 
-            @media (min-width: 600px) {
-               font-size: 16px;
+            @media (min-width: variables.$screen-mobile) {
+               font-size: variables.$fs-300;
             }    
         }
 
         .filter-section__button-active {
             background: rgba($color: #000000, $alpha: 0.5);
         }
+    }
+
+    .filter-section__choose-container {
+        display: flex;
+        margin: 0em auto;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        box-shadow: inset 0px 0px 5px rgba($color: #000000, $alpha: 0.5);
+        overflow-x: scroll;
+
+        @media (min-width: variables.$screen-tablet) {
+            flex-direction: column;
+            overflow-x: initial;
+            overflow-y: scroll;
+        }
+
     }
 }

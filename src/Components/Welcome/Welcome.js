@@ -1,4 +1,4 @@
-import './Welcome.css';
+import './Welcome.scss';
 import React from 'react';
 import { formatToDate } from '../global-helpers/formatToDate';
 

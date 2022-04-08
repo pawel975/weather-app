@@ -1,1 +1,1 @@
-{"version":3,"sources":["LoadingScreen.scss","LoadingScreen.css"],"names":[],"mappings":"AACA;EACI,YAAA;EACA,aAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,iFAAA;ACAJ;ADEI;EACI,gCAAA;ACAR;ADII;EACI,YAAA;EACA,eAAA;EACA,gBAAA;ACFR","file":"LoadingScreen.css"}
+{"version":3,"sources":["../variables.scss","LoadingScreen.scss","LoadingScreen.css"],"names":[],"mappings":"AAKA,eAAA;AAWA,iBAAA;ACdA;EACI,YAAA;EACA,aAAA;EACA,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,iFAAA;ACCJ;ADCI;EACI,gCAAA;ACCR;ADGI;EACI,YAAA;EACA,iBDTC;ECUD,gBAAA;ACDR","file":"LoadingScreen.css"}

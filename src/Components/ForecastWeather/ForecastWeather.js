@@ -1,5 +1,5 @@
 import React from 'react';
-import './ForecastWeather.css'; 
+import './ForecastWeather.scss'; 
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setModalDetailsIndex,modalDetailsOpen } from '../../redux/actions';
@@ -55,9 +55,11 @@ const ForecastWeather = () => {
         )})
 
     return(
-        <div className="weather">
-            {allDays}
-        </div>
+        <>
+            <div className="weather__container">
+                {allDays}
+            </div>
+        </>
     )
 } 
 

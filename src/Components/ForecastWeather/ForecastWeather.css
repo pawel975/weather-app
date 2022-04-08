@@ -1,79 +1,91 @@
-.weather {
-  width: 90%;
-  height: 70%;
-  display: flex;
+/* font sizes */
+/* screen-sizes */
+.weather__container {
+  justify-content: center;
   align-items: center;
-  flex-direction: row;
-  overflow: scroll;
-  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+  height: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
 }
-.weather .weather__day {
+@media (min-width: 60rem) {
+  .weather__container {
+    flex-direction: column;
+    top: 0%;
+    left: 0%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+.weather__container .weather__day {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin: 0;
   height: 80%;
-  width: clamp(100px, 90%, 400px);
+  width: 6rem;
   justify-content: space-between;
   color: white;
   cursor: pointer;
 }
-@media (min-width: 1750px) {
-  .weather .weather__day {
+@media (min-width: 80rem) {
+  .weather__container .weather__day {
     margin-top: -2em;
+    width: 7rem;
   }
 }
-.weather .weather__day .weather__date {
-  font-size: 18px;
+.weather__container .weather__day .weather__date {
+  font-size: 0.875rem;
   font-weight: 500;
 }
-@media (min-width: 1750px) {
-  .weather .weather__day .weather__date {
-    font-size: 22px;
+@media (min-width: 80rem) {
+  .weather__container .weather__day .weather__date {
+    font-size: 1.25rem;
   }
 }
-.weather .weather__day img {
+.weather__container .weather__day img {
   height: 55%;
 }
-@media (min-width: 1750px) {
-  .weather .weather__day img {
+@media (min-width: 80rem) {
+  .weather__container .weather__day img {
     margin: 1em 0;
     width: 40%;
   }
 }
-.weather .weather__day .weather__temperature {
+.weather__container .weather__day .weather__temperature {
   text-align: center;
-  font-size: 16px;
+  font-size: 0.875rem;
   font-weight: 700;
 }
-@media (min-width: 1750px) {
-  .weather .weather__day .weather__temperature {
-    font-size: 21px;
+@media (min-width: 80rem) {
+  .weather__container .weather__day .weather__temperature {
+    font-size: 1.25rem;
   }
 }
-.weather .weather__day .weather__day-night {
-  font-size: 12px;
+.weather__container .weather__day .weather__day-night {
+  font-size: 0.875rem;
   opacity: 0.6;
 }
-@media (min-width: 1750px) {
-  .weather .weather__day .weather__day-night {
-    font-size: 16px;
+@media (min-width: 80rem) {
+  .weather__container .weather__day .weather__day-night {
+    font-size: 1.25rem;
   }
 }
-@media (min-width: 1000px) {
-  .weather .weather__day {
+@media (min-width: 60rem) {
+  .weather__container .weather__day {
     overflow: initial;
     height: 60%;
   }
 }
-@media (min-width: 1000px) {
-  .weather .weather__day {
+@media (min-width: 60rem) {
+  .weather__container .weather__day {
     overflow: initial;
     height: 60%;
-  }
-}
-@media (min-width: 900px) {
-  .weather {
-    overflow: initial;
   }
 }/*# sourceMappingURL=ForecastWeather.css.map */

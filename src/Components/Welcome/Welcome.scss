@@ -1,4 +1,5 @@
-@import '../variables.scss';
+@use '../variables.scss';
+
 .Welcome {
     margin:0.5em 0;
     width: 95%;
@@ -10,17 +11,17 @@
     .Welcome__date {
         text-align: center;
         width: 95%;
-        background: $background;
+        background: variables.$background;
         padding: 0.5em;
         border-radius: 5px;
-        color: $font1;
-        font-size: 16px;
+        color: variables.$font1;
+        font-size: variables.$fs-200;
 
-        @media (min-width: 600px) {
-            font-size: 20px;
+        @media (min-width: variables.$screen-mobile) {
+            font-size: variables.$fs-300;
         };
-        @media (min-width: 1750px) {
-            font-size: 28px;
+        @media (min-width: variables.$screen-desktop) {
+            font-size: variables.$fs-400;
         };
 
     }
