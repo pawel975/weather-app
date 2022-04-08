@@ -30,10 +30,10 @@
   width: 100%;
   height: 30px;
   color: white;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0.2);
 }
 .dropdown .dropdown__bar {
   width: 100%;
   height: 20px;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0.2);
 }/*# sourceMappingURL=Dropdown.css.map */
