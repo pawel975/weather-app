@@ -3,10 +3,10 @@
 .main {
   flex-grow: 1;
   position: relative;
-  padding: 1rem;
+  padding: 0.25rem;
   display: grid;
-  grid-template-columns: 50% 60%;
-  grid-template-rows: 60% 40%;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
   grid-template-areas: "current-day weather-icon" "current-day quote";
 }
 .main .main__weather-icon {
@@ -17,15 +17,22 @@
   bottom: 0%;
   width: 10rem;
   height: auto;
+  -webkit-animation: movement 1.5s ease-in-out;
+          animation: movement 1.5s ease-in-out;
 }
 @media (min-width: 32rem) {
   .main .main__weather-icon {
     width: 15rem;
   }
 }
-@media (min-width: 80rem) {
+@media (min-width: 60rem) {
   .main .main__weather-icon {
     width: 20rem;
+  }
+}
+@media (min-width: 80rem) {
+  .main .main__weather-icon {
+    width: 25rem;
   }
 }
 .main .main__weather-icon img {

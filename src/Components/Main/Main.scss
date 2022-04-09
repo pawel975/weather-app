@@ -4,10 +4,10 @@
 
     flex-grow: 1;
     position: relative;
-    padding: 1rem;
+    padding: 0.25rem;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 60% 40%;    
+    grid-template-rows: 50% 50%;    
     grid-template-areas: 
     "current-day weather-icon"
     "current-day quote";
@@ -24,8 +24,11 @@
         @media (min-width: variables.$screen-mobile) {
             width: 15rem;
         }
-        @media (min-width: variables.$screen-desktop) {
+        @media (min-width: variables.$screen-tablet) {
             width: 20rem;
+        }
+        @media (min-width: variables.$screen-desktop) {
+            width: 25rem;
         }
     
         img {

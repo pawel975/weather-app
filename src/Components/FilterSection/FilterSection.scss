@@ -17,7 +17,7 @@
     }   
 
     .filter-section__choose-filter {
-        width: 15rem;
+        width: clamp(8rem, 100%, 12rem);
         height: 1.5rem;
         border-radius: 5px;
         display: flex;
@@ -42,11 +42,9 @@
     .filter-section__choose-container {
         display: flex;
         margin-block: auto;
-        position: relative;
         width: 100%;
         height: 100%;
         border-top: 1px solid rgba($color: #000000, $alpha: 0.2);
-        // box-shadow: inset 0px 0px 5px rgba($color: #000000, $alpha: 0.5);
         overflow-x: scroll;
 
         @media (min-width: variables.$screen-tablet) {

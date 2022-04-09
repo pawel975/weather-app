@@ -7,14 +7,13 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 1rem;
   margin: auto;
   border-radius: 5px;
   color: white;
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 32rem) {
+@media (min-width: 25rem) {
   .current-day {
     width: -webkit-fit-content;
     width: -moz-fit-content;
@@ -34,15 +33,16 @@
 .current-day .current-day__info .current-day__temperature {
   margin: auto;
   font-size: 3rem;
+  line-height: 100%;
 }
-@media (min-width: 32rem) {
-  .current-day .current-day__info .current-day__temperature {
-    font-size: 3rem;
-  }
-}
-@media (min-width: 60rem) {
+@media (min-width: 25rem) {
   .current-day .current-day__info .current-day__temperature {
     font-size: 5rem;
+  }
+}
+@media (min-width: 40rem) {
+  .current-day .current-day__info .current-day__temperature {
+    font-size: 6.25rem;
   }
 }
 @media (min-width: 80rem) {
@@ -55,17 +55,17 @@
   font-size: 0.875rem;
   font-weight: 700;
 }
-@media (min-width: 32rem) {
+@media (min-width: 25rem) {
   .current-day .current-day__info .current-day__city {
     font-size: 1.25rem;
   }
 }
-@media (min-width: 60rem) {
+@media (min-width: 40rem) {
   .current-day .current-day__info .current-day__city {
-    font-size: 1.5rem;
+    font-size: 1.875rem;
   }
 }
-@media (min-width: 60rem) {
+@media (min-width: 80rem) {
   .current-day .current-day__info .current-day__city {
     font-size: 2.25rem;
   }
@@ -76,18 +76,34 @@
   margin: auto;
   margin-bottom: 0.2em;
 }
-@media (min-width: 32rem) {
+@media (min-width: 25rem) {
   .current-day .current-day__info .current-day__weather {
     font-size: 1.25rem;
     margin-bottom: 0;
   }
 }
-.current-day table tbody .current-day__params {
-  font-size: 0.875rem;
+@media (min-width: 40rem) {
+  .current-day .current-day__info .current-day__weather {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
 }
-@media (min-width: 60rem) {
+@media (min-width: 80rem) {
+  .current-day .current-day__info .current-day__weather {
+    font-size: 1.875rem;
+  }
+}
+.current-day table tbody .current-day__params {
+  font-size: 0.7rem;
+}
+@media (min-width: 40rem) {
   .current-day table tbody .current-day__params {
     font-size: 1.25rem;
+  }
+}
+@media (min-width: 80rem) {
+  .current-day table tbody .current-day__params {
+    font-size: 1.5rem;
   }
 }
 .current-day table tbody .current-day__params td:first-child {

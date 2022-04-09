@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import ForecastWeather from '../ForecastWeather/ForecastWeather';
-import NextHours from '../NextHours/NextHours';
+import DaysForecast from '../DaysForecast/DaysForecast';
+import ForecastWrapper from '../ForecastWrapper/ForecastWrapper';
+import HoursForecast from '../HoursForecast/HoursForecast';
 import './FilterSection.scss';
 
 const FilterSection = () => {
@@ -38,8 +39,10 @@ const FilterSection = () => {
 
             <div className='filter-section__choose-container'>
 
-                {filterChoice === 0 && <NextHours/>}
-                {filterChoice === 1 && <ForecastWeather/>}
+            <ForecastWrapper>
+                {filterChoice === 0 && <HoursForecast/>}
+                {filterChoice === 1 && <DaysForecast/>}
+            </ForecastWrapper>
 
             </div>
 

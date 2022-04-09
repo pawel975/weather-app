@@ -6,6 +6,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column-reverse;
+  overflow: hidden;
 }
 @media (min-width: 60rem) {
   .app {

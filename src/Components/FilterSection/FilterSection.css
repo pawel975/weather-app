@@ -8,48 +8,43 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 0.5rem;
+  padding: 0.5rem 0.25rem;
 }
-@media (min-width: 60rem) {
+@media (min-width: 40rem) {
   .filter-section {
     height: 100vh;
     width: 25%;
   }
 }
 .filter-section .filter-section__choose-filter {
-  width: 15rem;
-  height: 2rem;
+  width: clamp(8rem, 100%, 12rem);
+  height: 1.5rem;
   border-radius: 5px;
   display: flex;
   overflow: hidden;
 }
-.filter-section .filter-section__choose-filter hr {
-  color: white;
-  height: 2rem;
-}
 .filter-section .filter-section__choose-filter .filter-section__button-filter {
   cursor: pointer;
   background: rgba(0, 0, 0, 0.4);
+  height: 100%;
   border: none;
-  height: 2rem;
   width: 100%;
   color: white;
-  font-size: 0.875rem;
+  font-size: 0.7rem;
 }
 .filter-section .filter-section__choose-filter .filter-section__button-active {
   background: rgba(0, 0, 0, 0.8);
 }
 .filter-section .filter-section__choose-container {
   display: flex;
-  margin: 0em auto;
-  position: relative;
+  margin-block: auto;
   width: 100%;
   height: 100%;
-  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
   overflow-x: scroll;
 }
-@media (min-width: 60rem) {
+@media (min-width: 40rem) {
   .filter-section .filter-section__choose-container {
     flex-direction: column;
     overflow-x: initial;

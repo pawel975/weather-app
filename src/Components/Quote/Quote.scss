@@ -2,9 +2,11 @@
 
 .quote {
     position: relative;
-    width: 8rem;
+    max-width: 90%;
+    width: 6rem;
     grid-area: quote;
     display: initial;
+    margin-inline: auto;
 
     @media (min-width: variables.$screen-tablet) {
         width: 15rem;
@@ -16,20 +18,20 @@
 
     p {
         color: variables.$font1;
-        font-size: variables.$fs-100;
+        font-size: variables.$fs-000;
 
         @media (min-width: variables.$screen-desktop) {
-            font-size: variables.$fs-200;
+            font-size: variables.$fs-100;
         }
     }
     
     h3 {
         text-align: right;
-        font-size: variables.$fs-200;
+        font-size: variables.$fs-100;
         color: variables.$font1;
 
         @media (min-width: variables.$screen-desktop) {
-            font-size: variables.$fs-300;
+            font-size: variables.$fs-200;
         }
     }
 }

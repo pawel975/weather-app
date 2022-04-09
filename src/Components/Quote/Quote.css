@@ -2,33 +2,38 @@
 /* screen-sizes */
 .quote {
   position: relative;
-  width: 100%;
-  border-radius: 5px;
+  max-width: 90%;
+  width: 6rem;
   grid-area: quote;
   display: initial;
+  margin-inline: auto;
+}
+@media (min-width: 60rem) {
+  .quote {
+    width: 15rem;
+  }
 }
 @media (min-width: 80rem) {
   .quote {
-    width: 100%;
+    width: 25rem;
   }
 }
 .quote p {
   color: white;
-  font-size: 0.875rem;
+  font-size: 0.7rem;
 }
 @media (min-width: 80rem) {
   .quote p {
-    font-size: 1.25rem;
+    font-size: 0.875rem;
   }
 }
 .quote h3 {
-  position: relative;
   text-align: right;
-  font-size: 1.25rem;
+  font-size: 0.875rem;
   color: white;
 }
 @media (min-width: 80rem) {
   .quote h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }/*# sourceMappingURL=Quote.css.map */
