@@ -40,7 +40,7 @@ const ModalDetails = () => {
                 />
                 <img src={icon} alt="weather icon" />
 
-                { daysOrHours === "hours" ?
+                {daysOrHours === "hours" ?
                     <ModalDetailsHours categoryPick={categoryPick}/> :
                     <ModalDetailsDays categoryPick={categoryPick}/>
                 }

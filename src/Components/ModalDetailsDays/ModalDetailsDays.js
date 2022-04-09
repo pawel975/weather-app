@@ -5,18 +5,49 @@ import { kelvinToCelsius } from "../global-helpers/kelvinToCelsius";
 const ModalDetailsDays = ({categoryPick}) => {
 
     const {dt, sunrise, sunset, temp, feels_like, pressure, clouds, wind_speed, wind_deg} = categoryPick
-
+    
     return (
         <div className="modal-details__info-section">
-            <div className="modal-details__parameter"><p>Date:</p><span>{formatToDate(dt,'day-month')}</span></div>
-            <div className="modal-details__parameter"><p>Sunrise:</p><span>{formatTimestamp(sunrise)}</span></div>
-            <div className="modal-details__parameter"><p>Sunset:</p><span>{formatTimestamp(sunset)}</span></div>
-            <div className="modal-details__parameter"><p>Temperature:</p><span>{kelvinToCelsius(temp)} °C</span></div>
-            <div className="modal-details__parameter"><p>Feels like:</p><span>{kelvinToCelsius(feels_like)} °C</span></div>
-            <div className="modal-details__parameter"><p>Pressure:</p><span>{pressure} hPa</span></div>
-            <div className="modal-details__parameter"><p>Clouds:</p><span>{clouds} %</span></div>
-            <div className="modal-details__parameter"><p>Wind speed:</p><span>{wind_speed} m/s</span></div>
-            <div className="modal-details__parameter"><p>Wind degree:</p><span>{wind_deg} deg</span></div>
+            <table>
+                <tbody>
+                    <tr className="modal-details__parameter">
+                        <td>Date:</td>
+                        <td>{formatToDate(dt,'day-month')}</td>
+                    </tr>
+                    <tr className="modal-details__parameter">
+                        <td>Sunrise:</td>
+                        <td>{formatTimestamp(sunrise)}</td>
+                    </tr>
+                    <tr className="modal-details__parameter">
+                        <td>Sunset:</td>
+                        <td>{formatTimestamp(sunset)}</td>
+                    </tr>
+                    <tr className="modal-details__parameter">
+                        <td>Temperature:</td>
+                        <td>{kelvinToCelsius(temp.day)} / {kelvinToCelsius(temp.night)} °C</td>
+                    </tr>
+                    <tr className="modal-details__parameter">
+                        <td>Feels like:</td>
+                        <td>{kelvinToCelsius(feels_like.day)} / {kelvinToCelsius(feels_like.night)} °C</td>
+                    </tr>
+                    <tr className="modal-details__parameter">
+                        <td>Pressure:</td>
+                        <td>{pressure} hPa</td>
+                    </tr>
+                    <tr className="modal-details__parameter">
+                        <td>Clouds:</td>
+                        <td>{clouds} %</td>
+                    </tr>
+                    <tr className="modal-details__parameter">
+                        <td>Wind speed:</td>
+                        <td>{wind_speed} m/s</td>
+                    </tr>
+                    <tr className="modal-details__parameter">
+                        <td>Wind degree:</td>
+                        <td>{wind_deg} deg</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     )
 }
