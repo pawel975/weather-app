@@ -2,7 +2,6 @@ import React, {useState,useEffect, useRef } from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import './App.scss';
 import Main from '../Main/Main';
-import Welcome from '../Welcome/Welcome';
 import LoadingScreen from '../LoadingScreen/LoadingScreen'
 import ModalDetails from '../ModalDetails/ModalDetails';
 
@@ -100,7 +99,6 @@ function App() {
 
         <div ref={bgRef} className="app" >
 
-          {/* <Welcome/> */}
           <FilterSection />
           {!dataLoading && <Main location={location} weatherIcon={weatherIcon} />}
 
@@ -108,7 +106,6 @@ function App() {
       }
 
       {dataLoading && <LoadingScreen/>}
-
 
     </>
   )

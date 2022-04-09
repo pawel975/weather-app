@@ -1,1 +1,0 @@
-{"version":3,"sources":["../variables.scss","Welcome.scss","Welcome.css"],"names":[],"mappings":"AAKA,eAAA;AAWA,iBAAA;ACdA;EACI,eAAA;EACA,UAAA;EAEA,aAAA;EACA,uBAAA;EACA,mBAAA;ACAJ;ADEI;EACI,kBAAA;EACA,UAAA;EACA,8BDbK;ECcL,cAAA;EACA,kBAAA;EACA,YDbA;ECcA,kBDJC;AEIT;ADEQ;EATJ;IAUQ,iBDRH;EESP;AACF;ADAQ;EAZJ;IAaQ,eDZH;EEeP;AACF","file":"Welcome.css"}

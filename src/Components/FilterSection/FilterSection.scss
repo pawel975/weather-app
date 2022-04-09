@@ -8,8 +8,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 0.5rem;
+    padding: 0.5rem 0.25rem;
 
     @media (min-width: variables.$screen-tablet) {
         height: 100vh;
@@ -18,24 +18,19 @@
 
     .filter-section__choose-filter {
         width: 15rem;
-        height: 2rem;
+        height: 1.5rem;
         border-radius: 5px;
         display: flex;
         overflow: hidden;
 
-        hr {
-            color: variables.$font1;
-            height: 2rem;
-        }
-
         .filter-section__button-filter {
             cursor: pointer;
             background: variables.$background;
+            height: 100%;
             border: none;
-            height: 2rem;
             width: 100%;
             color: variables.$font1;
-            font-size: variables.$fs-100;
+            font-size: variables.$fs-000;
 
         }
 
@@ -46,11 +41,12 @@
 
     .filter-section__choose-container {
         display: flex;
-        margin: 0em auto;
+        margin-block: auto;
         position: relative;
         width: 100%;
         height: 100%;
-        box-shadow: inset 0px 0px 5px rgba($color: #000000, $alpha: 0.5);
+        border-top: 1px solid rgba($color: #000000, $alpha: 0.2);
+        // box-shadow: inset 0px 0px 5px rgba($color: #000000, $alpha: 0.5);
         overflow-x: scroll;
 
         @media (min-width: variables.$screen-tablet) {

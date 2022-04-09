@@ -2,9 +2,6 @@
 
 .main {
 
-    // * {
-    //     outline: 2px solid green;
-    // }
     flex-grow: 1;
     position: relative;
     padding: 1rem;
@@ -48,7 +45,7 @@
             }
         }
     
-        // animation: movement 1.5s ease-in-out;
+        animation: movement 1.5s ease-in-out;
     }
 
     .current-day {

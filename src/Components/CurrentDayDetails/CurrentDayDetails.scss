@@ -31,10 +31,10 @@
             font-size: variables.$fs-600;
 
             @media (min-width: variables.$screen-mobile) {
-                font-size: variables.$fs-600;
+                font-size: variables.$fs-700;
             }
             @media (min-width: variables.$screen-tablet) {
-                font-size: variables.$fs-700;
+                font-size: variables.$fs-800;
             }
             @media (min-width: variables.$screen-desktop) {
                 font-size: variables.$fs-900;
@@ -51,7 +51,7 @@
                 font-size: variables.$fs-200;
             }
             @media (min-width: variables.$screen-tablet) {
-                font-size: variables.$fs-300;
+                font-size: variables.$fs-400;
             }
             @media (min-width: variables.$screen-tablet) {
                 font-size: variables.$fs-500;
@@ -67,6 +67,10 @@
 
             @media (min-width: variables.$screen-mobile) {
                 font-size: variables.$fs-200;
+                margin-bottom: 0;
+            }
+            @media (min-width: variables.$screen-tablet) {
+                font-size: variables.$fs-300;
                 margin-bottom: 0;
             }
 

@@ -26,8 +26,6 @@ const FilterSection = () => {
                         Next 48h
                 </button>
 
-                <hr/>
-
                 <button 
                     onClick={handleFilterButtonClick} 
                     value={1} 

@@ -45,9 +45,11 @@ const NextHours = () => {
                 className="hours-weather__element"
                 onClick={handleDetailsView}
             >
-
-                <p className="hours-weather__element__time">{formatTimestamp(thisTimestamp)}</p>
-                <p className="hours-weather__element__date">{formatToDate(thisTimestamp, "day-month")}</p>
+                <div>
+                    <p className="hours-weather__element__time">{formatTimestamp(thisTimestamp)}</p>
+                    <p className="hours-weather__element__date">{formatToDate(thisTimestamp, "day-month")}</p>
+                </div>
+                
                 <img src={icon} alt="weather icon" />
                 <p className="hours-weather__element__temperature">{kelvinToCelsius(hour.temp)}°C</p>
                 
