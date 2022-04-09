@@ -10,7 +10,7 @@ const ModalDetailsHours = ({categoryPick}) => {
             <table>
                 <tbody>
                     <tr className="modal-details__parameter">
-                        <td>Time:</td>
+                        <td>Time: </td>
                         <td>{formatTimestamp(dt)}</td>
                     </tr>
                     <tr className="modal-details__parameter">
