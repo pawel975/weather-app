@@ -32,7 +32,7 @@ const ModalDetails = () => {
 
     return(
         <>
-            <div className="modal-details__background"></div>
+            <div className="modal-details__background" onClick={handleModalClose}></div>
             <div className="modal-details">
                 <GrClose 
                     onClick={handleModalClose}

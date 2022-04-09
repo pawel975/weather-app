@@ -17,7 +17,7 @@
   position: absolute;
   transform: translate(-50%, 50%);
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background: white;
   left: 50%;
   bottom: 50%;
@@ -25,16 +25,18 @@
   flex-direction: column;
   align-items: center;
 }
-@media (min-width: 32rem) {
+@media (min-width: 25rem) {
   .modal-details {
     border-radius: 15px;
-    width: 70%;
-    height: 70%;
+    width: 80%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     left: 50%;
     bottom: 50%;
   }
 }
-@media (min-width: 60rem) {
+@media (min-width: 40rem) {
   .modal-details {
     width: clamp(300px, 50%, 500px);
   }
@@ -45,7 +47,7 @@
   border-radius: 20px;
   margin: 3em 0 1em 0;
 }
-@media (min-width: 32rem) {
+@media (min-width: 25rem) {
   .modal-details img {
     width: 40%;
   }
@@ -58,25 +60,55 @@
   right: 5%;
   top: 5%;
 }
-@media (min-width: 32rem) {
+@media (min-width: 25rem) {
   .modal-details .modal-details__modal-close {
     position: absolute;
     right: 5%;
   }
 }
 .modal-details .modal-details__info-section {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.modal-details .modal-details__info-section .modal-details__parameter {
-  margin: 0.3em;
-  width: 60%;
-  display: flex;
-  justify-content: space-between;
+.modal-details .modal-details__info-section table {
+  width: clamp(10rem, 60%, 12rem);
+  margin-bottom: 1rem;
 }
-.modal-details .modal-details__info-section .modal-details__parameter p {
-  font-weight: 700;
+@media (min-width: 25rem) {
+  .modal-details .modal-details__info-section table {
+    width: clamp(10rem, 50%, 14rem);
+  }
+}
+@media (min-width: 40rem) {
+  .modal-details .modal-details__info-section table {
+    width: clamp(15rem, 50%, 20rem);
+  }
+}
+@media (min-width: 80rem) {
+  .modal-details .modal-details__info-section table {
+    width: clamp(20rem, 50%, 25rem);
+  }
+}
+.modal-details .modal-details__info-section table tbody .modal-details__parameter {
+  font-size: 0.875rem;
+}
+@media (min-width: 40rem) {
+  .modal-details .modal-details__info-section table tbody .modal-details__parameter {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 80rem) {
+  .modal-details .modal-details__info-section table tbody .modal-details__parameter {
+    font-size: 1.5rem;
+  }
+}
+.modal-details .modal-details__info-section table tbody .modal-details__parameter td:first-child {
+  font-weight: bold;
+  text-align: left;
+}
+.modal-details .modal-details__info-section table tbody .modal-details__parameter td:nth-child(2) {
+  text-align: right;
 }/*# sourceMappingURL=ModalDetails.css.map */

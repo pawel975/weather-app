@@ -7,15 +7,44 @@ const ModalDetailsHours = ({categoryPick}) => {
 
     return (
         <div className="modal-details__info-section">
-            <div className="modal-details__parameter"><p>Time:</p><span>{formatTimestamp(dt)}</span></div>
-            <div className="modal-details__parameter"><p>Temperature:</p><span>{kelvinToCelsius(temp)} °C</span></div>
-            <div className="modal-details__parameter"><p>Feels like:</p><span>{kelvinToCelsius(feels_like)} °C</span></div>
-            <div className="modal-details__parameter"><p>Pressure:</p><span>{pressure} hPa</span></div>
-            <div className="modal-details__parameter"><p>Clouds:</p><span>{clouds} %</span></div>
-            <div className="modal-details__parameter"><p>Visibility:</p><span>{visibility} m</span></div>
-            <div className="modal-details__parameter"><p>Wind speed:</p><span>{wind_speed} m/s</span></div>
-            <div className="modal-details__parameter"><p>Wind degree:</p><span>{wind_deg} deg</span></div>
+            <table>
+                <tbody>
+                    <tr className="modal-details__parameter">
+                        <td>Time:</td>
+                        <td>{formatTimestamp(dt)}</td>
+                    </tr>
+                    <tr className="modal-details__parameter">
+                        <td>Temperature:</td>
+                        <td>{kelvinToCelsius(temp)} °C</td>
+                    </tr>
+                    <tr className="modal-details__parameter">
+                        <td>Feels like:</td>
+                        <td>{kelvinToCelsius(feels_like)} °C</td>
+                    </tr>
+                    <tr className="modal-details__parameter">
+                        <td>Pressure:</td>
+                        <td>{pressure} hPa</td>
+                    </tr>
+                    <tr className="modal-details__parameter">
+                        <td>Clouds:</td>
+                        <td>{clouds} %</td>
+                    </tr>
+                    <tr className="modal-details__parameter">
+                        <td>Visibilty:</td>
+                        <td>{visibility} m</td>
+                    </tr>
+                    <tr className="modal-details__parameter">
+                        <td>Wind speed:</td>
+                        <td>{wind_speed} m/s</td>
+                    </tr>
+                    <tr className="modal-details__parameter">
+                        <td>Wind degree:</td>
+                        <td>{wind_deg} deg</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+        
     )
 }
 

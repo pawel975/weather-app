@@ -13,10 +13,10 @@
     }
     .modal-details {
         z-Index:1; 
-        position:absolute;
+        position: absolute;
         transform: translate(-50%,50%);
         width:100vw;
-        height:100vh;
+        height:100%;
         background:white;
         left:50%;
         bottom:50%;
@@ -26,8 +26,8 @@
 
         @media (min-width: variables.$screen-mobile) {
             border-radius: 15px;
-            width:70%;
-            height: 70%;
+            width:80%;
+            height: fit-content;
             left: 50%;
             bottom: 50%;
         }
@@ -64,21 +64,49 @@
         }
 
         .modal-details__info-section {
-            width: 80%;
-            // outline: 2px solid green;
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
 
-            .modal-details__parameter {
-                margin: 0.3em;
-                width: 60%;
-                display: flex;
-                justify-content: space-between;
+            table {
+                width: clamp(10rem, 60%, 12rem);
+                margin-bottom: 1rem;
 
-                p {
-                    font-weight: 700;
+                @media (min-width: variables.$screen-mobile) {
+                    width: clamp(10rem, 50%, 14rem);
+                }
+                @media (min-width: variables.$screen-tablet) {
+                    width: clamp(15rem, 50%, 20rem);
+                }
+                @media (min-width: variables.$screen-desktop) {
+                    width: clamp(20rem, 50%, 25rem);
+                }
+
+                tbody {
+                    .modal-details__parameter {
+        
+                        font-size: variables.$fs-100;
+            
+                        @media (min-width: variables.$screen-tablet) {
+                            font-size: variables.$fs-200;
+                        }
+                        @media (min-width: variables.$screen-desktop) {
+                            font-size: variables.$fs-300;
+                        }
+        
+            
+                        td:first-child {
+                            font-weight: bold;
+                            text-align: left;
+                        }
+        
+                        td:nth-child(2) {
+                            text-align: right;
+                        }
+            
+                    }
                 }
             }
         }
