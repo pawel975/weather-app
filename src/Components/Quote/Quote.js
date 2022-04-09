@@ -24,7 +24,7 @@ const Quote = () => {
             })    
         })
         
-        interval = setInterval(fetchQuoteData, 10000)
+        interval = setInterval(fetchQuoteData, 1000)
     }
     
     useEffect(() => {

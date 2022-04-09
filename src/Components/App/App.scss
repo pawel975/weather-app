@@ -5,7 +5,8 @@
     width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: column-reverse; 
+    flex-direction: column-reverse;
+    overflow: hidden; 
     
     @media (min-width: variables.$screen-tablet) {
         flex-direction: row;

@@ -1,14 +1,18 @@
 @use '../variables.scss';
 
 .quote {
+    outline: 2px solid red;
     position: relative;
-    width: 100%;
-    border-radius: 5px;
+    width: 8rem;
     grid-area: quote;
     display: initial;
 
+    @media (min-width: variables.$screen-tablet) {
+        width: 15rem;
+    }
+
     @media (min-width: variables.$screen-desktop) {
-        width: 100%;
+        width: 25rem;
     }
 
     p {
@@ -21,7 +25,6 @@
     }
     
     h3 {
-        position: relative;
         text-align: right;
         font-size: variables.$fs-200;
         color: variables.$font1;
