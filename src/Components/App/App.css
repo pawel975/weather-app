@@ -8,7 +8,7 @@
   flex-direction: column-reverse;
   overflow: hidden;
 }
-@media (min-width: 60rem) {
+@media (min-width: 40rem) {
   .app {
     flex-direction: row;
   }

@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: row;
 }
-@media (min-width: 60rem) {
+@media (min-width: 40rem) {
   .forecast-wrapper {
     flex-direction: column;
     height: -webkit-fit-content;

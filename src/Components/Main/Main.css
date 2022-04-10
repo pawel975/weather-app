@@ -20,12 +20,12 @@
   -webkit-animation: movement 1.5s ease-in-out;
           animation: movement 1.5s ease-in-out;
 }
-@media (min-width: 32rem) {
+@media (min-width: 20rem) {
   .main .main__weather-icon {
-    width: 15rem;
+    width: 12rem;
   }
 }
-@media (min-width: 60rem) {
+@media (min-width: 40rem) {
   .main .main__weather-icon {
     width: 20rem;
   }

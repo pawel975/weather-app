@@ -8,7 +8,7 @@
   display: initial;
   margin-inline: auto;
 }
-@media (min-width: 60rem) {
+@media (min-width: 40rem) {
   .quote {
     width: 15rem;
   }

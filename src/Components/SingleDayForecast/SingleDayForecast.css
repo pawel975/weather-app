@@ -14,7 +14,7 @@
   background: rgba(255, 255, 255, 0.2);
   opacity: 0.8;
 }
-@media (min-width: 60rem) {
+@media (min-width: 40rem) {
   .weather__day {
     flex-direction: row;
     width: 100%;
@@ -30,7 +30,7 @@
   font-size: 0.7rem;
   font-weight: 500;
 }
-@media (min-width: 60rem) {
+@media (min-width: 40rem) {
   .weather__day .weather__date {
     font-size: 0.875rem;
   }
@@ -38,7 +38,7 @@
 .weather__day img {
   width: 55%;
 }
-@media (min-width: 60rem) {
+@media (min-width: 40rem) {
   .weather__day img {
     margin: 1rem 0;
     width: 40%;
