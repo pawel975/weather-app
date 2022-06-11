@@ -30,7 +30,7 @@
     width: 20rem;
   }
 }
-@media (min-width: 80rem) {
+@media (min-width: 64rem) {
   .main .main__weather-icon {
     width: 25rem;
   }

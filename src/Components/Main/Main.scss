@@ -12,6 +12,10 @@
     "current-day weather-icon"
     "current-day quote";
 
+    @media portret {
+        
+    }
+
     .main__weather-icon {
         grid-area: weather-icon;
         position: relative;
