@@ -2,6 +2,18 @@
 
 App to check weather based on current localization.
 
+## Installation
+
+`npm install` to install all dependencies.
+
+## Development
+
+`npm start` to run app in development mode.
+
+## Build 
+
+`npm build` to build app to production.
+
 ## Features 
 
 App contains:
