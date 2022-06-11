@@ -1,6 +1,7 @@
 # Weather App
 
 App to check weather based on current localization.
+Watch app at https://weather-app-one-lac.vercel.app/
 
 ## Installation
 
