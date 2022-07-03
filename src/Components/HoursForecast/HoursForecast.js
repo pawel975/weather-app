@@ -13,7 +13,7 @@ const HoursForecast = () => {
     const dispatch = useDispatch()
 
     const handleDetailsView = (e) => {
-        
+
         const index = Number(e.target.parentNode.id);
         dispatch(setModalDetailsIndex({
             index:index,

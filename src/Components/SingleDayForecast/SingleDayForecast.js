@@ -15,10 +15,11 @@ const SingleDayForecast = ({key, day, handleDetailsView}) => {
         const icon = getWeatherStyling(weather, dayOrNight).icon;
 
         return (
-            <day 
+            <button 
                 onClick={handleDetailsView} 
                 id={key} 
                 className="weather__day"
+                tabIndex="0"
             >
 
                 <p className="weather__date">{formatToDate(thisTimestamp,"day-month")}</p>
@@ -30,7 +31,7 @@ const SingleDayForecast = ({key, day, handleDetailsView}) => {
                     <p className="weather__day-night">day / night</p>
                 </div>
 
-            </day>
+            </button>
         )
 }
 

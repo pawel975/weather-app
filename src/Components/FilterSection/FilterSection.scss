@@ -19,9 +19,7 @@
     .filter-section__choose-filter {
         width: clamp(8rem, 100%, 12rem);
         height: 1.5rem;
-        border-radius: 5px;
         display: flex;
-        overflow: hidden;
 
         .filter-section__button-filter {
             cursor: pointer;

@@ -16,10 +16,11 @@ const SingleHourForecast = ({key, hour, sunrise, sunset, handleDetailsView}) => 
         const icon = getWeatherStyling(weather, dayOrNight).icon;
 
         return (
-            <div 
+            <button 
                 id={key}
                 className="hours-weather__element"
                 onClick={handleDetailsView}
+                tabIndex="0"
             >
                 <div>
                     <p className="hours-weather__element__time">{formatTimestamp(thisTimestamp)}</p>
@@ -29,7 +30,7 @@ const SingleHourForecast = ({key, hour, sunrise, sunset, handleDetailsView}) => 
                 <img src={icon} alt="weather icon" />
                 <p className="hours-weather__element__temperature">{kelvinToCelsius(hour.temp)}°C</p>
                 
-            </div>
+            </button>
         )
 }
 
